@@ -42,6 +42,17 @@ Specify the relationships regarding the degree, cardinality and instances mandat
 
 ```
 ... Write here your answer ...
+Grau - Binário. Todas entidades envolvidas no relacionamento é de grau 2. Ouseja, todas as relações existentes no sistema são binárias.
+
+1. Fornecedor-Encomenda: cardinalidade 1:N, um fornecedor pode ter 0 ou muitas encomendas; onde encomenda tem exatamente 1 fornecedor (obrigaório).
+
+2. Encomenda-ItemEncomenda: cardinalidade 1:N, uma encomenda tem pelo menos um item, ou seja, um ou mais items; cada item pertence a uma e só uma encomenda (participação obrigatória do Item em Encomenda).
+
+3. Produto-ItemEncomenda: cardinalidade 1:N, um produto pode aparecer em 0 ou mais encomendas; cada item refere-se exatamente á um produto.
+
+4. TipoFornecedor-Fornecedor: cardinalidade: 1:N, cada fornecedor tem um código interno único (obrigatoriamente); um tipo de fornecedor pode ser partilhado por muitos fornecedores. Um fornecedor deve obrigatoriamente ter um tipo designado.
+
+
 
 ```
 
