@@ -29,7 +29,11 @@ As entidades identificadas são: Produto, Encomenda, Fornecedor, TipoFornecedor 
 - ItemEncomenda (EncomendaID e ProdutoID (são as Chaves-Primárias), Quantidade, PreçoUnitário);
 
 3. Relações de base de dados:
-
+- Um fornecedor tem um TipoFornecedor (1:N)
+- Uma Encomenda é feita por um Fornecedor (N:1)
+- Uma Encomenda possui vários Itens de Encomenda (1:N)
+- Um ItemEncomenda refere-se a um único Produto (N:1)
+- Um Produto pode estar em vários ItensEncomenda (1:N)
 
 ```
 
