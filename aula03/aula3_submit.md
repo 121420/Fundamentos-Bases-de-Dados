@@ -20,6 +20,7 @@ Aluguer (numero_Aluguer(PK), duracao, data);
 Balcao (numero_Balcao(PK), nome, endereco);
 Veiculo (matricula(PK), marca, ano);
 Tipo_Veiculo (codigo, designacao, arcondicionado);
+Tipo_Similaridade (Tipo_A, TipoB);
 Ligeiro (numLugares, portas, combustivel);
 Pesado (peso, passageiros).
 
