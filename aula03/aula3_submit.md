@@ -50,7 +50,7 @@ Pesado (peso, passageiros).
 - Veículo - código do tipo_Veículo;
 - Ligeiro - herda PK do Tipo_Veículo;
 - Pesado - herda PK do Tipo_Veículo;
-- Similarida de Tipo de Veículo: código de tipo de Veículo:
+- Similarida de Tipo de Veículo: código de tipo de Veículo.
 
 ```
 
