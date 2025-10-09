@@ -31,6 +31,26 @@ Pesado (peso, passageiros).
 
 ```
 ... Write here your answer ...
+. Chaves candidatas (CK):
+- Cliente - NIF, num_carta;
+- Aluguer - numero;
+- Balcão - numero, endereco;
+- Veiculo - matricula;
+- Tipo_Veiculo - codigo.
+
+. Chaves primárias (PK):
+- Cliente - NIF;
+- Aluguer - numero;
+- Balcão - numero;
+- Veiculo - matricula;
+- Tipo_Veiculo - codigo.
+
+. Chaves Estrangeiras (FK):
+- Aluguer - NIF do cliente, numero do balcão, matrícula do veículo;
+- Veículo - código do tipo_Veículo;
+- Ligeiro - herda PK do Tipo_Veículo;
+- Pesado - herda PK do Tipo_Veículo;
+- Similarida de Tipo de Veículo: código de tipo de Veículo:
 
 ```
 
