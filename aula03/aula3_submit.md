@@ -16,13 +16,13 @@
 
 . Esquema de Relação:
 Cliente (NIF(PK), nome, endereco, num_carta);
-Aluguer (numero_Aluguer(PK), duracao, data);
+Aluguer (numero_Aluguer(PK), duracao, data, NIF(FK), numero(FK), matricula(FK));
 Balcao (numero_Balcao(PK), nome, endereco);
-Veiculo (matricula(PK), marca, ano);
+Veiculo (matricula(PK), marca, ano, codigo(FK));
 Tipo_Veiculo (codigo, designacao, arcondicionado);
 Tipo_Similaridade (Tipo_A, TipoB);
-Ligeiro (numLugares, portas, combustivel);
-Pesado (peso, passageiros).
+Ligeiro (numLugares, portas, combustivel, codigo(FK));
+Pesado (peso, passageiros, codigo(FK)).
 
 ```
 
@@ -70,6 +70,16 @@ Pesado (peso, passageiros).
 
 
 . Esquema de Relação:
+AIRPORT (Airport_code(PK), City, State, Name);
+CAN_LAND (Airport_code(FK), Type_name(FK));
+AIRPLANE_TYPE (Type_name(PK), Company, Max_seats);
+AIRPLANE (Airplane_ID(PK), Total_no_of_seats, Type_name(FK));
+FLIGHT (Number(PK), Airline, Weekdays)
+FARE (Code(PK), Amount, Restrictions, Number(FK));
+FLIGHT_LEG (Leg_no(FK), Number(FK), Airport_Code(FK));
+LEG_INSTANCE (Date(PK), Airport_Code(FK), Leg_no(FK), AirPlane_ID(FK))
+SEAT (Seat_no(PK), Customar_name(FK))
+
 
 ```
 
@@ -105,9 +115,9 @@ Pesado (peso, passageiros).
 - AIRPLANE - AIRPLANE_TYPE.Type_name;
 - FLIGHT - Number;
 - FLIGHT_LEG - FLIGHT.Number, AIRPORT.Airport_Code;
-- LEG_INSTANCE - Dat, AIRPORT.Airport_Code, FLIGHT_LEG.Leg_no, AIRPLANE.AirPlane_ID;
+- LEG_INSTANCE - Date, AIRPORT.Airport_Code, FLIGHT_LEG.Leg_no, AIRPLANE.AirPlane_ID;
 - FARE - Flight.Number;
-- SEAT - LEG_INSTANCE.Date;
+- SEAT - LEG_INSTANCE.Date, RESERVATION.Customar_name;
 - CAN_LAND - AIRPORT.Airport_Code, AIRPLANE_TYPE.Type_name.
 
 ```
