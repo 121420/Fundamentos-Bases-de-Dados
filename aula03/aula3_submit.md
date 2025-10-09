@@ -66,6 +66,11 @@ Pesado (peso, passageiros).
 
 ```
 ... Write here your answer ...
+. Quanto a relações e cardinalidades: 
+
+
+. Esquema de Relação:
+
 ```
 
 
@@ -73,6 +78,38 @@ Pesado (peso, passageiros).
 
 ```
 ... Write here your answer ...
+. Chaves candidatas (CK):
+- AIRPORT - Airport_Code;
+- AIRPLANE_TYPE - Type_name;
+- AIRPLANE - AirPlane_ID;
+- FLIGHT - Number;
+- FLIGHT_LEG - Leg_no;
+- LEG_INSTANCE - Date;
+- FARE - Code;
+- SEAT - Seat_no;
+- RESERVATION -  Customer_ID, Cphone;
+- CAN_LAND - AIRPORT.Airport_Code, AIRPLANE_TYPE.Type_name.
+
+. Chaves primárias (PK):
+- AIRPORT - Airport_Code;
+- AIRPLANE_TYPE - Type_name;
+- AIRPLANE - AirPlane_ID;
+- FLIGHT - Number;
+- FLIGHT_LEG - Leg_no;
+- LEG_INSTANCE - Date;
+- FARE - Code;
+- SEAT - Seat_no;
+- RESERVATION -  Customer_ID;
+
+. Chaves Estrangeiras (FK):
+- AIRPLANE - AIRPLANE_TYPE.Type_name;
+- FLIGHT - Number;
+- FLIGHT_LEG - FLIGHT.Number, AIRPORT.Airport_Code;
+- LEG_INSTANCE - Dat, AIRPORT.Airport_Code, FLIGHT_LEG.Leg_no, AIRPLANE.AirPlane_ID;
+- FARE - Flight.Number;
+- SEAT - LEG_INSTANCE.Date;
+- CAN_LAND - AIRPORT.Airport_Code, AIRPLANE_TYPE.Type_name.
+
 ```
 
 
