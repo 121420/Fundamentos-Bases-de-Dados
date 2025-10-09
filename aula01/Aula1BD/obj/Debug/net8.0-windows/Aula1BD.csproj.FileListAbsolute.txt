@@ -1,0 +1,16 @@
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\Aula1BD.Form1.resources
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\Aula1BD.csproj.GenerateResource.cache
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\Aula1BD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\Aula1BD.AssemblyInfoInputs.cache
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\Aula1BD.AssemblyInfo.cs
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\Aula1BD.csproj.CoreCompileInputs.cache
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\bin\Debug\net8.0-windows\Aula1BD.exe
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\bin\Debug\net8.0-windows\Aula1BD.deps.json
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\bin\Debug\net8.0-windows\Aula1BD.runtimeconfig.json
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\bin\Debug\net8.0-windows\Aula1BD.dll
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\bin\Debug\net8.0-windows\Aula1BD.pdb
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\Aula1BD.dll
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\refint\Aula1BD.dll
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\Aula1BD.pdb
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\Aula1BD.genruntimeconfig.cache
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Aula1BD\obj\Debug\net8.0-windows\ref\Aula1BD.dll

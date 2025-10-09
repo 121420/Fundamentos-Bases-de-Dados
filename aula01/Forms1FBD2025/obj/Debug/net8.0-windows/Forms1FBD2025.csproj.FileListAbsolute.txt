@@ -1,0 +1,17 @@
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\bin\Debug\net8.0-windows\Forms1FBD2025.exe
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\bin\Debug\net8.0-windows\Forms1FBD2025.deps.json
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\bin\Debug\net8.0-windows\Forms1FBD2025.runtimeconfig.json
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\bin\Debug\net8.0-windows\Forms1FBD2025.dll
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\bin\Debug\net8.0-windows\Forms1FBD2025.pdb
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\Forms1FBD2025.Form1.resources
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\Forms1FBD2025.csproj.GenerateResource.cache
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\Forms1FBD2025.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\Forms1FBD2025.AssemblyInfoInputs.cache
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\Forms1FBD2025.AssemblyInfo.cs
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\Forms1FBD2025.csproj.CoreCompileInputs.cache
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\Forms1FBD2025.dll
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\refint\Forms1FBD2025.dll
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\Forms1FBD2025.pdb
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\Forms1FBD2025.genruntimeconfig.cache
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\ref\Forms1FBD2025.dll
+C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Forms1FBD2025\obj\Debug\net8.0-windows\Forms1FBD2025.Properties.Resources.resources
