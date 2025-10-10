@@ -67,6 +67,15 @@ Pesado (peso, passageiros, codigo(FK)).
 ```
 ... Write here your answer ...
 . Quanto a relações e cardinalidades: 
+- AIRPLANE_TYPE -> AIRPLANE (1:N): 1 tipo de avião pode estar associado á N aviões; cada avião é de um único tipo.
+- AIRPLANE -> LEG_INSTANCE (1:N): 1 avião pode realizar N instância de vôo; cada instância sa um único avião.
+- FLIGHT -> FLIGHT_LEG (1:N): 1 vôo é composto por uma ou várias pernas (1..N); cada  Leg pertence á 1 único vôo.
+- FLIGHT -> FARE (1:N): 1 vôo pode ter vários tipos de tarifas; cada tarifa pertence a 1 vôo.
+- FLIGHT_LEG -> LEG_INSTANCE (1:N): cada Leg pode ter váras instâncias (em diferentes datas); cada instância refere-se a 1 Leg. 
+- AIRPORT -> FLIGHT_LEG (1:N): 1 aeroporto  pode ser origem ou destino de N Legs; cada Leg tem um aeroporto de partida e um de chegada.
+- AIRPORT -> LEG_INSTANCE (1:N): 1 aeroporto tem N origens/destinos de LEG_INSTANCE; cada LEG_INSTANCE tem 1 aeroporto.
+- AIRPORT -> AIRPLANE_TYPE (M:N): 1 aeroporto pode receber vários tipos de aviões; cada tipo de avião pode aterrar em N aeroportos.
+- LEG_INSTANCE -> SEAT (1:N): 1 instância de vôo tem N assentos.
 
 
 . Esquema de Relação:
@@ -74,11 +83,12 @@ AIRPORT (Airport_code(PK), City, State, Name);
 CAN_LAND (Airport_code(FK), Type_name(FK));
 AIRPLANE_TYPE (Type_name(PK), Company, Max_seats);
 AIRPLANE (Airplane_ID(PK), Total_no_of_seats, Type_name(FK));
-FLIGHT (Number(PK), Airline, Weekdays)
+FLIGHT (Number(PK), Airline, Weekdays);
 FARE (Code(PK), Amount, Restrictions, Number(FK));
-FLIGHT_LEG (Leg_no(FK), Number(FK), Airport_Code(FK));
-LEG_INSTANCE (Date(PK), Airport_Code(FK), Leg_no(FK), AirPlane_ID(FK))
-SEAT (Seat_no(PK), Customar_name(FK))
+FLIGHT_LEG (Leg_no(PK), Schedule_dep_time, Schedule_arr_time, Number(FK), Airport_Code(FK));
+LEG_INSTANCE (Date(PK), No_of_avail_seats, Dep_time, Arr_time, Airport_Code(FK), Leg_no(FK), AirPlane_ID(FK));
+SEAT (Seat_no(PK), Customar_name(FK), Cphone(FK));
+Reservation (Customer_name, Cphome).
 
 
 ```
@@ -110,12 +120,12 @@ SEAT (Seat_no(PK), Customar_name(FK))
 - FARE - Code;
 - SEAT - Seat_no;
 - RESERVATION -  Customer_ID;
+- CAN_LAND - AIRPORT.Airport_Code, AIRPLANE_TYPE.Type_name.
 
 . Chaves Estrangeiras (FK):
 - AIRPLANE - AIRPLANE_TYPE.Type_name;
-- FLIGHT - Number;
 - FLIGHT_LEG - FLIGHT.Number, AIRPORT.Airport_Code;
-- LEG_INSTANCE - Date, AIRPORT.Airport_Code, FLIGHT_LEG.Leg_no, AIRPLANE.AirPlane_ID;
+- LEG_INSTANCE - AIRPORT.Airport_Code, FLIGHT_LEG.Leg_no, AIRPLANE.AirPlane_ID;
 - FARE - Flight.Number;
 - SEAT - LEG_INSTANCE.Date, RESERVATION.Customar_name;
 - CAN_LAND - AIRPORT.Airport_Code, AIRPLANE_TYPE.Type_name.
