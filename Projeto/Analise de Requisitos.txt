@@ -2,11 +2,11 @@
 Projeto FDB - Sistema de Gestão de Estatisticas de NBA
 *********************************************************
 
-Objetivo:
-	Criar uma base de dados que armazene e organize informacoes sobre equipas jogadores e estatisticas,permitindo gerar relatorios e consultas
+I - Objetivo:
+	Criar uma base de dados que armazene e organize informações sobre equipas, jogadores e estatísticas, permitindo gerar relatorios e consultas
 
 
-Requisitos Funcionais:
+II - Requisitos Funcionais:
 	Registar equipas da NBA(Nome,cidade,treinador,
 	Registar jogadores (Nome,posicao,nacionalidade,equipa atual)
 	Registar jogos (equipasCasa,equipaFOra,data,resultados

@@ -1,0 +1,62 @@
+*********************************************************
+Projeto FDB - Sistema de Gestão de Estatisticas de NBA
+*********************************************************
+
+I - Objetivo:
+    O nosso projeto é uma base de dados sobre a Liga de Basquetebol NBA, que é a principal competição profissional de basquete do mundo.
+	O objetivo é de criar uma base de dados que armazene e organize informações sobre equipas, jogadores e estatísticas, permitindo gerar relatorios e consultas.
+
+    Queremos que a base de dados possa responder a perguntas, tais como:
+    . "Quais são os jogadores de cada equipa?"
+    . "Quais foram os resultados de um determinado jogo?"
+    . "Quem foi o campeão em cada temporada?"
+    . "Quais são as estatisticas individuais dos jogadores e ou equipas?"
+    . etc...(ainda iremos especificar mais...).
+
+    Ou seja, o nosso foco é representar a estrutura e funcionamento da NBA de forma organizada e consultável."
+
+
+II - Análise de requisitos:
+    . Requisitos funcionais
+        1. Registar: 
+            O sistema deve permitir o registo de:
+                    - equipas da NBA(Nome,cidade,treinador princial, conferência e divisão)
+                    - jogadores (Nome,posicao,nacionalidade,equipa atual, altura, peso, data de nascimento)
+                    - jogos (equipas participantes (casa e fora) ,data, local, resultado (pontos casa/fora), temporada)
+                    - temporadas (ano de início e fim, equipe campeã, total de jogos)
+                    - contratos (jogador, equipa, datas de início e fim, salário)
+
+        2. Guardar: 
+            O sistema deve guardar:
+                    - estatisticas dos jogadores por jogo (pontos, assistências, ressaltos, roubos, faltas, minutos jogados, eficiência)
+                    - a relação entre jogadores e equipas (contratos)
+                    - o resultado de cada jogo (pontuação final e vencedor)
+                    - histórico de equipas em cada temporada: posição final, número de vitórias e derrotas.
+
+        3. Consultar:
+            O sistema deve permitir consultas como: 
+                    - Top scorers da época (jogadores com mais pontos)
+	                - Resultados de jogos entre duas equipas específicas.
+	                - estatisticas médias por jogador (pontos, ressaltos, assistências, etc...)
+                    - estatisticas gerais por equipa e temporada
+                    - jogadores por nacionalidade, posição ou equipa.
+                    - histórico de quipas campeãs por temporada
+                    - Jogadores com mais assistências, ressaltos ou eficiência
+                    - evolução estatístia de um jogador ao longo das temporadas.
+
+        4. Atualizar:
+            O sistema deve permitir atualizar:
+                    - tranferências de jogadores (mudança de equipa)
+                    - resultados de jogos e estatisticas
+                    - contratos (renovação, fim de contrato)
+        
+        5. Eliminar:
+            O sistema deve permitir remover:
+                    - equipas, jogadores, jogos, ...
+                    - contratos ou estatísticas desatualizadas.
+
+    . Requisitos não funcionais:
+        - Os dados dever ser consistentes e fáceis de Consultar.
+        - O modelo deve ser escalável, podendo crescer com novas temporadas ou equipas.    
+
+III.
