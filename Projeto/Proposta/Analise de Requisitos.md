@@ -64,7 +64,7 @@ III - Principais entidades do DER e ER
 ##    Esquema Relacional (ER) com as principais entidades e atributos: 
     - Pessoa (CC(PK), nome, data_nascimento, nacionalidade, genero, email, telefone)
     - Jogador(ID_jogador(PK), CC(FK), nome_camisola, posição, altura, peso, numero, mao_dominante, ID_equipa(FK))
-    - Treinador(ID_treinador(PK), CC(FK), nome, experiencia_anos, especialidade, licenca)
+    - Treinador(ID_treinador(PK), CC(FK), experiencia_anos, especialidade, licenca)
     - Liga(ID_liga(PK), nome, pais, nivel)
     - Equipa(ID_equipa(PK), nome, cidade, conferência, ID_liga(FK))
     - Estadio(ID_estadio(PK), nome, cidade, capacidade, morada, ID_equipa(FK))
