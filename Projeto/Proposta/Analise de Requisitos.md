@@ -3,7 +3,7 @@ Projeto FDB - Sistema de Gestão de Estatisticas de NBA
 *********************************************************
 
 I - Objetivo:
-    O nosso projeto é uma base de dados sobre a Liga de Basquetebol NBA, que é a principal competição profissional de basquete do mundo.
+##    O nosso projeto é uma base de dados sobre a Liga de Basquetebol NBA, que é a principal        competição profissional de basquete do mundo.
 	O objetivo é de criar uma base de dados que armazene e organize informações sobre equipas, jogadores e estatísticas, permitindo gerar relatorios e consultas.
 
     Queremos que a base de dados possa responder a perguntas, tais como:
@@ -17,7 +17,7 @@ I - Objetivo:
 
 
 II - Análise de requisitos:
-    . Requisitos funcionais
+##  . Requisitos funcionais
         1. Registar: 
             O sistema deve permitir o registo de:
                     - equipas da NBA(Nome,cidade,treinador princial, conferência e divisão)
@@ -55,13 +55,13 @@ II - Análise de requisitos:
                     - equipas, jogadores, jogos, ...
                     - contratos ou estatísticas desatualizadas.
 
-    . Requisitos não funcionais:
+##  . Requisitos não funcionais:
         - Os dados dever ser consistentes e fáceis de Consultar.
         - O modelo deve ser escalável, podendo crescer com novas temporadas ou equipas.    
 
 III - Principais entidades do DER e ER
     
-    Esquema Relacional (ER) com as principais entidades e atributos: 
+##    Esquema Relacional (ER) com as principais entidades e atributos: 
     - Pessoa (CC(PK), nome, data_nascimento, nacionalidade, genero, email, telefone)
     - Jogador(ID_jogador(PK), CC(FK), nome_camisola, posição, altura, peso, numero, mao_dominante, ID_equipa(FK))
     - Treinador(ID_treinador(PK), CC(FK), nome, experiencia_anos, especialidade, licenca)
@@ -76,3 +76,10 @@ III - Principais entidades do DER e ER
     - Contrato_Jogador(ID_contrato(FK e PK), ID_jogador(FK), ID_equipa(FK))
     - Contrato_Treinador(ID_contrato(FK e PK), ID_treinador(FK), ID_equipa, cargo)
     - Bilhete(ID_bilhete(PK), ID_estadio(FK), ID_Jogo(FK), setor, lugar, preco, vendido(Bool), CC(FK))
+
+ ##   DER:
+![DER diagram](DER.png "AnImage")
+
+
+ ##   ER:
+![ER diagram](ER.png "AnImage")
