@@ -59,4 +59,19 @@ II - Análise de requisitos:
         - Os dados dever ser consistentes e fáceis de Consultar.
         - O modelo deve ser escalável, podendo crescer com novas temporadas ou equipas.    
 
-III.
+III - Principais entidades do DER e ER
+    
+    - Pessoa (CC(PK), nome, data_nascimento, nacionalidade, genero, email, telefone)
+    - Jogador(ID_jogador(PK), CC(FK), nome_camisola, posição, altura, peso, numero, mao_dominante, ID_equipa(FK))
+    - Treinador(ID_treinador(PK), CC(FK), nome, experiencia_anos, especialidade, licenca)
+    - Liga(ID_liga(PK), nome, pais, nivel)
+    - Equipa(ID_equipa(PK), nome, cidade, conferência, ID_liga(FK))
+    - Estadio(ID_estadio(PK), nome, cidade, capacidade, morada, ID_equipa(FK))
+    - Temporada(ID_temporada(PK), ano_iniio, ano_fim, ID_liga(FK), campeao)
+    - Jogo(ID_Jogo(PK), dataHora_jogo, ID_estadio(FK), ID_equipa_Casa(FK), ID_equipa_Fora(FK), pontos_casa, pontos_fora, fase, ID_temporada(FK))
+    - Estatistica_Jogador_Jogo(PK(ID_jogador, ID_Jogo), minutos, pontos, assistencias, ressaltos, roubos, blocos, faltas)
+    - Estatistica_Equipa_Jogo(PK(ID_equipa, ID_Jogo), pontos_totais, assistencias_totais, ressaltos_totais, faltas_totais, percentgem_lancamentos)
+    - Contrato(ID_contrato(PK), data_inicio, data_fim, salario_total, clausula_rescisao, bonus_objetivos, ID_equipa(FK), CC(FK))
+    - Contrato_Jogador(ID_contrato(FK e PK), ID_jogador(FK), ID_equipa(FK))
+    - Contrato_Treinador(ID_contrato(FK e PK), ID_treinador(FK), ID_equipa, cargo)
+    - Bilhete(ID_bilhete(PK), ID_estadio(FK), ID_Jogo(FK), setor, lugar, preco, vendido(Bool), CC(FK))
