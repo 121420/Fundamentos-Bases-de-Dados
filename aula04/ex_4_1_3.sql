@@ -6,6 +6,8 @@ create table TipoFornecedor(
 	Designacao VARCHAR(30) NOT NULL
 );
 create table Fornecedor (
+);
+create table Fornecedor (
 	Nif		INT,
 	Nome	VARCHAR(20) NOT NULL,
 	Fax		INT Unique,
