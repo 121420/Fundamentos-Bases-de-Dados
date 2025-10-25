@@ -1,59 +1,90 @@
 # BD: Trabalho Prático APF-T
 
-**Grupo**: PXGY
-- António Fictício, MEC: 1000
-- João Inventado, MEC: 2000
-
-# Instructions - TO REMOVE
-
-Este template é flexível.
-É sugerido seguir a estrutura, links de ficheiros e imagens, mas adicione ou remova conteúdo sempre que achar necessário.
-
----
-
-This template is flexible.
-It is suggested to follow the structure, file links and images but add more content where necessary.
-
-The files should be organized with the following nomenclature:
-
-- sql\01_ddl.sql: mandatory for DDL
-- sql\02_sp_functions.sql: mandatory for Store Procedure, Functions,... 
-- sql\03_triggers.sql: mandatory for triggers
-- sql\04_db_init.sql: scripts to init the database (i.e. inserts etc.)
-- sql\05_any_other_matter.sql: any other scripts.
-
-Por favor remova esta secção antes de submeter.
-
-Please remove this section before submitting.
+**Grupo**: P4G4
+- Kelvin Fortes, MEC: 121420
+- Romulo Monteiro, MEC: 127986
 
 ## Introdução / Introduction
- 
-Escreva uma pequena introdução sobre o trabalho.
-Write a simple introduction about your project.
+##    O nosso projeto é uma base de dados sobre a Liga de Basquetebol NBA, que é a principal competição profissional de basquete do mundo.
+O objetivo é de criar uma base de dados que armazene e organize informações sobre equipas, jogadores e estatísticas, permitindo gerar relatorios e consultas.
+
+    Queremos que a base de dados possa responder a perguntas, tais como:
+    . "Quais são os jogadores de cada equipa?"
+    . "Quais foram os resultados de um determinado jogo?"
+    . "Quem foi o campeão em cada temporada?"
+    . "Quais são as estatisticas individuais dos jogadores e ou equipas?"
+    . etc...(ainda iremos especificar mais...).
+
+    Ou seja, o nosso foco é representar a estrutura e funcionamento da NBA de forma organizada e consultável."
 
 ## ​Análise de Requisitos / Requirements
+##  . Requisitos funcionais
+        1. Registar: 
+            O sistema deve permitir o registo de:
+                    - equipas da NBA(Nome,cidade,treinador princial, conferência e divisão)
+                    - jogadores (Nome,posicao,nacionalidade,equipa atual, altura, peso, data de nascimento)
+                    - jogos (equipas participantes (casa e fora) ,data, local, resultado (pontos casa/fora), temporada)
+                    - temporadas (ano de início e fim, equipe campeã, total de jogos)
+                    - contratos (jogador, equipa, datas de início e fim, salário)
+
+        2. Guardar: 
+            O sistema deve guardar:
+                    - estatisticas dos jogadores por jogo (pontos, assistências, ressaltos, roubos, faltas, minutos jogados, eficiência)
+                    - a relação entre jogadores e equipas (contratos)
+                    - o resultado de cada jogo (pontuação final e vencedor)
+                    - histórico de equipas em cada temporada: posição final, número de vitórias e derrotas.
+
+        3. Consultar:
+            O sistema deve permitir consultas como: 
+                    - Top scorers da época (jogadores com mais pontos)
+	                - Resultados de jogos entre duas equipas específicas.
+	                - estatisticas médias por jogador (pontos, ressaltos, assistências, etc...)
+                    - estatisticas gerais por equipa e temporada
+                    - jogadores por nacionalidade, posição ou equipa.
+                    - histórico de quipas campeãs por temporada
+                    - Jogadores com mais assistências, ressaltos ou eficiência
+                    - evolução estatístia de um jogador ao longo das temporadas.
+
+        4. Atualizar:
+            O sistema deve permitir atualizar:
+                    - tranferências de jogadores (mudança de equipa)
+                    - resultados de jogos e estatisticas
+                    - contratos (renovação, fim de contrato)
+        
+        5. Eliminar:
+            O sistema deve permitir remover:
+                    - equipas, jogadores, jogos, ...
+                    - contratos ou estatísticas desatualizadas.
+
+##  . Requisitos não funcionais:
+        - Os dados dever ser consistentes e fáceis de Consultar.
+        - O modelo deve ser escalável, podendo crescer com novas temporadas ou equipas.    
 
 ## DER - Diagrama Entidade Relacionamento/Entity Relationship Diagram
 
 ### Versão final/Final version
 
-![DER Diagram!](der.jpg "AnImage")
-
-### Melhorias/Improvements 
-
-Descreva sumariamente as melhorias sobre a entrega anterior.
-Describe briefly the improvements made since the previous delivery.
+![DER Diagram!](der.png "AnImage")
 
 ## ER - Esquema Relacional/Relational Schema
+- Pessoa (CC(PK), nome, data_nascimento, nacionalidade, genero, email, telefone)
+    - Jogador(ID_jogador(PK), CC(FK), nome_camisola, posição, altura, peso, numero, mao_dominante, ID_equipa(FK))
+    - Treinador(ID_treinador(PK), CC(FK), experiencia_anos, especialidade, licenca)
+    - Liga(ID_liga(PK), nome, pais, nivel)
+    - Equipa(ID_equipa(PK), nome, cidade, conferência, ID_liga(FK))
+    - Estadio(ID_estadio(PK), nome, cidade, capacidade, morada, ID_equipa(FK))
+    - Temporada(ID_temporada(PK), ano_iniio, ano_fim, ID_liga(FK), campeao)
+    - Jogo(ID_Jogo(PK), dataHora_jogo, ID_estadio(FK), ID_equipa_Casa(FK), ID_equipa_Fora(FK), pontos_casa, pontos_fora, fase, ID_temporada(FK))
+    - Estatistica_Jogador_Jogo(PK(ID_jogador, ID_Jogo), minutos, pontos, assistencias, ressaltos, roubos, blocos, faltas)
+    - Estatistica_Equipa_Jogo(PK(ID_equipa, ID_Jogo), pontos_totais, assistencias_totais, ressaltos_totais, faltas_totais, percentgem_lancamentos)
+    - Contrato(ID_contrato(PK), data_inicio, data_fim, salario_total, clausula_rescisao, bonus_objetivos, ID_equipa(FK), CC(FK))
+    - Contrato_Jogador(ID_contrato(FK e PK), ID_jogador(FK), ID_equipa(FK))
+    - Contrato_Treinador(ID_contrato(FK e PK), ID_treinador(FK), ID_equipa, cargo)
+    - Bilhete(ID_bilhete(PK), ID_estadio(FK), ID_Jogo(FK), setor, lugar, preco, vendido(Bool), CC(FK))
 
 ### Versão final/Final Version
 
-![ER Diagram!](er.jpg "AnImage")
-
-### Melhorias/Improvements
-
-Descreva sumariamente as melhorias sobre a entrega anterior.
-Describe briefly the improvements made since the previous delivery.
+![ER Diagram!](er.png "AnImage")
 
 ## ​SQL DDL - Data Definition Language
 
