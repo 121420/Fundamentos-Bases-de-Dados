@@ -175,10 +175,8 @@ resultado_a = π IDPaciente, Nome ( Paciente − π IDPaciente (Prescricao) )
 ### *b)* 
 
 ```
--- juntar prescrições com o médico para obter a especialidade
 presc_med = Prescricao ⨝ Prescricao.IDMedico = Medico.IDMedico Medico
 
--- agrupar por especialidade e contar prescrições
 resultado_b = γ Especialidade; COUNT(IDPrescricao) → NumPrescricoes ( presc_med )
 
 ```
@@ -187,10 +185,8 @@ resultado_b = γ Especialidade; COUNT(IDPrescricao) → NumPrescricoes ( presc_m
 ### *c)* 
 
 ```
--- agrupar por farmácia e contar prescrições processadas
 proc_por_farm = γ IDFarmacia; COUNT(IDPrescricao) → NumProcessadas ( Prescricao_Processada )
 
--- para mostrar nome da farmácia também
 resultado_c = π IDFarmacia, Nome, NumProcessadas ( Farmacia ⨝ Farmacia.IDFarmacia = proc_por_farm.IDFarmacia proc_por_farm )
 
 ```
