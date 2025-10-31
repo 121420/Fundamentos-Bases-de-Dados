@@ -72,29 +72,45 @@ Write here your answer e.g:
 ### *a)*
 
 ```
-... Write here your answer ...
+a = π nome (σ numero = null (fornecedor ⟕ (nif = fornecedor) encomenda))
+
+- ⟕ -> junnção
+- σ numero = null -> mantém apenas os qu não têm encomenda
+- π nome -> mostra só o nome do fornecedor
+
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+b = γ codProd; AVG(unidades) → media_unidades (item)
+
+
+- γ -> agrupamento 
+- codProd -> atributo de agrupamento
+- Avg(unidades) -> média do número de unidades encomendadas (TotalUnidades item)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+Produtos = γ numEnc; COUNT(codProd) → total_prod (item)
+γ AVG(total_prod) → media_produtos (γ numEnc; COUNT(codProd) → total_prod (item))
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
-```
+γ fornecedor.nome, produto.nome; SUM(item.unidades) → total_unidades
+(
+  ( (fornecedor ⨝ (nif = encomenda.fornecedor) encomenda)
+    ⨝ (encomenda.numero = item.numEnc) item )
+    ⨝ (item.codProd = produto.codigo) produto
+)
 
+```
 
 ## ​Problema 5.3
 
