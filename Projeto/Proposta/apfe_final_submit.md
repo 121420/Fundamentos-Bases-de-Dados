@@ -1,8 +1,8 @@
 # BD: Trabalho Prático APF-T
 
 **Grupo**: P4G4
-- Kelvin Fortes, MEC: 121420
-- Romulo Monteiro, MEC: 127986
+- Kelvin Loforte, MEC: 121420
+- Rómulo Monteiro, MEC: 127986
 
 ## Introdução / Introduction
 ##    O nosso projeto é uma base de dados sobre a Liga de Basquetebol NBA, que é a principal competição profissional de basquete do mundo.
