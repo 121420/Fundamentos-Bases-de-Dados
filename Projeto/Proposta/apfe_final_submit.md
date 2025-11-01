@@ -64,7 +64,7 @@ O objetivo é de criar uma base de dados que armazene e organize informações s
 
 ### Versão final/Final version
 
-![DER Diagram!](der.png "AnImage")
+![DER Diagram!](der.jpg "AnImage")
 
 ## ER - Esquema Relacional/Relational Schema
 - Pessoa (CC(PK), nome, data_nascimento, nacionalidade, genero, email, telefone)
@@ -84,7 +84,7 @@ O objetivo é de criar uma base de dados que armazene e organize informações s
 
 ### Versão final/Final Version
 
-![ER Diagram!](er.png "AnImage")
+![ER Diagram!](er.jpg "AnImage")
 
 ## ​SQL DDL - Data Definition Language
 
