@@ -5,37 +5,43 @@
 ### *a)* Todos os tuplos da tabela autores (authors);
 
 ```
-... Write here your answer ...
+select * from authors;
 ```
 
 ### *b)* O primeiro nome, o último nome e o telefone dos autores;
 
 ```
-... Write here your answer ...
+select au_fname,au_lname,phone from authors;
 ```
 
 ### *c)* Consulta definida em b) mas ordenada pelo primeiro nome (ascendente) e depois o último nome (ascendente); 
 
 ```
-... Write here your answer ...
+select  au_fname,au_lname,phone from authors ORDER BY au_fname ASC , au_lname ASC ;
+
 ```
 
 ### *d)* Consulta definida em c) mas renomeando os atributos para (first_name, last_name, telephone); 
 
 ```
-... Write here your answer ...
+select au_fname as first_name,au_lname as last_name,phone as telephone
+from authors ORDER BY au_fname ASC , au_lname ASC 
+
 ```
 
 ### *e)* Consulta definida em d) mas só os autores da Califórnia (CA) cujo último nome é diferente de ‘Ringer’; 
 
 ```
-... Write here your answer ...
+select au_fname as first_name,au_lname as last_name,phone as telephone
+from authors where state = 'CA' and au_lname = 'Ringer' ORDER BY au_fname ASC , au_lname ASC 
+
+
 ```
 
 ### *f)* Todas as editoras (publishers) que tenham ‘Bo’ em qualquer parte do nome; 
 
 ```
-... Write here your answer ...
+select * from publishers where pub_name LIKE '%Bo%';.
 ```
 
 ### *g)* Nome das editoras que têm pelo menos uma publicação do tipo ‘Business’; 
