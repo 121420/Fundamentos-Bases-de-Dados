@@ -146,54 +146,71 @@ select * from publishers where pub_name LIKE '%Bo%';.
 
 ```
 ... Write here your answer ...
+lista contendo os projetos e funcionários (ssn e nome completo) que 
+lá trabalham:
 ```
 
 ##### *b)* 
 
 ```
 ... Write here your answer ...
+nome de todos os funcionários supervisionados por ‘Carlos D Gomes’
 ```
 
 ##### *c)* 
 
 ```
 ... Write here your answer ...
+Para cada projeto, listar o seu nome e o número de horas (por semana) gastos nesse 
+projeto por todos os funcionários;
 ```
 
 ##### *d)* 
 
 ```
 ... Write here your answer ...
+Obter o nome de todos os funcionários do departamento 3 que trabalham mais de 
+20 horas por semana no projeto ‘Aveiro Digital’; 
 ```
 
 ##### *e)* 
 
 ```
 ... Write here your answer ...
+Nome dos funcionários que não trabalham para projetos; 
+
 ```
 
 ##### *f)* 
 
 ```
 ... Write here your answer ...
+Para cada departamento, listar o seu nome e o salário médio dos seus funcionários 
+do sexo feminino;
 ```
 
 ##### *g)* 
 
 ```
 ... Write here your answer ...
+Obter uma lista de todos os funcionários com mais do que dois dependentes;
 ```
 
 ##### *h)* 
 
 ```
 ... Write here your answer ...
+Obtenha uma lista de todos os funcionários gestores de departamento que não têm 
+dependentes; 
 ```
 
 ##### *i)* 
 
 ```
 ... Write here your answer ...
+Obter os nomes e endereços de todos os funcionários que trabalham em, pelo menos, 
+um  projeto  localizado  em  Aveiro  mas  o  seu  departamento  não  tem  nenhuma 
+localização em Aveiro. 
 ```
 
 ### 5.2
@@ -212,12 +229,14 @@ select * from publishers where pub_name LIKE '%Bo%';.
 
 ```
 ... Write here your answer ...
+Lista dos fornecedores que nunca tiveram encomendas; 
 ```
 
 ##### *b)* 
 
 ```
 ... Write here your answer ...
+Número médio de unidades encomendadas para cada produto; 
 ```
 
 
@@ -225,6 +244,8 @@ select * from publishers where pub_name LIKE '%Bo%';.
 
 ```
 ... Write here your answer ...
+Número  médio  de  produtos  por  encomenda;  (nota:  não  interessa  o  número  de 
+unidades); 
 ```
 
 
@@ -232,6 +253,7 @@ select * from publishers where pub_name LIKE '%Bo%';.
 
 ```
 ... Write here your answer ...
+Lista de produtos (e quantidades) fornecidas por cada fornecedor;
 ```
 
 ### 5.3
@@ -250,12 +272,16 @@ select * from publishers where pub_name LIKE '%Bo%';.
 
 ```
 ... Write here your answer ...
+Lista de pacientes que nunca tiveram uma prescrição; 
+
 ```
 
 ##### *b)* 
 
 ```
 ... Write here your answer ...
+Número de prescrições por especialidade médica; 
+
 ```
 
 
@@ -263,6 +289,7 @@ select * from publishers where pub_name LIKE '%Bo%';.
 
 ```
 ... Write here your answer ...
+Número de prescrições processadas por farmácia; 
 ```
 
 
@@ -270,16 +297,20 @@ select * from publishers where pub_name LIKE '%Bo%';.
 
 ```
 ... Write here your answer ...
+Para  a  farmacêutica  com  registo  número  906,  lista  dos  seus  fármacos  nunca 
+prescritos;
 ```
 
 ##### *e)* 
 
 ```
 ... Write here your answer ...
+Para cada farmácia, o número de fármacos de cada farmacêutica vendidos;
 ```
 
 ##### *f)* 
 
 ```
 ... Write here your answer ...
+Pacientes que tiveram prescrições de médicos diferentes.
 ```
