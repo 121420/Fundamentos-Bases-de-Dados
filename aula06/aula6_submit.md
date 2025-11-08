@@ -146,15 +146,27 @@ select * from publishers where pub_name LIKE '%Bo%';.
 
 ```
 ... Write here your answer ...
-lista contendo os projetos e funcionários (ssn e nome completo) que 
+Lista contendo os projetos e funcionários (ssn e nome completo) que 
 lá trabalham:
+SELECT employee.Ssn, employee.Fname, employee.Minit, employee.Lname, project.Pnumber, project.Pname
+FROM employee, works_on, project
+WHERE employee.Ssn = works_on.Essn AND works_on.Pno = project.Pnumber
+ORDER BY project.Pnumber
+
 ```
 
 ##### *b)* 
 
 ```
 ... Write here your answer ...
-nome de todos os funcionários supervisionados por ‘Carlos D Gomes’
+Nome de todos os funcionários supervisionados por ‘Carlos D Gomes’:
+SELECT funcionario.Fname, funcionario.Minit, funcionario.Lname
+FROM employee AS funcionario, employee AS super
+WHERE funcionario.Super_ssn = super.Ssn 
+  AND super.Fname = 'Carlos' 
+  AND super.Minit = 'D' 
+  AND super.Lname = 'Gomes'
+
 ```
 
 ##### *c)* 
@@ -162,7 +174,13 @@ nome de todos os funcionários supervisionados por ‘Carlos D Gomes’
 ```
 ... Write here your answer ...
 Para cada projeto, listar o seu nome e o número de horas (por semana) gastos nesse 
-projeto por todos os funcionários;
+projeto por todos os funcionários:
+SELECT project.Pname, SUM(works_on.Hours) AS horas_semana
+FROM project, works_on
+WHERE works_on.Pno = project.Pnumber
+GROUP BY project.Pname
+
+
 ```
 
 ##### *d)* 
@@ -170,15 +188,24 @@ projeto por todos os funcionários;
 ```
 ... Write here your answer ...
 Obter o nome de todos os funcionários do departamento 3 que trabalham mais de 
-20 horas por semana no projeto ‘Aveiro Digital’; 
+20 horas por semana no projeto ‘Aveiro Digital’:
+SELECT employee.Fname, employee.Lname
+FROM employee, works_on, project
+WHERE employee.Ssn = works_on.Essn 
+  AND works_on.Pno = project.Pnumber
+  AND employee.Dno = 3 
+  AND project.Pname = 'Aveiro Digital' 
+  AND works_on.Hours > 20
 ```
 
 ##### *e)* 
 
 ```
 ... Write here your answer ...
-Nome dos funcionários que não trabalham para projetos; 
-
+Nome dos funcionários que não trabalham para projetos: 
+SELECT employee.Fname, employee.Lname
+FROM employee LEFT OUTER JOIN works_on ON employee.Ssn = works_on.Essn
+WHERE works_on.Essn IS NULL
 ```
 
 ##### *f)* 
@@ -186,14 +213,24 @@ Nome dos funcionários que não trabalham para projetos;
 ```
 ... Write here your answer ...
 Para cada departamento, listar o seu nome e o salário médio dos seus funcionários 
-do sexo feminino;
+do sexo feminino:
+SELECT department.Dname, AVG(employee.Salary) AS salario_medio
+FROM employee, department
+WHERE employee.Dno = department.Dnumber AND employee.Sex = 'F'
+GROUP BY department.Dname
 ```
 
 ##### *g)* 
 
 ```
 ... Write here your answer ...
-Obter uma lista de todos os funcionários com mais do que dois dependentes;
+Obter uma lista de todos os funcionários com mais do que dois dependentes:
+SELECT employee.Fname, employee.Lname, COUNT(dependent.Dependent_name) AS Numero
+FROM employee, dependent
+WHERE employee.Ssn = dependent.Essn
+GROUP BY employee.Fname, employee.Lname
+HAVING COUNT(dependent.Dependent_name) > 2
+
 ```
 
 ##### *h)* 
@@ -201,7 +238,13 @@ Obter uma lista de todos os funcionários com mais do que dois dependentes;
 ```
 ... Write here your answer ...
 Obtenha uma lista de todos os funcionários gestores de departamento que não têm 
-dependentes; 
+dependentes:
+SELECT employee.Fname, employee.Lname
+FROM employee 
+JOIN department ON employee.Ssn = department.Mgr_ssn 
+LEFT JOIN dependent ON employee.Ssn = dependent.Essn
+WHERE dependent.Essn IS NULL
+
 ```
 
 ##### *i)* 
@@ -210,7 +253,15 @@ dependentes;
 ... Write here your answer ...
 Obter os nomes e endereços de todos os funcionários que trabalham em, pelo menos, 
 um  projeto  localizado  em  Aveiro  mas  o  seu  departamento  não  tem  nenhuma 
-localização em Aveiro. 
+localização em Aveiro:
+SELECT DISTINCT employee.Fname, employee.Lname, employee.Address
+FROM employee, works_on, project, dept_location
+WHERE employee.Ssn = works_on.Essn
+  AND works_on.Pno = project.Pnumber
+  AND employee.Dno = dept_location.Dnumber
+  AND project.Plocation = 'Aveiro'
+  AND dept_location.Dlocation <> 'Aveiro'
+
 ```
 
 ### 5.2
@@ -229,14 +280,21 @@ localização em Aveiro.
 
 ```
 ... Write here your answer ...
-Lista dos fornecedores que nunca tiveram encomendas; 
+Lista dos fornecedores que nunca tiveram encomendas:
+SELECT fornecedor.nome
+FROM fornecedor 
+LEFT OUTER JOIN encomenda ON fornecedor.nif = encomenda.fornecedor
+WHERE encomenda.fornecedor IS NULL
 ```
 
 ##### *b)* 
 
 ```
 ... Write here your answer ...
-Número médio de unidades encomendadas para cada produto; 
+Número médio de unidades encomendadas para cada produto:
+SELECT item.codProd, AVG(item.unidades) AS media
+FROM item
+GROUP BY item.codProd
 ```
 
 
@@ -245,7 +303,13 @@ Número médio de unidades encomendadas para cada produto;
 ```
 ... Write here your answer ...
 Número  médio  de  produtos  por  encomenda;  (nota:  não  interessa  o  número  de 
-unidades); 
+unidades):
+SELECT AVG(produtos_por_encomenda.total_produtos) AS media_produto_encomenda
+FROM (
+    SELECT item.numEnc, COUNT(item.codProd) AS total_produtos
+    FROM item
+    GROUP BY item.numEnc
+) AS produtos_por_encomenda
 ```
 
 
@@ -253,7 +317,14 @@ unidades);
 
 ```
 ... Write here your answer ...
-Lista de produtos (e quantidades) fornecidas por cada fornecedor;
+Lista de produtos (e quantidades) fornecidas por cada fornecedor:
+SELECT fornecedor.nome, produto.nome, SUM(item.unidades) AS quantidade
+FROM fornecedor, encomenda, item, produto
+WHERE fornecedor.nif = encomenda.fornecedor
+  AND encomenda.numero = item.numEnc
+  AND item.codProd = produto.codigo
+GROUP BY fornecedor.nome, produto.nome
+ORDER BY fornecedor.nome
 ```
 
 ### 5.3
@@ -272,15 +343,22 @@ Lista de produtos (e quantidades) fornecidas por cada fornecedor;
 
 ```
 ... Write here your answer ...
-Lista de pacientes que nunca tiveram uma prescrição; 
-
+Lista de pacientes que nunca tiveram uma prescrição
+SELECT paciente.nome
+FROM paciente 
+LEFT OUTER JOIN prescricao ON paciente.numUtente = prescricao.numUtente
+WHERE prescricao.numUtente IS NULL
 ```
 
 ##### *b)* 
 
 ```
 ... Write here your answer ...
-Número de prescrições por especialidade médica; 
+Número de prescrições por especialidade médica:
+SELECT medico.especialidade, COUNT(*) AS numero_prescricoes
+FROM medico, prescricao
+WHERE medico.numSNS = prescricao.numMedico
+GROUP BY medico.especialidade
 
 ```
 
@@ -289,7 +367,11 @@ Número de prescrições por especialidade médica;
 
 ```
 ... Write here your answer ...
-Número de prescrições processadas por farmácia; 
+Número de prescrições processadas por farmácia:
+SELECT farmacia.nome, COUNT(prescricao.numPresc) AS prescricoes_processadas
+FROM farmacia, prescricao
+WHERE farmacia.nome = prescricao.farmacia
+GROUP BY farmacia.nome
 ```
 
 
@@ -298,19 +380,41 @@ Número de prescrições processadas por farmácia;
 ```
 ... Write here your answer ...
 Para  a  farmacêutica  com  registo  número  906,  lista  dos  seus  fármacos  nunca 
-prescritos;
+prescritos:
+SELECT farmaco.nome
+FROM farmaco
+WHERE farmaco.numRegFarm = 906
+AND farmaco.nome NOT IN (
+    SELECT presc_farmaco.nomeFarmaco
+    FROM prescricao, presc_farmaco
+    WHERE prescricao.numPresc = presc_farmaco.numPresc
+    AND presc_farmaco.numRegFarm = 906
+)
 ```
 
 ##### *e)* 
 
 ```
 ... Write here your answer ...
-Para cada farmácia, o número de fármacos de cada farmacêutica vendidos;
+Para cada farmácia, o número de fármacos de cada farmacêutica vendidos:
+SELECT prescricao.farmacia, farmaceutica.nome, COUNT(presc_farmaco.nomeFarmaco) AS farmaco_vendido_farmacia
+FROM prescricao, presc_farmaco, farmaceutica
+WHERE prescricao.dataProc IS NOT NULL
+  AND presc_farmaco.numPresc = prescricao.numPresc
+  AND presc_farmaco.numRegFarm = farmaceutica.numReg
+GROUP BY prescricao.farmacia, farmaceutica.nome
+ORDER BY prescricao.farmacia
 ```
 
 ##### *f)* 
 
 ```
 ... Write here your answer ...
-Pacientes que tiveram prescrições de médicos diferentes.
+Pacientes que tiveram prescrições de médicos diferentes:
+SELECT prescricao.numUtente, paciente.nome
+FROM prescricao, medico, paciente
+WHERE prescricao.numMedico = medico.numSNS
+  AND prescricao.numUtente = paciente.numUtente
+GROUP BY prescricao.numUtente, paciente.nome
+HAVING COUNT(prescricao.numMedico) > 1
 ```
