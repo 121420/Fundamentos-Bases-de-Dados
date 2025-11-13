@@ -16,14 +16,14 @@ A relação Livro está apenas na primeira forma normal (1FN), pois há depenên
 ```
 ... Write here your answer ...
 - Segunda forma normal (2FN), pois precisamos primeiro passar a segunda antes da terceira:
-Livro (_Titulo_Livro_, _Nome_Autor_, Tipo_Livro, Preco, NoPaginas, Editor, Endereco_Editor, Ano_Puublicacao)
-Autor (_Nome_Autor_, Afiliacao_Autor)
+R1: Livro(<u>_Titulo_Livro_</u>, <u>_Nome_Autor_</u>, Tipo_Livro, Preco, NoPaginas, Editor, Endereco_Editor, Ano_Puublicacao)
+R2: Autor(<u>_Nome_Autor_</u>, Afiliacao_Autor)
 
 - Terceira forma normal (3FN):
-R1 (_Titulo_Livro_, _Nome_Autor_, Tipo_Livro, NoPaginas, Editor, Ano_Puublicacao)
-R2 (_Nome_Autor_, Afiliacao_Autor)
-R3 (_Tipo_Livro_, _NoPaginas_, Preco)
-R4 (_Editor_, Endereco_Editor)
+R1: AUTOR(<u>_Nome_Autor_</u>, Afiliacao_Autor)
+R2: EDITOR(<u>_Editor_</u>, Endereco_Editor)
+R3: Livro(<u>_Titulo_Livro_</u>, <u>_Nome_Autor_</u>, Tipo_Livro NoPaginas, Editor, Ano_Puublicacao)
+R4: PRECO_POR_TIPO_PAG(<u>_Tipo_Livro_</u>, <u>_NoPaginas_</u>, Preco)
 ```
 
 
@@ -35,7 +35,7 @@ R4 (_Editor_, Endereco_Editor)
 
 ```
 ... Write here your answer ...
-{A,B} é a chave primária.
+{A,B} é a chave (super-chave).
 ```
 
 
@@ -43,9 +43,9 @@ R4 (_Editor_, Endereco_Editor)
 
 ```
 ... Write here your answer ...
-R1 (_A_, _B_, C)
-R2 (_B_, F, G, H)
-R3 (_A_, D, E, I, J)
+R1 ((<u>A(</u>, D, E, I, J)
+R2 ((<u>B(</u>, F, G, H)
+R3 ((<u>A(</u>, B, C)
 ```
 
 
