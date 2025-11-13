@@ -16,14 +16,14 @@ A relação Livro está apenas na primeira forma normal (1FN), pois há depenên
 ```
 ... Write here your answer ...
 - Segunda forma normal (2FN), pois precisamos primeiro passar a segunda antes da terceira:
-R1: Livro(<u>_Titulo_Livro_</u>, <u>_Nome_Autor_</u>, Tipo_Livro, Preco, NoPaginas, Editor, Endereco_Editor, Ano_Puublicacao)
-R2: Autor(<u>_Nome_Autor_</u>, Afiliacao_Autor)
+R1: Livro(_Titulo_Livro_, _Nome_Autor_, Tipo_Livro, Preco, NoPaginas, Editor, Endereco_Editor, Ano_Puublicacao)
+R2: Autor(_Nome_Autor_, Afiliacao_Autor)
 
 - Terceira forma normal (3FN):
-R1: AUTOR(<u>_Nome_Autor_</u>, Afiliacao_Autor)
-R2: EDITOR(<u>_Editor_</u>, Endereco_Editor)
-R3: Livro(<u>_Titulo_Livro_</u>, <u>_Nome_Autor_</u>, Tipo_Livro NoPaginas, Editor, Ano_Puublicacao)
-R4: PRECO_POR_TIPO_PAG(<u>_Tipo_Livro_</u>, <u>_NoPaginas_</u>, Preco)
+R1: AUTOR(_Nome_Autor_, Afiliacao_Autor)
+R2: EDITOR(_Editor_, Endereco_Editor)
+R3: Livro(_Titulo_Livro_, _Nome_Autor_, Tipo_Livro NoPaginas, Editor, Ano_Puublicacao)
+R4: PRECO_POR_TIPO_PAG(_Tipo_Livro_, _NoPaginas_, Preco)
 ```
 
 
@@ -43,9 +43,9 @@ R4: PRECO_POR_TIPO_PAG(<u>_Tipo_Livro_</u>, <u>_NoPaginas_</u>, Preco)
 
 ```
 ... Write here your answer ...
-R1 ((<u>A(</u>, D, E, I, J)
-R2 ((<u>B(</u>, F, G, H)
-R3 ((<u>A(</u>, B, C)
+R1 ((_A_, D, E, I, J)
+R2 (_B_, F, G, H)
+R3 (_A_, B, C)
 ```
 
 
