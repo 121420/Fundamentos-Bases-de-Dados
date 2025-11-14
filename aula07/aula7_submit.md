@@ -66,48 +66,67 @@ R5 (_D_, I, J)
 ### *a)*
 
 ```
-... Write here your answer ...
+As chaves minimas de R sao
+{A,B}
+{B,C}
 ```
 
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+Criar as relacoes aparir das dependencias
+R1(A,B,C,D)
+R2(D,E)
+R3(C,A)
+
+Podemos simplificar o R3:
+3NF
+R1(A,B,C,D)
+R2(D,E)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+Decomposicao BCNF
+R1(C,A)
+R2(D,E)
+R3(B,C,D)
 ```
 
 
 
 ## ​7.5
  
-### *a)*
+### *a)*0
 
 ```
-... Write here your answer ...
+{A,B}
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+R1(A, C)
+R2(A, B, D, E)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+R1(A, C)
+R2(A, B, E)
+R3(C, D)
 ```
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+R1(C, D)
+R2(A, C)
+R3(A, B, E)
+
 ```
