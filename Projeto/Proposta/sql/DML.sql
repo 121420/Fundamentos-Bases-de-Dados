@@ -19,7 +19,7 @@ Per Conferences:
 
 - Eastern Conference: Pistons, Cavaliers, Raptors, Hawks, Knicks, 76ers, Heat, Bulls, Bucks, Magic, Celtics, Hornets, Nets, Wizerds, Pacers
 
-- Western Thunder, Nuggets, Rockets, Lakers, Spurs,Timberwolves, Warriors, Suns, Trail Blazers, Jazz, Grizzlies, Clippers, Mavericks, Kings, Pelicans*/
+- Western Conference: Thunder, Nuggets, Rockets, Lakers, Spurs,Timberwolves, Warriors, Suns, Trail Blazers, Jazz, Grizzlies, Clippers, Mavericks, Kings, Pelicans*/
 
 /*-----Ligas-----*/
 INSERT INTO Ligas (ID_Liga, Nome, Pais, Nivel) VALUES
