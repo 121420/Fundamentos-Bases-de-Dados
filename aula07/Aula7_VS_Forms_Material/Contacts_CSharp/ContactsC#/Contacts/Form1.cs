@@ -24,12 +24,15 @@ namespace Contacts
         private void Form1_Load(object sender, EventArgs e)
         {
             cn = getSGBDConnection();
+
+            //carregar contactos automaticamente ao abrir o formulario
+            loadCustomersToolStripMenuItem_Click(null, null);
         }
 
 
         private SqlConnection getSGBDConnection() 
         {
-            return new SqlConnection("data source= CCWIN8\\SQL2012EXPRESS;integrated security=true;initial catalog=Northwind");
+            return new SqlConnection("data source=DESKTOP-5HRQN5F\\ROMULO ;integrated security=true;initial catalog=Northwind");
         }
 
         private bool verifySGBDConnection() 
@@ -46,12 +49,13 @@ namespace Contacts
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex > 0)
+            if (listBox1.SelectedIndex >= 0)
             {
                 currentContact = listBox1.SelectedIndex;
                 ShowContact();
             }
         }
+        
 
         private void loadCustomersToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -73,6 +77,9 @@ namespace Contacts
                 C.State = reader["Region"].ToString();
                 C.ZIP = reader["PostalCode"].ToString();
                 C.Country = reader["Country"].ToString();
+                C.tel = reader["Phone"].ToString();
+                C.FAX = reader["Fax"].ToString();
+                
                 listBox1.Items.Add(C);
             }
 
@@ -82,7 +89,7 @@ namespace Contacts
             currentContact = 0;
             ShowContact();
         }
-
+        
         private void SubmitContact(Contact C)
         {
             if (!verifySGBDConnection())
@@ -329,7 +336,7 @@ namespace Contacts
         private void bttnEdit_Click(object sender, EventArgs e)
         {
             currentContact = listBox1.SelectedIndex;
-            if (currentContact <= 0)
+            if (currentContact < 0)
             {
                 MessageBox.Show("Please select a contact to edit");
                 return;
