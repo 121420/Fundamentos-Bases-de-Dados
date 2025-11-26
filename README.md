@@ -1,5 +1,5 @@
 # Fundamentos-Bases-de-Dados
-Cadeira do segundo ano, primeiro simestre.
+Cadeira do segundo ano, primeiro semestre.
 121420 - Kelvin Loforte
 127986 - Rómulo Monteiro
 

@@ -166,6 +166,7 @@ SELECT * FROM employeeProjects('183623612');
 ### *f)* 
 
 ```
+<<<<<<< HEAD
 CREATE FUNCTION dbo.getMediaFuncionarios(@Dno INT)
 Returns TABLE
 AS
@@ -187,11 +188,15 @@ Return
 
 );
 
+=======
+... Write here your answer ...
+>>>>>>> b0e8178ff6af75f2b7b6b4be88b312acc9f555f2
 ```
 
 ### *g)* 
 
 ```
+<<<<<<< HEAD
 
 
 Create FUNCTION dbo.GetDepartmentProjectCosts(@Dno INT)
@@ -251,16 +256,107 @@ END
 GO
 
 
+=======
+... Write here your answer ...
+>>>>>>> b0e8178ff6af75f2b7b6b4be88b312acc9f555f2
 ```
 
 ### *h)* 
 
 ```
-... Write here your answer ...
+TRIGGER "AFTER DELETE "
+--Criar trigger afeter delete
+CREATE TRIGGER trg_Department_AfterDelete
+ON DEPARTMENT AFTER DELETE
+As
+BEGIN
+	SET NOCOUNT ON;
+
+	--verificar e criar tabela destino
+
+	IF NOT EXISTS(Select * from INFORMATION_SCHEMA.TABLES 
+	WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'departament_deleted')
+
+	BEGIN
+	--criar tabela
+	Select * INTO dbo.department_deleted FROM DEPARTMENT where 1 = 0 ;
+	End
+
+
+	-- coloca os registos
+	INSERT INTO dbo.department_deleted(Dname,Dnumber,Mgr_ssn,Mgr_start_date)
+	SELECT Dname,Dnumber,Mgr_ssn,Mgr_start_date
+	From deleted;
+END
+GO
+	
+
+TRIGER "INSTEAD OF DELETE"
+
+CREATE TRIGGER trg_Department_InsteadOfDelete
+ON DEPARTMENT
+INSTEAD OF DELETE
+AS
+BEgin
+
+	SET NOCOUNT ON
+
+	IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES
+	WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'department_deleted')
+
+	BEGIN
+		SELECT *INTO dbo.department_deleted FROM DEPARTMENT WHERE 1 = 0
+	END
+
+	INSERT INTO dbo.department_deleted (Dname,Dnumber,Mgr_ssn,Mgr_start_date)
+	SELECT Dname,Dnumber,Mgr_ssn,Mgr_start_date
+	FROM deleted
+
+	DELETE D FROM DEPARTMENT D INNER JOIN deleted del ON D.Dnumber = del.Dnumber
+
+END
+GO
+
+CONCLUINDO:
+O AFTER DELETE é um trigger de reacao.Ele espera que o comando de DELETE seja completado e tenta aquivar os dados na tabela department_deleted depois disso .Sua vantagem principal é a seguranca transcional.Se a logica de arquivamento falhar,o SQL Server automaticamente faz um rollback e desfaz a exclusao da tabela principal DEPARMENT, grantido que nenhum dado seja perdido.A dewsvantegme é que ao fazer a exclusao primeiro,pode haver um pequene desprdicio de esforco se for necessario desfazer o trabalho
+Por outro lado o INSTEAD OF DELED é um trigger de substicuicao que lhe dá controle total.
+Quando alguem tenta deletar um departamento,o DELETE original é interceptado e nunca é executado.EM vez disso o codigo é acionado salvar os dados na table department_deleted e depois executar o comando DELETE na tabela principal .ESSA abordagem é mais eficionte para aequivamento e oferece flexiblidade
+
+
 ```
 
 ### *i)* 
 
 ```
-... Write here your answer ...
+
+Distinções Fundamentais:
+
+Uma UDF existe para calcular um valor ou retornar um conjunto de dados para ser usado dentro de uma consulta, agindo como uma função matemática ou uma subconsulta parametrizada. Por isso, a regra mais crítica é que as UDFs não podem modificar o estado do banco de dados; são restritas a comandos SELECT e não podem usar INSERT, UPDATE, DELETE ou gerenciar transações (COMMIT/ROLLBACK). Uma UDF pode ser chamada diretamente em cláusulas como SELECT, WHERE ou JOIN.
+
+Já uma Stored Procedure existe para executar uma tarefa ou processar dados. As SPs podem modificar o estado do banco de dados e são a única ferramenta para gerenciar explicitamente o fluxo de programação complexo (usando IF/ELSE, WHILE) e as transações. Uma SP é chamada sozinha através do comando EXEC.
+
+
+Vantagens:
+As SPs são superiores quando o objetivo é a segurança e o processamento. Elas permitem a um utilizador executar operações de modificação de dados (como a criação de uma nova conta de funcionário) sem ter permissão direta nas tabelas, garantindo um controlo de permissões robusto. Além disso, por serem pré-compiladas no servidor, as SPs reduzem o tráfego de rede ao executar uma sequência complexa de lógica em apenas uma chamada.
+
+As UDFs, por sua vez, são inestimáveis para a reutilização de lógica de cálculo ou para simplificar consultas. Uma UDF de valor escalar pode encapsular uma fórmula complexa (ex: cálculo de imposto e desconto) e ser integrada em qualquer coluna de um SELECT. Já as Table-Valued Functions (UDFs que retornam tabelas) são excelentes para criar fontes de dados parametrizadas que simplificam JOINs complexos ou filtros em relatórios.
+
+A escolha entre as duas ferramentas deve seguir a regra: Ação (SP) vs. Cálculo/Filtro (UDF).
+
+Utilize uma Stored Procedure quando:
+
+Processar em Lote: Mover milhares de registos de uma tabela de vendas ativa para uma tabela de histórico.
+
+Transações Múltiplas: Criar um novo cliente, o que exige um INSERT na tabela de clientes, outro INSERT na tabela de contactos e um UPDATE no log do sistema.
+
+Controlo Lógico: Implementar um procedimento complexo que verifica se um valor é válido (IF/ELSE) e, se não for, tenta um novo cálculo (WHILE).
+
+Utilize uma UDF quando:
+
+Cálculo Recorrente: Calcular a idade exata de um funcionário com base na data de nascimento (Bdate), sendo que esse valor deve ser incluído em múltiplas consultas.
+
+Filtro Complexo: Criar uma função que aceita um código de projeto e retorna apenas os funcionários que trabalharam mais de 100 horas nesse projeto, para ser usada numa cláusula JOIN.
+
+Formatação: Converter um valor em segundos para um formato de horas, minutos e segundos (hh:mm:ss) para visualização em relatórios.
+
 ```
