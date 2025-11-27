@@ -1,0 +1,6 @@
+Dados adicionadas na BD
+
+Ligas
+Equipas
+Pessoa
+Jogadores

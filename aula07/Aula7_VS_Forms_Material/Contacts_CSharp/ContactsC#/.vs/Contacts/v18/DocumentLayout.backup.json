@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\aula07\\Aula7_VS_Forms_Material\\Contacts_CSharp\\ContactsC#\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CF27752-BA7F-456B-8D42-C4349A499652}|Contacts\\Contacts.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\aula07\\aula7_vs_forms_material\\contacts_csharp\\contactsc#\\contacts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2CF27752-BA7F-456B-8D42-C4349A499652}|Contacts\\Contacts.csproj|C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\aula07\\Aula7_VS_Forms_Material\\Contacts_CSharp\\ContactsC#\\contacts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2CF27752-BA7F-456B-8D42-C4349A499652}|Contacts\\Contacts.csproj|solutionrelative:contacts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CF27752-BA7F-456B-8D42-C4349A499652}|Contacts\\Contacts.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\aula07\\aula7_vs_forms_material\\contacts_csharp\\contactsc#\\contacts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CF27752-BA7F-456B-8D42-C4349A499652}|Contacts\\Contacts.csproj|solutionrelative:contacts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\aula07\\Aula7_VS_Forms_Material\\Contacts_CSharp\\ContactsC#\\Contacts\\Form1.cs",
+              "RelativeDocumentMoniker": "Contacts\\Form1.cs",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\aula07\\Aula7_VS_Forms_Material\\Contacts_CSharp\\ContactsC#\\Contacts\\Form1.cs",
+              "RelativeToolTip": "Contacts\\Form1.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T00:11:08.648Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
