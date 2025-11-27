@@ -1,6 +1,22 @@
+====================
+READ ME
+====================
+Colunas Alteradas na BD
+--------------------
+Jogadores.Nome_camisola -> Varchar (20)
+Jogadores.Posicao -> Varchar (20)
+Treinadores.Licenca -> Varhcar(20)
+Treinadores.Especialidade -> Varhcar(30)
+Estadios.Nome -> Varhcar(30)
+
+
+
+====================
 Dados adicionadas na BD
 
 Ligas
 Equipas
 Pessoa
 Jogadores
+Treinadores
+Estadio
