@@ -8,6 +8,7 @@ Jogadores.Posicao -> Varchar (20)
 Treinadores.Licenca -> Varhcar(20)
 Treinadores.Especialidade -> Varhcar(30)
 Estadios.Nome -> Varhcar(30)
+Removido: Contrato.ID_Equipa (Obs: redundante)
 
 
 
@@ -20,3 +21,8 @@ Pessoa
 Jogadores
 Treinadores
 Estadio
+Contrato
+Contrato Jogador
+Contrato Treinador
+
+
