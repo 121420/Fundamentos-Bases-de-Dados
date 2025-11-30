@@ -160,3 +160,63 @@ JOIN Equipas Eq ON E.ID_Equipa = Eq.ID_Equipas
 ---------------------
 */
 
+
+/*********************
+Select * from Contrato
+alter table Contrato 
+Drop COlumn ID_Equipa
+*/
+
+INSERT INTO Contrato (ID_contrato, data_inicio, data_fim, salario_total, clausula_rescisao, bonus_objetivos, CC) VALUES
+-- Contratos de Jogadores (ID_Contrato 1 a 10)
+(1, '2024-10-01', '2029-09-30', 30000000.00, 1000000.00, 500000.00, 10101010), -- Jogador 1
+(2, '2024-10-01', '2028-09-30', 15000000.00, 500000.00, 250000.00, 11211211), -- Jogador 2
+(3, '2024-10-01', '2027-09-30', 8000000.00, 250000.00, 100000.00, 12321232), -- Jogador 3
+(4, '2024-10-01', '2029-09-30', 22000000.00, 750000.00, 350000.00, 13431343), -- Jogador 4
+(5, '2024-10-01', '2028-09-30', 12000000.00, 400000.00, 200000.00, 14541454), -- Jogador 5
+(6, '2024-10-01', '2027-09-30', 5000000.00, 100000.00, 50000.00, 15651565), -- Jogador 6
+(7, '2024-10-01', '2029-09-30', 25000000.00, 900000.00, 450000.00, 16761676), -- Jogador 7
+(8, '2024-10-01', '2028-09-30', 18000000.00, 600000.00, 300000.00, 17871787), -- Jogador 8
+(9, '2024-10-01', '2027-09-30', 7000000.00, 200000.00, 80000.00, 18981898), -- Jogador 9
+(10, '2024-10-01', '2029-09-30', 10000000.00, 300000.00, 150000.00, 19091909), -- Jogador 10
+
+-- Contratos de Treinadores (ID_Contrato 11 a 20)
+(11, '2024-07-01', '2027-06-30', 5000000.00, 0.00, 100000.00, 20102010), -- Treinador 1
+(12, '2024-07-01', '2026-06-30', 2500000.00, 0.00, 50000.00, 21212121), -- Treinador 2
+(13, '2024-07-01', '2028-06-30', 8000000.00, 0.00, 200000.00, 22322232), -- Treinador 3
+(14, '2024-07-01', '2026-06-30', 1500000.00, 0.00, 30000.00, 23432343), -- Treinador 4
+(15, '2024-07-01', '2027-06-30', 4000000.00, 0.00, 80000.00, 24542454), -- Treinador 5
+(16, '2024-07-01', '2028-06-30', 6000000.00, 0.00, 120000.00, 25652565), -- Treinador 6
+(17, '2024-07-01', '2026-06-30', 1000000.00, 0.00, 20000.00, 26762676), -- Treinador 7
+(18, '2024-07-01', '2028-06-30', 7500000.00, 0.00, 150000.00, 27872787), -- Treinador 8
+(19, '2024-07-01', '2027-06-30', 3500000.00, 0.00, 70000.00, 28982898), -- Treinador 9
+(20, '2024-07-01', '2028-06-30', 6500000.00, 0.00, 130000.00, 29092909); -- Treinador 10
+
+
+/* ----- Contrato_Jogador ----- */
+INSERT INTO Contrato_Jogador (ID_contrato, ID_jogador, ID_equipa) VALUES
+(1, 1, 1),  -- Jogador 1 (Ana Silva) -> Celtics (1)
+(2, 2, 6),  -- Jogador 2 (Bruno Costa) -> Bulls (6)
+(3, 3, 13), -- Jogador 3 (Carla Mendes) -> Heat (13)
+(4, 4, 16), -- Jogador 4 (Diogo Pereira) -> Nuggets (16)
+(5, 5, 21), -- Jogador 5 (Elsa Rodrigues) -> Warriors (21)
+(6, 6, 26), -- Jogador 6 (Filipe Almeida) -> Mavericks (26)
+(7, 7, 3),  -- Jogador 7 (Gabriela Santos) -> Knicks (3)
+(8, 8, 10), -- Jogador 8 (Hugo Martins) -> Bucks (10)
+(9, 9, 18), -- Jogador 9 (Inês Fernandes) -> Thunder (18)
+(10, 10, 24); -- Jogador 10 (João Ribeiro) -> Suns (24)
+
+
+/* ----- Contrato_Treinador ----- */
+INSERT INTO Contrato_Treinador (ID_contrato, ID_treinador, ID_equipa, cargo) VALUES
+(11, 1, 2, 'Treinador Principal'), -- Treinador 1 -> Nets (2)
+(12, 2, 4, 'Treinador Adjunto'), -- Treinador 2 -> 76ers (4)
+(13, 3, 5, 'Treinador Principal'), -- Treinador 3 -> Raptors (5)
+(14, 4, 7, 'Treinador Adjunto'), -- Treinador 4 -> Cavaliers (7)
+(15, 5, 8, 'Treinador Principal'), -- Treinador 5 -> Pistons (8)
+(16, 6, 9, 'Treinador Adjunto'), -- Treinador 6 -> Pacers (9)
+(17, 7, 11, 'Treinador Principal'), -- Treinador 7 -> Hawks (11)
+(18, 8, 12, 'Treinador Adjunto'), -- Treinador 8 -> Hornets (12)
+(19, 9, 14, 'Treinador Principal'), -- Treinador 9 -> Magic (14)
+(20, 10, 15, 'Treinador Adjunto'); -- Treinador 10 -> Wizards (15)
+
