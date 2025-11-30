@@ -220,3 +220,81 @@ INSERT INTO Contrato_Treinador (ID_contrato, ID_treinador, ID_equipa, cargo) VAL
 (19, 9, 14, 'Treinador Principal'), -- Treinador 9 -> Magic (14)
 (20, 10, 15, 'Treinador Adjunto'); -- Treinador 10 -> Wizards (15)
 
+
+
+/* ----- Temporada (Com ID_Equipa_Campeao) ----- */
+INSERT INTO Temporada (ID_Temporada, Ano_Inicio, Ano_Fim, Nome_Temporada, ID_Liga, ID_Equipa_Campeao) VALUES
+(1, 2021, 2022, 'Temporada 2021-2022', 1, 21), -- Golden State Warriors (ID 21)
+(2, 2022, 2023, 'Temporada 2022-2023', 1, 16), -- Denver Nuggets (ID 16)
+(3, 2023, 2024, 'Temporada 2023-2024', 1, 1), -- Boston Celtics (ID 1)
+(4, 2024, 2025, 'Temporada Regular 2024-2025', 1, NULL), -- Em curso (Campeão ainda não definido)
+(5, 2025, 2026, 'Próxima Temporada', 1, NULL); -- Futuro (Campeão ainda não definido)
+
+select * from Temporada
+
+select * from Jogo
+
+/* ----- Jogo ----- */
+INSERT INTO Jogo (ID_Jogo, dataHora_jogo, ID_estadio, ID_equipa_Casa, ID_equipa_Fora, pontos_casa, pontos_fora, fase, ID_temporada) VALUES
+(1, '2023-11-05 19:30:00', 1, 1, 3, 125, 113, 'Regular Season', 3), -- Celtics vs Knicks
+(2, '2023-11-06 20:00:00', 21, 21, 23, 134, 145, 'Regular Season', 3), -- Warriors vs Lakers (Vitória Lakers)
+(3, '2024-01-20 17:00:00', 16, 16, 26, 115, 112, 'Regular Season', 3), -- Nuggets vs Mavericks
+(4, '2024-05-15 21:00:00', 13, 13, 10, 105, 98, 'Playoffs', 3), -- Heat vs Bucks
+(5, '2024-06-06 20:30:00', 1, 1, 16, 107, 104, 'Finais', 3); -- Celtics vs Nuggets
+
+
+
+/* ----- Estatistica_Equipa_Jogo (10 registos) ----- */
+INSERT INTO Estatistica_Equipa_Jogo (ID_equipa, ID_Jogo, pontos_totais, assistencias_totais, ressaltos_totais, faltas_totais, percentagem_lancamentos) VALUES
+-- Jogo 1: Celtics (125) vs Knicks (113)
+(1, 1, 125, 30, 50, 18, 0.49),
+(3, 1, 113, 25, 45, 22, 0.45),
+
+-- Jogo 2: Warriors (134) vs Lakers (145)
+(21, 2, 134, 33, 48, 20, 0.52),
+(23, 2, 145, 35, 55, 19, 0.55),
+
+-- Jogo 3: Nuggets (115) vs Mavericks (112)
+(16, 3, 115, 27, 42, 16, 0.48),
+(26, 3, 112, 24, 39, 15, 0.47),
+
+-- Jogo 4: Heat (105) vs Bucks (98)
+(13, 4, 105, 21, 40, 17, 0.44),
+(10, 4, 98, 19, 38, 21, 0.41),
+
+-- Jogo 5: Celtics (107) vs Nuggets (104)
+(1, 5, 107, 26, 45, 19, 0.46),
+(16, 5, 104, 23, 41, 18, 0.45);
+
+
+select * from Estatistica_Jogador_Jogo
+
+/* ----- Estatistica_Jogador_Jogo (4 registos) ----- */
+INSERT INTO Estatistica_Jogador_Jogo (ID_jogador, ID_Jogo, minutos, pontos, assistencias, ressaltos, roubos, blocos, faltas) VALUES
+-- Jogo 1: Celtics (1) vs Knicks (3)
+(1, 1, 35, 28, 7, 4, 2, 0, 3), -- Ana Silva (Celtics)
+(7, 1, 38, 25, 9, 3, 1, 0, 4), -- Gabriela Santos (Knicks)
+
+-- Jogo 3: Nuggets (16) vs Mavericks (26)
+(4, 3, 40, 32, 10, 5, 1, 1, 2), -- Diogo Pereira (Nuggets)
+(6, 3, 30, 18, 4, 8, 0, 1, 3); -- Filipe Almeida (Mavericks)
+
+
+select * from Bilhete
+/* ----- Bilhete (15 registos para o Jogo 1) ----- */
+INSERT INTO Bilhete (ID_bilhete, ID_estadio, ID_Jogo, setor, lugar, preco, vendido, CC) VALUES
+(1, 1, 1, 'A1', '101', 150.00, 1, 10101010), -- Vendido, Ligado ao Jogador 1 (Ana Silva)
+(2, 1, 1, 'A1', '102', 150.00, 1, 11211211), -- Vendido, Ligado ao Jogador 2 (Bruno Costa)
+(3, 1, 1, 'B2', '205', 95.00, 1, 12321232), -- Vendido, Ligado ao Jogador 3 (Carla Mendes)
+(4, 1, 1, 'B2', '206', 95.00, 1, 13431343), -- Vendido, Ligado ao Jogador 4 (Diogo Pereira)
+(5, 1, 1, 'C3', '315', 60.00, 1, 14541454), -- Vendido, Ligado ao Jogador 5 (Elsa Rodrigues)
+(6, 1, 1, 'C3', '316', 60.00, 1, NULL),
+(7, 1, 1, 'C3', '317', 60.00, 1, NULL),
+(8, 1, 1, 'D4', '401', 45.00, 1, NULL),
+(9, 1, 1, 'D4', '402', 45.00, 1, NULL),
+(10, 1, 1, 'D4', '403', 45.00, 1, NULL),
+(11, 1, 1, 'D4', '404', 45.00, 0, NULL), -- Não vendido
+(12, 1, 1, 'A1', '103', 150.00, 0, NULL), -- Não vendido
+(13, 1, 1, 'E5', '501', 30.00, 1, NULL),
+(14, 1, 1, 'E5', '502', 30.00, 1, NULL),
+(15, 1, 1, 'E5', '503', 30.00, 0, NULL); -- Não vendido

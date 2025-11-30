@@ -8,8 +8,11 @@ Jogadores.Posicao -> Varchar (20)
 Treinadores.Licenca -> Varhcar(20)
 Treinadores.Especialidade -> Varhcar(30)
 Estadios.Nome -> Varhcar(30)
-Removido: Contrato.ID_Equipa (Obs: redundante)
+Removido: 
+	->Contrato.ID_Equipa (Obs: redundante)
+	->Contrato.Campeao
 
+Adicionado: Temporada.ID_Equipa_Campeao INT 
 
 
 ====================
@@ -24,5 +27,12 @@ Estadio
 Contrato
 Contrato Jogador
 Contrato Treinador
+Temporada
+JOgo
+Estatistica_Equipa_jogo
+Estatistica_jogador_jogo
+Bilhete
+
+
 
 
