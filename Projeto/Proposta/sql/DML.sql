@@ -69,8 +69,28 @@ INSERT INTO Pessoas (CC, Nome, data_nascimento, Nacionalidade, Genero, Email, Te
 ('27872787', 'Tiago Nunes', '1974-11-29', 'Portuguesa', 'Masculino', 'tiago.nunes@email.pt', '960000018'),
 ('28982898', 'Vera Monteiro', '1982-05-17', 'Ucraniana', 'Feminino', 'vera.monteiro@email.pt', '910000019'),
 ('29092909', 'Vítor Jorge', '1996-07-27', 'Portuguesa', 'Masculino', 'vitor.jorge@email.pt', '930000020');
-
-
+('30003000', 'Stephen Curry', '1988-03-14', 'Americana', 'Masculino', 'steph.curry@nba.com', '900000001'),
+('30003001', 'LeBron James', '1984-12-30', 'Americana', 'Masculino', 'lebron.james@nba.com', '900000002'),
+('30003002', 'Kevin Durant', '1988-09-29', 'Americana', 'Masculino', 'kevin.durant@nba.com', '900000003'),
+('30003003', 'Nikola Jokic', '1995-02-19', 'Sérvia', 'Masculino', 'nikola.jokic@nba.com', '900000004'),
+('30003004', 'Luka Doncic', '1999-02-28', 'Eslovena', 'Masculino', 'luka.doncic@nba.com', '900000005'),
+('30003005', 'Jayson Tatum', '1998-03-03', 'Americana', 'Masculino', 'jayson.tatum@nba.com', '900000006'),
+('30003006', 'Giannis Antetokounmpo', '1994-12-06', 'Grega', 'Masculino', 'giannis@nba.com', '900000007'),
+('30003007', 'James Harden', '1989-08-26', 'Americana', 'Masculino', 'harden@nba.com', '900000008'),
+('30003008', 'Kawhi Leonard', '1991-06-29', 'Americana', 'Masculino', 'kawhi@nba.com', '900000009'),
+('30003009', 'Damian Lillard', '1990-07-15', 'Americana', 'Masculino', 'dame@nba.com', '900000010'),
+-- Jogadoras WNBA
+('30004000', 'A\'ja Wilson', '1996-08-08', 'Americana', 'Feminino', 'aja.wilson@wnba.com', '900000011'),
+('30004001', 'Breanna Stewart', '1994-08-27', 'Americana', 'Feminino', 'stewart@wnba.com', '900000012'),
+('30004002', 'Sabrina Ionescu', '1997-12-06', 'Americana', 'Feminino', 'sabrina@wnba.com', '900000013'),
+('30004003', 'Candace Parker', '1986-04-19', 'Americana', 'Feminino', 'candace.parker@wnba.com', '900000014'),
+('30004004', 'Kelsey Plum', '1994-08-24', 'Americana', 'Feminino', 'kelsey.plum@wnba.com', '900000015'),
+('30004005', 'Elena Delle Donne', '1989-09-05', 'Americana', 'Feminino', 'delle.donne@wnba.com', '900000016'),
+('30004006', 'Nneka Ogwumike', '1990-07-02', 'Nigeriana-Americana', 'Feminino', 'nneka@wnba.com', '900000017'),
+('30004007', 'Arike Ogunbowale', '1997-03-02', 'Americana', 'Feminino', 'arike@wnba.com', '900000018'),
+('30004008', 'Skylar Diggins-Smith', '1990-08-02', 'Americana', 'Feminino', 'skylar@wnba.com', '900000019'),
+('30004009', 'Sue Bird', '1980-10-16', 'Americana', 'Feminino', 'suebird@wnba.com', '900000020');
+  
 /*----Jogador------*/
 INSERT INTO Jogadores (ID_Jogador, CC, Nome_Camisola, Posicao, Altura, Peso, Numero, Mao_Dominante, ID_Equipa) VALUES
 (1, '10101010', 'A. SILVA', 'Base (PG)', 1.88, 85, 3, 'Direita', 1),
@@ -83,6 +103,30 @@ INSERT INTO Jogadores (ID_Jogador, CC, Nome_Camisola, Posicao, Altura, Peso, Num
 (8, '17871787', 'MARTINS', 'Extremo (SF)', 2.01, 98, 1, 'Esquerda', 10),
 (9, '18981898', 'FERNANDES', 'Extremo-P. (PF)', 2.08, 110, 5, 'Direita', 18),
 (10, '19091909', 'RIBEIRO', 'Poste (C)', 2.16, 120, 55, 'Direita', 24);
+-- NBA
+(11, '30003000', 'CURRY', 'Base (PG)', 1.88, 84, 30, 'Direita', 21), -- Warriors
+(12, '30003001', 'LEBRON', 'Extremo (SF)', 2.03, 113, 6, 'Direita', 19), -- Lakers
+(13, '30003002', 'DURANT', 'Extremo (SF)', 2.08, 109, 7, 'Direita', 23), -- Clippers
+(14, '30003003', 'JOKIC', 'Poste (C)', 2.11, 129, 15, 'Direita', 16), -- Nuggets
+(15, '30003004', 'DONCIC', 'Base (PG)', 2.01, 104, 77, 'Direita', 28), -- Mavericks
+(16, '30003005', 'TATUM', 'Extremo (SF)', 2.03, 95, 0, 'Direita', 1), -- Celtics
+(17, '30003006', 'GIANNIS', 'Extremo-P. (PF)', 2.11, 110, 34, 'Direita', 10), -- Bucks
+(18, '30003007', 'HARDEN', 'Extremo-Base (SG)', 1.96, 99, 13, 'Esquerda', 18), -- Rockets
+(19, '30003008', 'LEONARD', 'Extremo (SF)', 2.01, 102, 2, 'Direita', 27), -- LA Clippers
+(20, '30003009', 'LILLARD', 'Base (PG)', 1.88, 88, 0, 'Direita', 24), -- Trail Blazers
+
+-- WNBA (temporário em equipas NBA por FK)
+(21, '30004000', 'WILSON', 'Extremo-P. (PF)', 1.93, 85, 22, 'Direita', 3),
+(22, '30004001', 'STEWART', 'Extremo (SF)', 1.93, 81, 30, 'Direita', 5),
+(23, '30004002', 'IONESCU', 'Base (PG)', 1.80, 75, 20, 'Direita', 13),
+(24, '30004003', 'PARKER', 'Extremo-P. (PF)', 1.93, 82, 3, 'Direita', 7),
+(25, '30004004', 'PLUM', 'Base (PG)', 1.73, 66, 10, 'Direita', 14),
+(26, '30004005', 'DELLE DONNE', 'Extremo (SF)', 1.96, 86, 11, 'Direita', 15),
+(27, '30004006', 'OGWUMIKE', 'Pivô (C)', 1.88, 79, 30, 'Direita', 2),
+(28, '30004007', 'OGUNBOWALE', 'Extremo-Base (SG)', 1.73, 70, 24, 'Direita', 6),
+(29, '30004008', 'DIGGINS', 'Base (PG)', 1.75, 70, 4, 'Esquerda', 12),
+(30, '30004009', 'SUE BIRD', 'Base (PG)', 1.75, 68, 10, 'Esquerda', 11);
+
 /*
 Alter table Treinadores
 Alter Column Especialidade varchar(30)
@@ -101,6 +145,7 @@ INSERT INTO Treinadores (ID_Treinador, CC, Experiencia_anos, Especialidade, Lice
 (8, 27872787, 25, 'Poste e Pivôs', 'Nivel Pro'),
 (9, 28982898, 9, 'Recrutamento', 'Nivel B'),
 (10, 29092909, 14, 'Marcação Individual', 'Nivel A');
+
 
 
 /*--Estadios-----*/
@@ -230,6 +275,16 @@ INSERT INTO Jogo (ID_Jogo, dataHora_jogo, ID_estadio, ID_equipa_Casa, ID_equipa_
 (3, '2024-01-20 17:00:00', 16, 16, 26, 115, 112, 'Regular Season', 3), -- Nuggets vs Mavericks
 (4, '2024-05-15 21:00:00', 13, 13, 10, 105, 98, 'Playoffs', 3), -- Heat vs Bucks
 (5, '2024-06-06 20:30:00', 1, 1, 16, 107, 104, 'Finais', 3); -- Celtics vs Nuggets
+(6, '2024-11-01 19:00:00', 2, 2, 4, 110, 102, 'Regular Season', 4), -- Nets vs 76ers
+(7, '2024-11-02 20:00:00', 3, 3, 5, 98, 101, 'Regular Season', 4),  -- Knicks vs Raptors
+(8, '2024-11-03 18:30:00', 4, 4, 6, 115, 108, 'Regular Season', 4), -- 76ers vs Bulls
+(9, '2024-11-04 21:00:00', 5, 5, 7, 123, 117, 'Regular Season', 4), -- Raptors vs Cavaliers
+(10, '2024-11-05 19:30:00', 6, 6, 8, 99, 95, 'Regular Season', 4),  -- Bulls vs Pistons
+(11, '2024-11-06 20:00:00', 7, 7, 9, 105, 110, 'Regular Season', 4), -- Cavaliers vs Pacers
+(12, '2024-11-07 17:00:00', 8, 8, 10, 112, 108, 'Regular Season', 4), -- Pistons vs Magic
+(13, '2024-11-08 21:30:00', 9, 9, 11, 101, 104, 'Regular Season', 4), -- Pacers vs Hawks
+(14, '2024-11-09 20:00:00', 10, 10, 12, 107, 111, 'Regular Season', 4), -- Magic vs Hornets
+(15, '2024-11-10 19:00:00', 11, 11, 13, 118, 115, 'Regular Season', 4); -- Hawks vs Heat
 
 
 
@@ -238,22 +293,49 @@ INSERT INTO Estatistica_Equipa_Jogo (ID_equipa, ID_Jogo, pontos_totais, assisten
 -- Jogo 1: Celtics (125) vs Knicks (113)
 (1, 1, 125, 30, 50, 18, 0.49),
 (3, 1, 113, 25, 45, 22, 0.45),
-
 -- Jogo 2: Warriors (134) vs Lakers (145)
 (21, 2, 134, 33, 48, 20, 0.52),
 (23, 2, 145, 35, 55, 19, 0.55),
-
 -- Jogo 3: Nuggets (115) vs Mavericks (112)
 (16, 3, 115, 27, 42, 16, 0.48),
 (26, 3, 112, 24, 39, 15, 0.47),
-
 -- Jogo 4: Heat (105) vs Bucks (98)
 (13, 4, 105, 21, 40, 17, 0.44),
 (10, 4, 98, 19, 38, 21, 0.41),
-
 -- Jogo 5: Celtics (107) vs Nuggets (104)
 (1, 5, 107, 26, 45, 19, 0.46),
 (16, 5, 104, 23, 41, 18, 0.45);
+-- Jogo 6: Nets vs 76ers
+(2, 6, 110, 25, 40, 18, 0.46),
+(4, 6, 102, 20, 38, 22, 0.43),  
+-- Jogo 7: Knicks vs Raptors
+(3, 7, 98, 22, 35, 19, 0.44),
+(5, 7, 101, 24, 37, 21, 0.45),
+-- Jogo 8: 76ers vs Bulls
+(4, 8, 115, 28, 42, 17, 0.48),
+(6, 8, 108, 26, 39, 20, 0.46),
+-- Jogo 9: Raptors vs Cavaliers
+(5, 9, 123, 30, 45, 19, 0.50),
+(7, 9, 117, 28, 41, 21, 0.47),
+-- Jogo 10: Bulls vs Pistons
+(6, 10, 99, 21, 37, 18, 0.43),
+(8, 10, 95, 19, 36, 20, 0.42),
+-- Jogo 11: Cavaliers vs Pacers
+(7, 11, 105, 23, 40, 19, 0.44),
+(9, 11, 110, 25, 43, 21, 0.46),
+-- Jogo 12: Pistons vs Magic
+(8, 12, 112, 24, 38, 20, 0.45),
+(10, 12, 108, 22, 37, 18, 0.44),
+-- Jogo 13: Pacers vs Hawks
+(9, 13, 101, 20, 35, 19, 0.43),
+(11, 13, 104, 23, 39, 21, 0.45),
+-- Jogo 14: Magic vs Hornets
+(10, 14, 107, 25, 42, 20, 0.46),
+(12, 14, 111, 27, 41, 22, 0.48),
+-- Jogo 15: Hawks vs Heat
+(11, 15, 118, 30, 44, 19, 0.49),
+(13, 15, 115, 28, 43, 21, 0.47);
+
 
 
 select * from Estatistica_Jogador_Jogo
@@ -267,6 +349,37 @@ INSERT INTO Estatistica_Jogador_Jogo (ID_jogador, ID_Jogo, minutos, pontos, assi
 -- Jogo 3: Nuggets (16) vs Mavericks (26)
 (4, 3, 40, 32, 10, 5, 1, 1, 2), -- Diogo Pereira (Nuggets)
 (6, 3, 30, 18, 4, 8, 0, 1, 3); -- Filipe Almeida (Mavericks)
+
+-- Jogo 6
+(1, 6, 36, 24, 6, 5, 2, 1, 3),
+(2, 6, 38, 20, 8, 4, 1, 0, 2),
+-- Jogo 7
+(3, 7, 32, 18, 4, 6, 0, 1, 3),
+(4, 7, 40, 25, 9, 5, 2, 0, 4),
+-- Jogo 8
+(5, 8, 38, 28, 7, 6, 1, 1, 2),
+(6, 8, 34, 15, 5, 7, 0, 0, 3),
+-- Jogo 9
+(7, 9, 37, 22, 8, 5, 1, 1, 2),
+(8, 9, 39, 26, 6, 4, 2, 0, 3),
+-- Jogo 10
+(9, 10, 35, 19, 5, 5, 1, 0, 2),
+(10, 10, 33, 21, 7, 6, 0, 1, 2),
+-- Jogo 11
+(11, 11, 36, 28, 9, 4, 1, 0, 3),
+(12, 11, 38, 25, 8, 5, 2, 1, 2),
+-- Jogo 12
+(13, 12, 34, 20, 6, 6, 1, 0, 3),
+(14, 12, 32, 18, 5, 4, 0, 0, 2),
+-- Jogo 13
+(15, 13, 37, 22, 7, 5, 1, 1, 3),
+(16, 13, 39, 26, 6, 6, 2, 0, 2),
+-- Jogo 14
+(17, 14, 35, 19, 5, 4, 1, 0, 2),
+(18, 14, 33, 21, 7, 5, 0, 1, 3),
+-- Jogo 15
+(19, 15, 36, 24, 8, 6, 1, 1, 2),
+(20, 15, 38, 27, 9, 5, 2, 0, 3);
 
 
 select * from Bilhete
@@ -287,3 +400,18 @@ INSERT INTO Bilhete (ID_bilhete, ID_estadio, ID_Jogo, setor, lugar, preco, vendi
 (13, 1, 1, 'E5', '501', 30.00, 1, NULL),
 (14, 1, 1, 'E5', '502', 30.00, 1, NULL),
 (15, 1, 1, 'E5', '503', 30.00, 0, NULL); -- Não vendido
+(16, 2, 6, 'A1', '101', 120.00, 1, 10101010),
+(17, 2, 6, 'A1', '102', 120.00, 1, 11211211),
+(18, 2, 6, 'B2', '201', 80.00, 1, 12321232),
+(19, 2, 6, 'B2', '202', 80.00, 0, NULL),
+(20, 3, 7, 'C3', '301', 100.00, 1, 13431343),
+(21, 3, 7, 'C3', '302', 100.00, 1, 14541454),
+(22, 3, 7, 'D4', '401', 60.00, 0, NULL),
+(23, 4, 8, 'E5', '501', 50.00, 1, 15651565),
+(24, 4, 8, 'E5', '502', 50.00, 1, 16761676),
+(25, 4, 8, 'F6', '601', 40.00, 0, NULL),
+(26, 5, 9, 'A1', '101', 90.00, 1, 17871787),
+(27, 5, 9, 'A1', '102', 90.00, 1, 18981898),
+(28, 5, 9, 'B2', '201', 70.00, 1, 19091909),
+(29, 6, 10, 'C3', '301', 60.00, 1, 20102010),
+(30, 6, 10, 'C3', '302', 60.00, 0, NULL);
