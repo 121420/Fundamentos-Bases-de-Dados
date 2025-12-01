@@ -1,21 +1,5 @@
 use p4g4;
-
-/*________Inserts  nas tabelas_________  */
-/*NBA TEAMS:
-- ATLANTIC: Boston Celtic, Brooklyn Nets, New York Knicks, Philadelphia 76ers, Toronto Raptors
-
-- CENTRAL: Chicago Bulls, Cleveland Cavaliers, Detroit Pistons, Indiana Pacers, Milwaukee Bucks
-
-- SOUTHEAST: Atlanta Hawks, Charlotte Hornets, Miami Heat, Orlando Magic, Washington Wizards
-
-- NORTHWEST: Denver Nuggets, Minnesota Timberwolves, Oklahoma City Thunder, Portland Trail Blazers, Utah Jazz
-
-- PACIFIC: Golden State Warriors, LA Clippers, Los Angeles Lakers, Phoenix Suns, Sacramento Kings
-
-- SOUTHWEST: Dallas Mavericks, Houston Rockets, Memphis Grizzlies, New Orleans Pelicans, San Antônio Spurs
-
-
-Per Conferences:
+/*Per Conferences:
 
 - Eastern Conference: Pistons, Cavaliers, Raptors, Hawks, Knicks, 76ers, Heat, Bulls, Bucks, Magic, Celtics, Hornets, Nets, Wizerds, Pacers
 
@@ -26,37 +10,42 @@ INSERT INTO Ligas (ID_Liga, Nome, Pais, Nivel) VALUES
 (1, 'NBA', 'EUA', 'Profissional');
 
 /*-----Equipas-----*/
+/*-----Equipas (Conferência Eastern)-----*/
 INSERT INTO Equipas (ID_Equipas, Nome, Cidade, Conferencia, ID_Liga) VALUES
-(1, 'Boston Celtics', 'Boston', 'Leste', 1),
-(2, 'Brooklyn Nets', 'Brooklyn', 'Leste', 1),
-(3, 'New York Knicks', 'New York', 'Leste', 1),
-(4, 'Philadelphia 76ers', 'Philadelphia', 'Leste', 1),
-(5, 'Toronto Raptors', 'Toronto', 'Leste', 1),
-(6, 'Chicago Bulls', 'Chicago', 'Leste', 1),
-(7, 'Cleveland Cavaliers', 'Cleveland', 'Leste', 1),
-(8, 'Detroit Pistons', 'Detroit', 'Leste', 1),
-(9, 'Indiana Pacers', 'Indianapolis', 'Leste', 1),
-(10, 'Milwaukee Bucks', 'Milwaukee', 'Leste', 1),
-(11, 'Atlanta Hawks', 'Atlanta', 'Leste', 1),
+(1, 'Detroit Pistons', 'Detroit', 'Leste', 1),
+(2, 'Cleveland Cavaliers', 'Cleveland', 'Leste', 1),
+(3, 'Toronto Raptors', 'Toronto', 'Leste', 1),
+(4, 'Atlanta Hawks', 'Atlanta', 'Leste', 1),
+(5, 'New York Knicks', 'New York', 'Leste', 1),
+(6, 'Philadelphia 76ers', 'Philadelphia', 'Leste', 1),
+(7, 'Miami Heat', 'Miami', 'Leste', 1),
+(8, 'Chicago Bulls', 'Chicago', 'Leste', 1),
+(9, 'Milwaukee Bucks', 'Milwaukee', 'Leste', 1),
+(10, 'Orlando Magic', 'Orlando', 'Leste', 1),
+(11, 'Boston Celtics', 'Boston', 'Leste', 1),
 (12, 'Charlotte Hornets', 'Charlotte', 'Leste', 1),
-(13, 'Miami Heat', 'Miami', 'Leste', 1),
-(14, 'Orlando Magic', 'Orlando', 'Leste', 1),
-(15, 'Washington Wizards', 'Washington D.C.', 'Leste', 1),
-(16, 'Denver Nuggets', 'Denver', 'Oeste', 1),
-(17, 'Minnesota Timberwolves', 'Minneapolis', 'Oeste', 1),
-(18, 'Oklahoma City Thunder', 'Oklahoma City', 'Oeste', 1),
-(19, 'Portland Trail Blazers', 'Portland', 'Oeste', 1),
-(20, 'Utah Jazz', 'Salt Lake City', 'Oeste', 1),
-(21, 'Golden State Warriors', 'San Francisco', 'Oeste', 1),
-(22, 'LA Clippers', 'Los Angeles', 'Oeste', 1),
-(23, 'Los Angeles Lakers', 'Los Angeles', 'Oeste', 1),
-(24, 'Phoenix Suns', 'Phoenix', 'Oeste', 1),
-(25, 'Sacramento Kings', 'Sacramento', 'Oeste', 1),
-(26, 'Dallas Mavericks', 'Dallas', 'Oeste', 1),
-(27, 'Houston Rockets', 'Houston', 'Oeste', 1),
-(28, 'Memphis Grizzlies', 'Memphis', 'Oeste', 1),
-(29, 'New Orleans Pelicans', 'New Orleans', 'Oeste', 1),
-(30, 'San Antonio Spurs', 'San Antonio', 'Oeste', 1);
+(13, 'Brooklyn Nets', 'Brooklyn', 'Leste', 1),
+(14, 'Washington Wizards', 'Washington D.C.', 'Leste', 1),
+(15, 'Indiana Pacers', 'Indianapolis', 'Leste', 1);
+
+/*-----Equipas (Conferência Oeste)-----*/
+INSERT INTO Equipas (ID_Equipas, Nome, Cidade, Conferencia, ID_Liga) VALUES
+(16, 'Oklahoma City Thunder', 'Oklahoma City', 'Oeste', 1),
+(17, 'Denver Nuggets', 'Denver', 'Oeste', 1),
+(18, 'Houston Rockets', 'Houston', 'Oeste', 1),
+(19, 'Los Angeles Lakers', 'Los Angeles', 'Oeste', 1),
+(20, 'San Antonio Spurs', 'San Antonio', 'Oeste', 1),
+(21, 'Minnesota Timberwolves', 'Minneapolis', 'Oeste', 1),
+(22, 'Golden State Warriors', 'San Francisco', 'Oeste', 1),
+(23, 'Phoenix Suns', 'Phoenix', 'Oeste', 1),
+(24, 'Portland Trail Blazers', 'Portland', 'Oeste', 1),
+(25, 'Utah Jazz', 'Salt Lake City', 'Oeste', 1),
+(26, 'Memphis Grizzlies', 'Memphis', 'Oeste', 1),
+(27, 'LA Clippers', 'Los Angeles', 'Oeste', 1),
+(28, 'Dallas Mavericks', 'Dallas', 'Oeste', 1),
+(29, 'Sacramento Kings', 'Sacramento', 'Oeste', 1),
+(30, 'New Orleans Pelicans', 'New Orleans', 'Oeste', 1);
+
 
 /*-----Pessoas-----*/
 INSERT INTO Pessoas (CC, Nome, data_nascimento, Nacionalidade, Genero, Email, Telefone) VALUES
