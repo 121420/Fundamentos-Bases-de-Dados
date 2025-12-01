@@ -1,0 +1,15 @@
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\bin\Debug\NBA.exe.config
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\bin\Debug\NBA.exe
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\bin\Debug\NBA.pdb
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.csproj.AssemblyReference.cache
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.Properties.Resources.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.csproj.GenerateResource.cache
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.csproj.CoreCompileInputs.cache
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.exe
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.pdb
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.Home.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.FormJogadores.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.FormEquipas.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.FormJogos.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.FormLigas.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\NBA\NBA\obj\Debug\NBA.FormTreinadores.resources
