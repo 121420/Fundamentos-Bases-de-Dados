@@ -33,6 +33,7 @@ Estatistica_Equipa_jogo
 Estatistica_jogador_jogo
 Bilhete
 
+- 01/12/2025 - mais dados adicionados nas tabelas e alterações de conferências
 
 
 
