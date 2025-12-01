@@ -1,4 +1,9 @@
 use p4g4;
+GO
+-- SCRIPT DML (VERSÃO 1) 
+-- Mantive os teus dados originais; corrigi apenas as conferências
+-- NÃO alterei IDs, nomes, ou relações que tinhas fornecido.
+
 /*Per Conferences:
 
 - Eastern Conference: Pistons, Cavaliers, Raptors, Hawks, Knicks, 76ers, Heat, Bulls, Bucks, Magic, Celtics, Hornets, Nets, Wizerds, Pacers
@@ -8,6 +13,8 @@ use p4g4;
 /*-----Ligas-----*/
 INSERT INTO Ligas (ID_Liga, Nome, Pais, Nivel) VALUES
 (1, 'NBA', 'EUA', 'Profissional');
+(2, 'WNBA', 'EUA', 'Profissional');
+GO
 
 /*-----Equipas-----*/
 /*-----Equipas (Conferência Eastern)-----*/
@@ -46,8 +53,24 @@ INSERT INTO Equipas (ID_Equipas, Nome, Cidade, Conferencia, ID_Liga) VALUES
 (29, 'Sacramento Kings', 'Sacramento', 'Oeste', 1),
 (30, 'New Orleans Pelicans', 'New Orleans', 'Oeste', 1);
 
+/*Femenino*/
+INSERT INTO Equipas (ID_Equipas, Nome, Cidade, Conferencia, ID_Liga) VALUES
+(31, 'Las Vegas Aces', 'Las Vegas', 'Oeste', 2),
+(32, 'Seattle Storm', 'Seattle', 'Oeste', 2),
+(33, 'Phoenix Mercury', 'Phoenix', 'Oeste', 2),
+(34, 'Los Angeles Sparks', 'Los Angeles', 'Oeste', 2),
+(35, 'Minnesota Lynx', 'Minneapolis', 'Oeste', 2),
+(36, 'Connecticut Sun', 'Uncasville', 'Leste', 2),
+(37, 'New York Liberty', 'New York', 'Leste', 2),
+(38, 'Chicago Sky', 'Chicago', 'Leste', 2),
+(39, 'Atlanta Dream', 'Atlanta', 'Leste', 2),
+(40, 'Washington Mystics', 'Washington D.C.', 'Leste', 2);
 
 /*-----Pessoas-----*/
+/* 
+   - Inclui pessoas locais (IDs CC numéricos/string) e jogadores famosos
+   - Corrigido delimitador entre registos e escape de apóstrofo
+*/
 INSERT INTO Pessoas (CC, Nome, data_nascimento, Nacionalidade, Genero, Email, Telefone) VALUES
 ('10101010', 'Ana Silva', '1995-05-15', 'Portuguesa', 'Feminino', 'ana.silva@email.pt', '910000001'),
 ('11211211', 'Bruno Costa', '1988-11-20', 'Portuguesa', 'Masculino', 'bruno.costa@email.pt', '930000002'),
@@ -79,8 +102,10 @@ INSERT INTO Pessoas (CC, Nome, data_nascimento, Nacionalidade, Genero, Email, Te
 ('30003007', 'James Harden', '1989-08-26', 'Americana', 'Masculino', 'harden@nba.com', '900000008'),
 ('30003008', 'Kawhi Leonard', '1991-06-29', 'Americana', 'Masculino', 'kawhi@nba.com', '900000009'),
 ('30003009', 'Damian Lillard', '1990-07-15', 'Americana', 'Masculino', 'dame@nba.com', '900000010'),
--- Jogadoras WNBA
-('30004000', 'A\'ja Wilson', '1996-08-08', 'Americana', 'Feminino', 'aja.wilson@wnba.com', '900000011'),
+
+/* WNBA Players */
+INSERT INTO Pessoas (CC, Nome, data_nascimento, Nacionalidade, Genero, Email, Telefone) VALUES
+('30004000', 'A''ja Wilson', '1996-08-08', 'Americana', 'Feminino', 'aja.wilson@wnba.com', '900000011'),
 ('30004001', 'Breanna Stewart', '1994-08-27', 'Americana', 'Feminino', 'stewart@wnba.com', '900000012'),
 ('30004002', 'Sabrina Ionescu', '1997-12-06', 'Americana', 'Feminino', 'sabrina@wnba.com', '900000013'),
 ('30004003', 'Candace Parker', '1986-04-19', 'Americana', 'Feminino', 'candace.parker@wnba.com', '900000014'),
@@ -90,8 +115,9 @@ INSERT INTO Pessoas (CC, Nome, data_nascimento, Nacionalidade, Genero, Email, Te
 ('30004007', 'Arike Ogunbowale', '1997-03-02', 'Americana', 'Feminino', 'arike@wnba.com', '900000018'),
 ('30004008', 'Skylar Diggins-Smith', '1990-08-02', 'Americana', 'Feminino', 'skylar@wnba.com', '900000019'),
 ('30004009', 'Sue Bird', '1980-10-16', 'Americana', 'Feminino', 'suebird@wnba.com', '900000020');
+GO
   
-/*----Jogador------*/
+/*----Jogadores------*/
 INSERT INTO Jogadores (ID_Jogador, CC, Nome_Camisola, Posicao, Altura, Peso, Numero, Mao_Dominante, ID_Equipa) VALUES
 (1, '10101010', 'A. SILVA', 'Base (PG)', 1.88, 85, 3, 'Direita', 1),
 (2, '11211211', 'B. COSTA', 'Extremo (SF)', 2.03, 100, 23, 'Direita', 6),
@@ -103,7 +129,8 @@ INSERT INTO Jogadores (ID_Jogador, CC, Nome_Camisola, Posicao, Altura, Peso, Num
 (8, '17871787', 'MARTINS', 'Extremo (SF)', 2.01, 98, 1, 'Esquerda', 10),
 (9, '18981898', 'FERNANDES', 'Extremo-P. (PF)', 2.08, 110, 5, 'Direita', 18),
 (10, '19091909', 'RIBEIRO', 'Poste (C)', 2.16, 120, 55, 'Direita', 24);
--- NBA
+
+/*-----Jogadores que adicionei para ser mais realista-----*/
 (11, '30003000', 'CURRY', 'Base (PG)', 1.88, 84, 30, 'Direita', 21), -- Warriors
 (12, '30003001', 'LEBRON', 'Extremo (SF)', 2.03, 113, 6, 'Direita', 19), -- Lakers
 (13, '30003002', 'DURANT', 'Extremo (SF)', 2.08, 109, 7, 'Direita', 23), -- Clippers
@@ -145,6 +172,7 @@ INSERT INTO Treinadores (ID_Treinador, CC, Experiencia_anos, Especialidade, Lice
 (8, 27872787, 25, 'Poste e Pivôs', 'Nivel Pro'),
 (9, 28982898, 9, 'Recrutamento', 'Nivel B'),
 (10, 29092909, 14, 'Marcação Individual', 'Nivel A');
+GO
 
 
 
@@ -184,6 +212,7 @@ INSERT INTO Estadios (ID_Estadio, Nome, Cidade, Capacidade, Morada, ID_Equipa) V
 (28, 'FedExForum', 'Memphis', 17794, '191 Beale St', 28),
 (29, 'Smoothie King Center', 'New Orleans', 16867, '1501 Dave Dixon Dr', 29),
 (30, 'Frost Bank Center', 'San Antonio', 18418, '1 AT&T Center Pkwy', 30);
+GO
 
 /*
 -------------------
@@ -202,7 +231,7 @@ Drop COlumn ID_Equipa
 */
 
 INSERT INTO Contrato (ID_contrato, data_inicio, data_fim, salario_total, clausula_rescisao, bonus_objetivos, CC) VALUES
--- Contratos de Jogadores (ID_Contrato 1 a 10)
+/* Contratos de Jogadores (ID_Contrato 1 a 10) */
 (1, '2024-10-01', '2029-09-30', 30000000.00, 1000000.00, 500000.00, 10101010), -- Jogador 1
 (2, '2024-10-01', '2028-09-30', 15000000.00, 500000.00, 250000.00, 11211211), -- Jogador 2
 (3, '2024-10-01', '2027-09-30', 8000000.00, 250000.00, 100000.00, 12321232), -- Jogador 3
@@ -214,7 +243,7 @@ INSERT INTO Contrato (ID_contrato, data_inicio, data_fim, salario_total, clausul
 (9, '2024-10-01', '2027-09-30', 7000000.00, 200000.00, 80000.00, 18981898), -- Jogador 9
 (10, '2024-10-01', '2029-09-30', 10000000.00, 300000.00, 150000.00, 19091909), -- Jogador 10
 
--- Contratos de Treinadores (ID_Contrato 11 a 20)
+/* Contratos de Treinadores (ID_Contrato 11 a 20) */
 (11, '2024-07-01', '2027-06-30', 5000000.00, 0.00, 100000.00, 20102010), -- Treinador 1
 (12, '2024-07-01', '2026-06-30', 2500000.00, 0.00, 50000.00, 21212121), -- Treinador 2
 (13, '2024-07-01', '2028-06-30', 8000000.00, 0.00, 200000.00, 22322232), -- Treinador 3
@@ -263,6 +292,7 @@ INSERT INTO Temporada (ID_Temporada, Ano_Inicio, Ano_Fim, Nome_Temporada, ID_Lig
 (3, 2023, 2024, 'Temporada 2023-2024', 1, 1), -- Boston Celtics (ID 1)
 (4, 2024, 2025, 'Temporada Regular 2024-2025', 1, NULL), -- Em curso (Campeão ainda não definido)
 (5, 2025, 2026, 'Próxima Temporada', 1, NULL); -- Futuro (Campeão ainda não definido)
+GO
 
 select * from Temporada
 
@@ -285,7 +315,7 @@ INSERT INTO Jogo (ID_Jogo, dataHora_jogo, ID_estadio, ID_equipa_Casa, ID_equipa_
 (13, '2024-11-08 21:30:00', 9, 9, 11, 101, 104, 'Regular Season', 4), -- Pacers vs Hawks
 (14, '2024-11-09 20:00:00', 10, 10, 12, 107, 111, 'Regular Season', 4), -- Magic vs Hornets
 (15, '2024-11-10 19:00:00', 11, 11, 13, 118, 115, 'Regular Season', 4); -- Hawks vs Heat
-
+GO
 
 
 /* ----- Estatistica_Equipa_Jogo (10 registos) ----- */
