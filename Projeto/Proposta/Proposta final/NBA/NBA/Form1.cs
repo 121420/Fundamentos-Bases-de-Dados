@@ -33,7 +33,7 @@ namespace NBA
             // 4. Mostra o formulário
             FormFilho.Show();
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -67,6 +67,17 @@ namespace NBA
         private void btm_jogos_Click(object sender, EventArgs e)
         {
             AbrirFormularioNoPainel(new FormJogos());
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.PainelContent.Controls.Clear();
+            
         }
     }
 }
