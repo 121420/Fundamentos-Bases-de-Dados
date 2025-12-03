@@ -18,7 +18,7 @@ namespace NBA
         public FormJogadores()
         {
             InitializeComponent();
-            connectionString = @"Server=tcp:mednat.ieeta.pt,8101;Database=p4g4;User ID=p4g4;Password=-121420127986@KR;Encrypt=False;";
+            connectionString = @"Server=tcp:mednat.ieeta.pt,8101;Database=p4g4;User ID=p4g4;Password=im not dum to tell u my passord;Encrypt=False;";
 
         }
 
