@@ -11,12 +11,8 @@
       "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\formjogadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\nba\\nba\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\nba\\nba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\nba\\nba\\formpessoas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\formpessoas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,32 +22,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\App.config",
-              "RelativeDocumentMoniker": "NBA\\App.config",
-              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\App.config",
-              "RelativeToolTip": "NBA\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-12-03T01:50:50.452Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "FormJogadores.cs",
               "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\FormJogadores.cs",
               "RelativeDocumentMoniker": "NBA\\FormJogadores.cs",
-              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\FormJogadores.cs",
-              "RelativeToolTip": "NBA\\FormJogadores.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAAwDMAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\FormJogadores.cs*",
+              "RelativeToolTip": "NBA\\FormJogadores.cs*",
+              "ViewState": "AgIAACUAAAAAAAAAAAAhwCsAAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T01:24:06.35Z",
+              "WhenOpened": "2025-12-04T18:17:32.755Z",
               "EditorCaption": ""
             },
             {
@@ -60,23 +43,24 @@
               "Title": "FormJogadores.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\FormJogadores.cs",
               "RelativeDocumentMoniker": "NBA\\FormJogadores.cs",
-              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\FormJogadores.cs [Design]",
-              "RelativeToolTip": "NBA\\FormJogadores.cs [Design]",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\FormJogadores.cs [Design]*",
+              "RelativeToolTip": "NBA\\FormJogadores.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T00:59:15.155Z",
+              "WhenOpened": "2025-12-04T18:15:58.836Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\Form1.cs",
-              "RelativeDocumentMoniker": "NBA\\Form1.cs",
-              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\Form1.cs [Design]",
-              "RelativeToolTip": "NBA\\Form1.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "FormPessoas.cs",
+              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\FormPessoas.cs",
+              "RelativeDocumentMoniker": "NBA\\FormPessoas.cs",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\NBA\\NBA\\FormPessoas.cs",
+              "RelativeToolTip": "NBA\\FormPessoas.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAawGUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T00:58:52.607Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-04T17:32:00.529Z",
+              "EditorCaption": ""
             }
           ]
         }

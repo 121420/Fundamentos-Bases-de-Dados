@@ -76,6 +76,12 @@
     <Compile Include="FormLigas.Designer.cs">
       <DependentUpon>FormLigas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPessoas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPessoas.Designer.cs">
+      <DependentUpon>FormPessoas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTreinadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLigas.resx">
       <DependentUpon>FormLigas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPessoas.resx">
+      <DependentUpon>FormPessoas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTreinadores.resx">
       <DependentUpon>FormTreinadores.cs</DependentUpon>

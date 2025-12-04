@@ -79,5 +79,16 @@ namespace NBA
             this.PainelContent.Controls.Clear();
             
         }
+
+        private void Btm_Ligas_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormularioNoPainel(new FormLigas());
+
+        }
+
+        private void btm_Pessoas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioNoPainel(new FormPessoas());
+        }
     }
 }
