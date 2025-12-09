@@ -1,0 +1,6 @@
+*********************************
+Ideas to implement in the project
+**********************************
+-> Mercado de Transeferencias Jogadores
+-> Tela de classificacao na Pagina Inicial
+-> Ultimos resultados na Pagina Inicial
