@@ -47,12 +47,14 @@
             this.cmbID_Equipa = new System.Windows.Forms.ComboBox();
             this.cmbMaoDominante = new System.Windows.Forms.ComboBox();
             this.cmbPosicao = new System.Windows.Forms.ComboBox();
-            this.btmAdicionar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btmAtualizar = new System.Windows.Forms.Button();
+            this.btmEliminar = new System.Windows.Forms.Button();
+            this.Limpar = new System.Windows.Forms.Button();
+            this.btmInserir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listajogadores)).BeginInit();
             this.SuspendLayout();
@@ -199,7 +201,7 @@
             this.listajogadores.BackgroundColor = System.Drawing.SystemColors.Control;
             this.listajogadores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listajogadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listajogadores.Location = new System.Drawing.Point(737, 126);
+            this.listajogadores.Location = new System.Drawing.Point(742, 179);
             this.listajogadores.Name = "listajogadores";
             this.listajogadores.RowHeadersWidth = 51;
             this.listajogadores.RowTemplate.Height = 24;
@@ -232,46 +234,6 @@
             this.cmbPosicao.Size = new System.Drawing.Size(121, 24);
             this.cmbPosicao.TabIndex = 23;
             // 
-            // btmAdicionar
-            // 
-            this.btmAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmAdicionar.Location = new System.Drawing.Point(250, 399);
-            this.btmAdicionar.Name = "btmAdicionar";
-            this.btmAdicionar.Size = new System.Drawing.Size(107, 33);
-            this.btmAdicionar.TabIndex = 24;
-            this.btmAdicionar.Text = "Adicionar";
-            this.btmAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(376, 399);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 33);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(510, 399);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 33);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Remover";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(250, 468);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 33);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Atualizar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -286,19 +248,81 @@
             // 
             this.txtID.Location = new System.Drawing.Point(250, 138);
             this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(136, 22);
             this.txtID.TabIndex = 3;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(742, 143);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(736, 22);
+            this.txtPesquisa.TabIndex = 64;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(739, 122);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 16);
+            this.label11.TabIndex = 63;
+            this.label11.Text = "Pesquisa";
+            // 
+            // btmAtualizar
+            // 
+            this.btmAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmAtualizar.Location = new System.Drawing.Point(377, 399);
+            this.btmAtualizar.Name = "btmAtualizar";
+            this.btmAtualizar.Size = new System.Drawing.Size(107, 33);
+            this.btmAtualizar.TabIndex = 62;
+            this.btmAtualizar.Text = "Atualizar";
+            this.btmAtualizar.UseVisualStyleBackColor = true;
+            this.btmAtualizar.Click += new System.EventHandler(this.btmAtualizar_Click);
+            // 
+            // btmEliminar
+            // 
+            this.btmEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmEliminar.Location = new System.Drawing.Point(510, 399);
+            this.btmEliminar.Name = "btmEliminar";
+            this.btmEliminar.Size = new System.Drawing.Size(107, 33);
+            this.btmEliminar.TabIndex = 61;
+            this.btmEliminar.Text = "Eliminar";
+            this.btmEliminar.UseVisualStyleBackColor = true;
+            this.btmEliminar.Click += new System.EventHandler(this.btmEliminar_Click);
+            // 
+            // Limpar
+            // 
+            this.Limpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Limpar.Location = new System.Drawing.Point(623, 399);
+            this.Limpar.Name = "Limpar";
+            this.Limpar.Size = new System.Drawing.Size(107, 33);
+            this.Limpar.TabIndex = 60;
+            this.Limpar.Text = "Limpar";
+            this.Limpar.UseVisualStyleBackColor = true;
+            this.Limpar.Click += new System.EventHandler(this.Limpar_Click);
+            // 
+            // btmInserir
+            // 
+            this.btmInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmInserir.Location = new System.Drawing.Point(249, 399);
+            this.btmInserir.Name = "btmInserir";
+            this.btmInserir.Size = new System.Drawing.Size(107, 33);
+            this.btmInserir.TabIndex = 59;
+            this.btmInserir.Text = "Inserir";
+            this.btmInserir.UseVisualStyleBackColor = true;
+            this.btmInserir.Click += new System.EventHandler(this.btmInserir_Click);
             // 
             // FormJogadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1899, 550);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btmAdicionar);
+            this.Controls.Add(this.txtPesquisa);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.btmAtualizar);
+            this.Controls.Add(this.btmEliminar);
+            this.Controls.Add(this.Limpar);
+            this.Controls.Add(this.btmInserir);
             this.Controls.Add(this.cmbPosicao);
             this.Controls.Add(this.cmbMaoDominante);
             this.Controls.Add(this.cmbID_Equipa);
@@ -351,11 +375,13 @@
         private System.Windows.Forms.ComboBox cmbID_Equipa;
         private System.Windows.Forms.ComboBox cmbMaoDominante;
         private System.Windows.Forms.ComboBox cmbPosicao;
-        private System.Windows.Forms.Button btmAdicionar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btmAtualizar;
+        private System.Windows.Forms.Button btmEliminar;
+        private System.Windows.Forms.Button Limpar;
+        private System.Windows.Forms.Button btmInserir;
     }
 }

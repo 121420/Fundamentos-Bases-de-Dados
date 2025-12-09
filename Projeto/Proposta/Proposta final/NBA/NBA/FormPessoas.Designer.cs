@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btmAdicionar = new System.Windows.Forms.Button();
+            this.btmAtualizar = new System.Windows.Forms.Button();
+            this.btmEliminar = new System.Windows.Forms.Button();
+            this.Limpar = new System.Windows.Forms.Button();
+            this.btmInserir = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listaPessoas = new System.Windows.Forms.DataGridView();
@@ -49,49 +49,55 @@
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.mskData = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.listaPessoas)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button3
+            // btmAtualizar
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(250, 443);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 33);
-            this.button3.TabIndex = 51;
-            this.button3.Text = "Atualizar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btmAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmAtualizar.Location = new System.Drawing.Point(378, 374);
+            this.btmAtualizar.Name = "btmAtualizar";
+            this.btmAtualizar.Size = new System.Drawing.Size(107, 33);
+            this.btmAtualizar.TabIndex = 51;
+            this.btmAtualizar.Text = "Atualizar";
+            this.btmAtualizar.UseVisualStyleBackColor = true;
+            this.btmAtualizar.Click += new System.EventHandler(this.btmAtualizar_Click);
             // 
-            // button2
+            // btmEliminar
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(510, 374);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 33);
-            this.button2.TabIndex = 50;
-            this.button2.Text = "Remover";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btmEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmEliminar.Location = new System.Drawing.Point(511, 374);
+            this.btmEliminar.Name = "btmEliminar";
+            this.btmEliminar.Size = new System.Drawing.Size(107, 33);
+            this.btmEliminar.TabIndex = 50;
+            this.btmEliminar.Text = "Eliminar";
+            this.btmEliminar.UseVisualStyleBackColor = true;
+            this.btmEliminar.Click += new System.EventHandler(this.btmEliminar_Click);
             // 
-            // button1
+            // Limpar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(376, 374);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 33);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Limpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Limpar.Location = new System.Drawing.Point(624, 374);
+            this.Limpar.Name = "Limpar";
+            this.Limpar.Size = new System.Drawing.Size(107, 33);
+            this.Limpar.TabIndex = 49;
+            this.Limpar.Text = "Limpar";
+            this.Limpar.UseVisualStyleBackColor = true;
+            this.Limpar.Click += new System.EventHandler(this.Limpar_Click);
             // 
-            // btmAdicionar
+            // btmInserir
             // 
-            this.btmAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmAdicionar.Location = new System.Drawing.Point(250, 374);
-            this.btmAdicionar.Name = "btmAdicionar";
-            this.btmAdicionar.Size = new System.Drawing.Size(107, 33);
-            this.btmAdicionar.TabIndex = 48;
-            this.btmAdicionar.Text = "Adicionar";
-            this.btmAdicionar.UseVisualStyleBackColor = true;
+            this.btmInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmInserir.Location = new System.Drawing.Point(250, 374);
+            this.btmInserir.Name = "btmInserir";
+            this.btmInserir.Size = new System.Drawing.Size(107, 33);
+            this.btmInserir.TabIndex = 48;
+            this.btmInserir.Text = "Inserir";
+            this.btmInserir.UseVisualStyleBackColor = true;
+            this.btmInserir.Click += new System.EventHandler(this.btmInserir_Click);
             // 
             // txtEmail
             // 
@@ -116,7 +122,7 @@
             this.listaPessoas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.listaPessoas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listaPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaPessoas.Location = new System.Drawing.Point(737, 101);
+            this.listaPessoas.Location = new System.Drawing.Point(737, 154);
             this.listaPessoas.Name = "listaPessoas";
             this.listaPessoas.RowHeadersWidth = 51;
             this.listaPessoas.RowTemplate.Height = 24;
@@ -252,18 +258,37 @@
             this.mskData.TabIndex = 56;
             this.mskData.ValidatingType = typeof(System.DateTime);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(740, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 16);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "Pesquisa";
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(743, 118);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(736, 22);
+            this.txtPesquisa.TabIndex = 58;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
+            // 
             // FormPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1513, 543);
+            this.Controls.Add(this.txtPesquisa);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.mskData);
             this.Controls.Add(this.cmbGenero);
             this.Controls.Add(this.txtTelefone);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btmAdicionar);
+            this.Controls.Add(this.btmAtualizar);
+            this.Controls.Add(this.btmEliminar);
+            this.Controls.Add(this.Limpar);
+            this.Controls.Add(this.btmInserir);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.listaPessoas);
             this.Controls.Add(this.label9);
@@ -290,10 +315,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btmAdicionar;
+        private System.Windows.Forms.Button btmAtualizar;
+        private System.Windows.Forms.Button btmEliminar;
+        private System.Windows.Forms.Button Limpar;
+        private System.Windows.Forms.Button btmInserir;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView listaPessoas;
@@ -311,5 +336,7 @@
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.ComboBox cmbGenero;
         private System.Windows.Forms.MaskedTextBox mskData;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPesquisa;
     }
 }

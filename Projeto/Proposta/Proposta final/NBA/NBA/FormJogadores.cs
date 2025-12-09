@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
 
 namespace NBA
 {
@@ -22,7 +23,25 @@ namespace NBA
 
         }
 
-
+        // Dentro da classe FormJogadores
+        private string ObterCCSelecionado()
+        {
+            // O campo CC é a chave primária/identificador que vamos usar para operações
+            string cc = txtCC.Text.Trim();
+            if (string.IsNullOrEmpty(cc) || cc.Length < 8) // Assumindo CC tem um tamanho mínimo
+            {
+                MessageBox.Show("Por favor, selecione um jogador na lista ou insira um CC válido.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            return cc;
+        }
+        // Dentro da classe FormJogadores
+       
+        // Associar ao evento Click do botão Limpar (Exemplo: btnLimpar_Click)
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -42,7 +61,8 @@ namespace NBA
         {
             cmbMaoDominante.Items.AddRange(new string[] { "Direita", "Esquerda" });
             cmbPosicao.Items.AddRange(new string[] { "Base (PG)", "Extremo (SF)", "Poste (C)", "Extremo-Base (SG)", "Extremo-P. (PF)" });
-           
+            txtID.Enabled = false;
+
 
 
             //carregar Equipas
@@ -50,6 +70,8 @@ namespace NBA
             CarregarJogadores();
 
         }
+        // Dentro da classe FormJogadores
+        // Dentro da classe FormJogadores
         private void CarregarEquipas()
         {
             DataTable DT = new DataTable();
@@ -62,16 +84,21 @@ namespace NBA
 
                     using (SqlCommand cmd = new SqlCommand(queryEquipas, con))
                     {
-                       using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                       { 
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
                             adapter.Fill(DT);
 
+                            // 1. Configurar membros ANTES de atribuir a fonte de dados (mais seguro)
+                            cmbID_Equipa.DisplayMember = "Nome";
+                            cmbID_Equipa.ValueMember = "ID_Equipas";
+
+                            // 2. Tentar limpar antes ou depois. (Eu sugiro mover a limpeza para o LimparCampos())
+                            // cmbID_Equipa.SelectedIndex = -1; // <-- Remova ou comente esta linha
+
+                            // 3. Atribuir a fonte de dados
                             cmbID_Equipa.DataSource = DT;
-                       }
-
-                        
+                        }
                     }
-
                 }
             }
             catch (Exception erro)
@@ -79,7 +106,9 @@ namespace NBA
                 MessageBox.Show("Erro ao carregar Equipas: " + erro.Message);
             }
         }
-        private void CarregarJogadores()
+
+       
+        private void CarregarJogadores(string nomePesquisa = "")
         {
             DataTable jogadoresDT = new DataTable();
             try
@@ -87,21 +116,33 @@ namespace NBA
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string queryJogadore = "SELECT * from Jogadores";
 
-                    using (SqlCommand cmd = new SqlCommand(queryJogadore, con))
+                    string queryJogadores = "SELECT * from Jogadores";
+
+                    if (!string.IsNullOrEmpty(nomePesquisa))
                     {
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        // Adiciona a cláusula WHERE para filtrar pelo Nome_camisola
+                        queryJogadores += " WHERE Nome_camisola LIKE @NomeParam";
+                    }
 
+                    queryJogadores += " ORDER BY Nome_camisola"; // Ordenar para melhor visualização
+
+                    using (SqlCommand cmd = new SqlCommand(queryJogadores, con))
+                    {
+                        if (!string.IsNullOrEmpty(nomePesquisa))
+                        {
+                            // Adiciona o parâmetro SQL para a pesquisa LIKE
+                            cmd.Parameters.AddWithValue("@NomeParam", "%" + nomePesquisa + "%");
+                        }
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         adapter.Fill(jogadoresDT);
 
                         listajogadores.DataSource = jogadoresDT;
-                        cmbID_Equipa.DisplayMember = "Nome";
-                        cmbID_Equipa.ValueMember = "ID_Equipas";
+
+                       
 
                     }
-
-
                 }
             }
             catch (Exception erro)
@@ -109,7 +150,6 @@ namespace NBA
                 MessageBox.Show("Erro ao carregar Jogadores" + erro.Message);
             }
         }
-
         private void listajogadores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -153,5 +193,325 @@ namespace NBA
 
             }
         }
+
+
+        private void btmAtualizar_Click(object sender, EventArgs e)
+        {
+            string cc = ObterCCSelecionado();
+            if (cc == null) return;
+
+            // 1. Obter os dados atualizados do formulário
+            string nomeCamisola = txtNomeCamisola.Text.Trim();
+            string posicao = cmbPosicao.Text;
+            string maoDominante = cmbMaoDominante.Text;
+
+            // Tratamento de valores que podem ser null ou que precisam de conversão
+            object idEquipa = cmbID_Equipa.SelectedValue;
+
+            // Converter altura e peso aceitando ponto ou vírgula
+            string alturaTexto = txtAltura.Text.Replace('.', ',');
+            string pesoTexto = txtPeso.Text.Replace('.', ',');
+
+            float altura, peso;
+            int numero;
+
+            if (!float.TryParse(alturaTexto, out altura) ||
+                !float.TryParse(pesoTexto, out peso) ||
+                !int.TryParse(txtNumero.Text, out numero))
+            {
+                MessageBox.Show("Altura, peso ou número estão inválidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    // A query usa a cláusula WHERE para garantir que apenas o jogador com o @CC seja atualizado.
+                    string queryAtualizar = "UPDATE Jogadores SET ID_Equipa = @ID_Equipa, Nome_camisola = @Nome_camisola, Posicao = @Posicao, Altura = @Altura, Peso = @Peso, Numero = @Numero, Mao_Dominante = @Mao_Dominante WHERE CC = @CC";
+
+                    using (SqlCommand cmd = new SqlCommand(queryAtualizar, con))
+                    {
+                        // Verifica se uma equipa foi selecionada
+                        if (idEquipa != null && idEquipa != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@ID_Equipa", idEquipa);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@ID_Equipa", DBNull.Value); // Permite definir ID_Equipa como NULL
+                        }
+
+                        cmd.Parameters.AddWithValue("@Nome_camisola", nomeCamisola);
+                        cmd.Parameters.AddWithValue("@Posicao", posicao);
+                        cmd.Parameters.AddWithValue("@Altura", altura);
+                        cmd.Parameters.AddWithValue("@Peso", peso);
+                        cmd.Parameters.AddWithValue("@Numero", numero);
+                        cmd.Parameters.AddWithValue("@Mao_Dominante", maoDominante);
+                        cmd.Parameters.AddWithValue("@CC", cc);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Jogador atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CarregarJogadores(); // Recarrega a lista
+                            LimparCampos(); // Limpa os campos após a atualização
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nenhum registo foi atualizado. O jogador pode não existir.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao atualizar jogador: " + erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btmEliminar_Click(object sender, EventArgs e)
+        {
+            string cc = ObterCCSelecionado();
+            if (cc == null) return;
+
+            // Confirmação para evitar exclusões acidentais
+            DialogResult result = MessageBox.Show($"Tem certeza que deseja eliminar o jogador com CC: {cc}? Esta ação é irreversível.", "Confirmar Eliminação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        con.Open();
+                        // A query usa a cláusula WHERE para garantir que apenas o jogador com o @CC seja eliminado.
+                        string queryEliminar = "DELETE FROM Jogadores WHERE CC = @CC";
+
+                        using (SqlCommand cmd = new SqlCommand(queryEliminar, con))
+                        {
+                            cmd.Parameters.AddWithValue("@CC", cc);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Jogador eliminado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                CarregarJogadores(); // Recarrega a lista
+                                LimparCampos(); // Limpa os campos após a eliminação
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nenhum registo foi eliminado. O jogador pode não existir.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    // Se houver restrições de chave estrangeira, o jogador pode estar associado a outros dados (ex: estatísticas).
+                    MessageBox.Show("Erro SQL ao eliminar jogador. Certifique-se de que não existem dados relacionados: " + ex.Message, "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro ao eliminar jogador: " + erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        
+         
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            CarregarJogadores(txtPesquisa.Text);
+        }
+        private void LimparCampos()
+        {
+            txtID.Enabled = false;
+            txtID.Text = string.Empty;
+            txtCC.Text = string.Empty;
+            txtCC.Enabled = true; // Habilita o campo CC para nova inserção
+            txtNomeCamisola.Text = string.Empty;
+            txtAltura.Text = string.Empty;
+            txtPeso.Text = string.Empty;
+            txtNumero.Text = string.Empty;
+            cmbMaoDominante.SelectedIndex = -1;
+            cmbPosicao.SelectedIndex = -1;
+            cmbID_Equipa.SelectedIndex = -1;
+
+            // Desselecionar qualquer linha na DataGridView
+            listajogadores.ClearSelection();
+        }
+
+        private void Limpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+
+        private int ObterProximoID()
+        {
+            int proximoID = 1; // Valor padrão se a tabela estiver vazia
+
+            try
+            {
+                // Use a sua connectionString
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    // A query MAX retorna o maior valor de ID_Jogador.
+                    string queryMaxID = "SELECT MAX(ID_Jogador) FROM Jogadores";
+
+                    using (SqlCommand cmd = new SqlCommand(queryMaxID, con))
+                    {
+                        // ExecuteScalar retorna o primeiro valor (o MAX ID)
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null && resultado != DBNull.Value)
+                        {
+                            // Se houver dados, o próximo ID será o valor máximo + 1
+                            proximoID = Convert.ToInt32(resultado) + 1;
+                        }
+                        // Se o resultado for nulo (tabela vazia), retorna o valor padrão 1.
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao obter o próximo ID: " + erro.Message, "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Retornar 0 em caso de erro grave para evitar inserções inválidas
+                return 0;
+            }
+            return proximoID;
+        }
+        
+        private bool CCExisteNaBD(string cc)
+    {
+        string queryVerificarCC = "SELECT COUNT(*) FROM Pessoas WHERE CC = @CC";
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(queryVerificarCC, con))
+                {
+                    cmd.Parameters.AddWithValue("@CC", cc);
+
+                    // ExecuteScalar retorna o número de linhas encontradas com o CC
+                    int count = (int)cmd.ExecuteScalar();
+
+                    return count <0 ; // Retorna true se count > 0 (CC nao for encontrado)
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Erro ao verificar CC na base de dados: " + ex.Message, "Erro de BD", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return true; // É mais seguro retornar true em caso de erro para evitar dados duplicados
+        }
+    }
+    private void btmInserir_Click(object sender, EventArgs e)
+        {
+
+            // --- 1. Geração do ID e Obtenção de Dados ---
+            int idJogador = ObterProximoID();
+
+            // Se a obtenção do ID falhar (retorna 0), cancela a operação
+            if (idJogador == 0)
+            {
+                return;
+            }
+
+            string cc = txtCC.Text.Trim();
+            
+            string nomeCamisola = txtNomeCamisola.Text.Trim();
+            string posicao = cmbPosicao.Text;
+            string maoDominante = cmbMaoDominante.Text;
+            object idEquipa = cmbID_Equipa.SelectedValue;
+
+            // --- 2. Preparação de Altura e Peso (Flexibilidade de Separador) ---
+            // Substitui a vírgula por ponto. O TryParse a seguir usará o ponto.
+            string alturaString = txtAltura.Text.Trim().Replace(',', '.');
+            string pesoString = txtPeso.Text.Trim().Replace(',', '.');
+
+            float altura, peso;
+            int numero;
+
+            // --- 3. Validação Completa ---
+            if (string.IsNullOrEmpty(cc) || string.IsNullOrEmpty(nomeCamisola) || string.IsNullOrEmpty(posicao) || string.IsNullOrEmpty(maoDominante) ||
+                // Tenta converter usando a Cultura Invariant (ponto decimal)
+                !float.TryParse(alturaString, NumberStyles.Float, CultureInfo.InvariantCulture, out altura) ||
+                !float.TryParse(pesoString, NumberStyles.Float, CultureInfo.InvariantCulture, out peso) ||
+                !int.TryParse(txtNumero.Text, out numero))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos obrigatórios e verifique se Altura e Peso estão no formato numérico correto (ponto ou vírgula).", "Dados Inválidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            
+
+            // --- 4. Inserção no Banco de Dados ---
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    // ID_Jogador foi adicionado à query
+                    string queryInserir = "INSERT INTO Jogadores (ID_Jogador, CC, ID_Equipa, Nome_camisola, Posicao, Altura, Peso, Numero, Mao_Dominante) VALUES (@ID_Jogador, @CC, @ID_Equipa, @Nome_camisola, @Posicao, @Altura, @Peso, @Numero, @Mao_Dominante)";
+
+                    using (SqlCommand cmd = new SqlCommand(queryInserir, con))
+                    {
+                        // O ID agora vem do método ObterProximoID()
+                        cmd.Parameters.AddWithValue("@ID_Jogador", idJogador);
+
+                        cmd.Parameters.AddWithValue("@CC", cc);
+
+                        // Tratamento de ID_Equipa (pode ser NULL) - Correção da captura
+                        if (idEquipa != null && idEquipa != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@ID_Equipa", idEquipa);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@ID_Equipa", DBNull.Value); // Insere NULL se não houver equipa
+                        }
+
+                        // Adicionar outros parâmetros
+                        cmd.Parameters.AddWithValue("@Nome_camisola", nomeCamisola);
+                        cmd.Parameters.AddWithValue("@Posicao", posicao);
+                        cmd.Parameters.AddWithValue("@Altura", altura); // O valor float será passado corretamente
+                        cmd.Parameters.AddWithValue("@Peso", peso);
+                        cmd.Parameters.AddWithValue("@Numero", numero);
+                        cmd.Parameters.AddWithValue("@Mao_Dominante", maoDominante);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        // Feedback
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Jogador inserido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CarregarJogadores();
+                            LimparCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nenhum registo foi inserido. Verifique os dados.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Erro SQL ao inserir jogador: " + ex.Message, "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao inserir jogador: " + erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }
