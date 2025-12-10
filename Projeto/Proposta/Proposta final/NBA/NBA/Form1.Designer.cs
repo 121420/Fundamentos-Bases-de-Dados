@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btm_Pessoas = new System.Windows.Forms.Button();
             this.Btm_Ligas = new System.Windows.Forms.Button();
             this.btm_jogos = new System.Windows.Forms.Button();
             this.btm_Equipas = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.fundo = new System.Windows.Forms.PictureBox();
             this.PainelContent = new System.Windows.Forms.Panel();
-            this.btm_Pessoas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +66,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(217, 672);
             this.panel1.TabIndex = 0;
+            // 
+            // btm_Pessoas
+            // 
+            this.btm_Pessoas.FlatAppearance.BorderSize = 0;
+            this.btm_Pessoas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btm_Pessoas.ForeColor = System.Drawing.Color.White;
+            this.btm_Pessoas.Image = ((System.Drawing.Image)(resources.GetObject("btm_Pessoas.Image")));
+            this.btm_Pessoas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btm_Pessoas.Location = new System.Drawing.Point(-3, 364);
+            this.btm_Pessoas.Name = "btm_Pessoas";
+            this.btm_Pessoas.Size = new System.Drawing.Size(217, 57);
+            this.btm_Pessoas.TabIndex = 10;
+            this.btm_Pessoas.Text = "Pessoas";
+            this.btm_Pessoas.UseVisualStyleBackColor = true;
+            this.btm_Pessoas.Click += new System.EventHandler(this.btm_Pessoas_Click);
             // 
             // Btm_Ligas
             // 
@@ -181,7 +196,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(217, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1707, 17);
+            this.panel2.Size = new System.Drawing.Size(1712, 17);
             this.panel2.TabIndex = 1;
             // 
             // panel4
@@ -191,7 +206,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1924, 672);
+            this.panel4.Size = new System.Drawing.Size(1929, 672);
             this.panel4.TabIndex = 3;
             // 
             // fundo
@@ -200,10 +215,11 @@
             this.fundo.Image = ((System.Drawing.Image)(resources.GetObject("fundo.Image")));
             this.fundo.Location = new System.Drawing.Point(0, 0);
             this.fundo.Name = "fundo";
-            this.fundo.Size = new System.Drawing.Size(1924, 672);
+            this.fundo.Size = new System.Drawing.Size(1929, 672);
             this.fundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fundo.TabIndex = 3;
             this.fundo.TabStop = false;
+            this.fundo.WaitOnLoad = true;
             this.fundo.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // PainelContent
@@ -212,29 +228,15 @@
             this.PainelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PainelContent.Location = new System.Drawing.Point(0, 0);
             this.PainelContent.Name = "PainelContent";
-            this.PainelContent.Size = new System.Drawing.Size(1924, 672);
+            this.PainelContent.Size = new System.Drawing.Size(1929, 672);
             this.PainelContent.TabIndex = 4;
-            // 
-            // btm_Pessoas
-            // 
-            this.btm_Pessoas.FlatAppearance.BorderSize = 0;
-            this.btm_Pessoas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btm_Pessoas.ForeColor = System.Drawing.Color.White;
-            this.btm_Pessoas.Image = ((System.Drawing.Image)(resources.GetObject("btm_Pessoas.Image")));
-            this.btm_Pessoas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btm_Pessoas.Location = new System.Drawing.Point(-3, 364);
-            this.btm_Pessoas.Name = "btm_Pessoas";
-            this.btm_Pessoas.Size = new System.Drawing.Size(217, 57);
-            this.btm_Pessoas.TabIndex = 10;
-            this.btm_Pessoas.Text = "Pessoas";
-            this.btm_Pessoas.UseVisualStyleBackColor = true;
-            this.btm_Pessoas.Click += new System.EventHandler(this.btm_Pessoas_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 672);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(1929, 672);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
@@ -242,6 +244,7 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -260,7 +263,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox fundo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btm_Jogador;
         private System.Windows.Forms.Button btm_jogos;
@@ -269,6 +271,7 @@
         private System.Windows.Forms.Panel PainelContent;
         private System.Windows.Forms.Button Btm_Ligas;
         private System.Windows.Forms.Button btm_Pessoas;
+        internal System.Windows.Forms.PictureBox fundo;
     }
 }
 

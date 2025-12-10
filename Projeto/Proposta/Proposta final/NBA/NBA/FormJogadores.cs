@@ -23,7 +23,6 @@ namespace NBA
 
         }
 
-        // Dentro da classe FormJogadores
         private string ObterCCSelecionado()
         {
             // O campo CC é a chave primária/identificador que vamos usar para operações
@@ -35,9 +34,7 @@ namespace NBA
             }
             return cc;
         }
-        // Dentro da classe FormJogadores
-       
-        // Associar ao evento Click do botão Limpar (Exemplo: btnLimpar_Click)
+        
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
@@ -70,8 +67,7 @@ namespace NBA
             CarregarJogadores();
 
         }
-        // Dentro da classe FormJogadores
-        // Dentro da classe FormJogadores
+        
         private void CarregarEquipas()
         {
             DataTable DT = new DataTable();
@@ -107,7 +103,6 @@ namespace NBA
             }
         }
 
-       
         private void CarregarJogadores(string nomePesquisa = "")
         {
             DataTable jogadoresDT = new DataTable();
@@ -157,7 +152,7 @@ namespace NBA
 
         private void listajogadores_SelectionChanged(object sender, EventArgs e)
         {
-            if(listajogadores.SelectedRows.Count >0)
+            if (listajogadores.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = listajogadores.SelectedRows[0];
 
@@ -167,7 +162,7 @@ namespace NBA
 
                 //ID_Equpas
                 object equipaID = selectedRow.Cells["ID_Equipa"].Value;
-                if(equipaID != null && equipaID != DBNull.Value)
+                if (equipaID != null && equipaID != DBNull.Value)
                 {
                     int idEquipa = Convert.ToInt32(equipaID);
 
@@ -175,7 +170,7 @@ namespace NBA
                 }
                 else { cmbID_Equipa.SelectedIndex = -1; }
 
-                  
+
                 txtNomeCamisola.Text = selectedRow.Cells["Nome_camisola"].Value.ToString();
 
                 string posicao = selectedRow.Cells["Posicao"].Value.ToString();
@@ -193,7 +188,6 @@ namespace NBA
 
             }
         }
-
 
         private void btmAtualizar_Click(object sender, EventArgs e)
         {
@@ -320,8 +314,7 @@ namespace NBA
                 }
             }
         }
-        
-         
+
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             CarregarJogadores(txtPesquisa.Text);
@@ -348,7 +341,6 @@ namespace NBA
         {
             LimparCampos();
         }
-
 
         private int ObterProximoID()
         {
@@ -385,34 +377,8 @@ namespace NBA
             }
             return proximoID;
         }
-        
-        private bool CCExisteNaBD(string cc)
-    {
-        string queryVerificarCC = "SELECT COUNT(*) FROM Pessoas WHERE CC = @CC";
-
-        try
-        {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand(queryVerificarCC, con))
-                {
-                    cmd.Parameters.AddWithValue("@CC", cc);
-
-                    // ExecuteScalar retorna o número de linhas encontradas com o CC
-                    int count = (int)cmd.ExecuteScalar();
-
-                    return count <0 ; // Retorna true se count > 0 (CC nao for encontrado)
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Erro ao verificar CC na base de dados: " + ex.Message, "Erro de BD", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return true; // É mais seguro retornar true em caso de erro para evitar dados duplicados
-        }
-    }
-    private void btmInserir_Click(object sender, EventArgs e)
+    
+        private void btmInserir_Click(object sender, EventArgs e)
         {
 
             // --- 1. Geração do ID e Obtenção de Dados ---
@@ -512,6 +478,9 @@ namespace NBA
             }
         }
 
+        private void cmbMaoDominante_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

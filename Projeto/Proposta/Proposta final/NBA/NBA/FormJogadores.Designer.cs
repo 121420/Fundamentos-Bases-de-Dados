@@ -78,7 +78,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1899, 67);
+            this.panel1.Size = new System.Drawing.Size(1919, 67);
             this.panel1.TabIndex = 1;
             // 
             // txtCC
@@ -205,7 +205,7 @@
             this.listajogadores.Name = "listajogadores";
             this.listajogadores.RowHeadersWidth = 51;
             this.listajogadores.RowTemplate.Height = 24;
-            this.listajogadores.Size = new System.Drawing.Size(742, 361);
+            this.listajogadores.Size = new System.Drawing.Size(922, 361);
             this.listajogadores.TabIndex = 20;
             this.listajogadores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listajogadores_CellContentClick);
             this.listajogadores.SelectionChanged += new System.EventHandler(this.listajogadores_SelectionChanged);
@@ -225,6 +225,7 @@
             this.cmbMaoDominante.Name = "cmbMaoDominante";
             this.cmbMaoDominante.Size = new System.Drawing.Size(121, 24);
             this.cmbMaoDominante.TabIndex = 22;
+            this.cmbMaoDominante.SelectedIndexChanged += new System.EventHandler(this.cmbMaoDominante_SelectedIndexChanged);
             // 
             // cmbPosicao
             // 
@@ -316,7 +317,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1899, 550);
+            this.ClientSize = new System.Drawing.Size(1919, 550);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btmAtualizar);
