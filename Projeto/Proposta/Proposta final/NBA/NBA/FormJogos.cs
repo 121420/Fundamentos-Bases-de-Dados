@@ -24,6 +24,8 @@ namespace NBA
         {
             cmbFase.Items.AddRange(new string[] {"Regular Season" });
             txtIdJogo.Enabled = false;
+            cmbEquipaFora.SelectedIndex = -1;
+            cmbEquipaCasa.SelectedIndex = -1;
 
             CarregarEquipasDropDowns();
             CarregarListaJogos();
@@ -33,7 +35,6 @@ namespace NBA
         {
 
         }
-
         
         //Funcoes
         private void CarregarListaJogos()
@@ -134,6 +135,80 @@ namespace NBA
         private void listaJogos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        
+        private void LimparCampo()
+        {
+            txtIdJogo.Text = string.Empty;
+            txtIdJogo.Enabled = true;
+            txtIdEstadio.Text = string.Empty;
+            txtData.Text = string.Empty;
+            cmbEquipaCasa.SelectedIndex = -1;
+            cmbEquipaFora.SelectedIndex = -1;
+            txtPontosCasa.Text = string.Empty;
+            txtPontosFora.Text = string.Empty;
+            cmbFase.SelectedIndex = -1;
+
+        }
+
+        private void Limpar_Click(object sender, EventArgs e)
+        {
+            LimparCampo();
+        }
+
+        private void btmInserir_Click(object sender, EventArgs e)
+        {
+            string idJogo = txtIdJogo.Text.Trim();
+            string idEstadio = txtIdEstadio.Text.Trim();
+            string data = txtData.Text.Trim();
+            string equipaCasa = cmbEquipaCasa.Text;
+            string equipaFora = cmbEquipaFora.Text;
+            string pontosCasa = txtPontosCasa.Text.Trim();
+            string pontoFora = txtPontosFora.Text.Trim();
+            string fase = cmbFase.Text;
+            string idtemporada = txtIDTemporada.Text.Trim();
+
+            using(SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string query = "INSERT INTO JOGO (ID_Jogo,dataHora_jogo,ID_estadio,ID_equipa_Casa,ID_equipa_Fora,pontos_casa,pontos_fora,fase,ID_Temporada) Values (@ID_Jogo,@dataHora_jogo,@ID_estadio,@ID_equipa_Casa,@ID_equipa_Fora,@pontos_casa,@pontos_fora,@fase,@ID_Temporada)";
+
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@ID_Jogo", idJogo);
+                        cmd.Parameters.AddWithValue("dataHora_jogo", data);
+                        cmd.Parameters.AddWithValue("@ID_estadio", idEstadio);
+                        cmd.Parameters.AddWithValue("@ID_equipa_Casa", equipaCasa);
+                        cmd.Parameters.AddWithValue("@ID_equipa_Fora", equipaFora);
+                        cmd.Parameters.AddWithValue("@pontos_casa", pontosCasa);
+                        cmd.Parameters.AddWithValue("@pontos_fora", pontoFora);
+                        cmd.Parameters.AddWithValue("@fase", fase);
+                        cmd.Parameters.AddWithValue("@ID_Temporada", idtemporada);
+
+
+                        int rowaffect = cmd.ExecuteNonQuery();
+
+                        if (rowaffect > 0)
+                        {
+                            MessageBox.Show("Jogo Adicionado COm Sucesso !", "Sucesso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            LimparCampo();
+                            CarregarListaJogos();
+                            
+                        }
+                    }
+                    
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Erro SQL (CC duplicado ou formato inválido): " + ex.Message, "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro ao inserir Pessoa: " + erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

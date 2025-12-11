@@ -52,6 +52,8 @@
             this.cmbEquipaCasa = new System.Windows.Forms.ComboBox();
             this.cmbFase = new System.Windows.Forms.ComboBox();
             this.txtData = new System.Windows.Forms.MaskedTextBox();
+            this.txtIDTemporada = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaJogos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +114,7 @@
             this.Limpar.TabIndex = 86;
             this.Limpar.Text = "Limpar";
             this.Limpar.UseVisualStyleBackColor = true;
+            this.Limpar.Click += new System.EventHandler(this.Limpar_Click);
             // 
             // btmInserir
             // 
@@ -122,6 +125,7 @@
             this.btmInserir.TabIndex = 85;
             this.btmInserir.Text = "Inserir";
             this.btmInserir.UseVisualStyleBackColor = true;
+            this.btmInserir.Click += new System.EventHandler(this.btmInserir_Click);
             // 
             // listaJogos
             // 
@@ -279,11 +283,30 @@
             this.txtData.TabIndex = 98;
             this.txtData.ValidatingType = typeof(System.DateTime);
             // 
+            // txtIDTemporada
+            // 
+            this.txtIDTemporada.Location = new System.Drawing.Point(426, 325);
+            this.txtIDTemporada.Name = "txtIDTemporada";
+            this.txtIDTemporada.Size = new System.Drawing.Size(154, 22);
+            this.txtIDTemporada.TabIndex = 100;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(422, 298);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(163, 30);
+            this.label3.TabIndex = 99;
+            this.label3.Text = "ID Temporada";
+            // 
             // FormJogos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2009, 543);
+            this.Controls.Add(this.txtIDTemporada);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtData);
             this.Controls.Add(this.cmbFase);
             this.Controls.Add(this.cmbEquipaCasa);
@@ -344,5 +367,7 @@
         private System.Windows.Forms.ComboBox cmbEquipaCasa;
         private System.Windows.Forms.ComboBox cmbFase;
         private System.Windows.Forms.MaskedTextBox txtData;
+        private System.Windows.Forms.TextBox txtIDTemporada;
+        private System.Windows.Forms.Label label3;
     }
 }
