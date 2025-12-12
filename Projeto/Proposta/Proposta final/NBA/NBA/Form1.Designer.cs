@@ -63,8 +63,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(217, 672);
+            this.panel1.Size = new System.Drawing.Size(163, 546);
             this.panel1.TabIndex = 0;
             // 
             // btm_Pessoas
@@ -74,9 +75,10 @@
             this.btm_Pessoas.ForeColor = System.Drawing.Color.White;
             this.btm_Pessoas.Image = ((System.Drawing.Image)(resources.GetObject("btm_Pessoas.Image")));
             this.btm_Pessoas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btm_Pessoas.Location = new System.Drawing.Point(-3, 364);
+            this.btm_Pessoas.Location = new System.Drawing.Point(-2, 296);
+            this.btm_Pessoas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btm_Pessoas.Name = "btm_Pessoas";
-            this.btm_Pessoas.Size = new System.Drawing.Size(217, 57);
+            this.btm_Pessoas.Size = new System.Drawing.Size(163, 46);
             this.btm_Pessoas.TabIndex = 10;
             this.btm_Pessoas.Text = "Pessoas";
             this.btm_Pessoas.UseVisualStyleBackColor = true;
@@ -89,9 +91,10 @@
             this.Btm_Ligas.ForeColor = System.Drawing.Color.White;
             this.Btm_Ligas.Image = ((System.Drawing.Image)(resources.GetObject("Btm_Ligas.Image")));
             this.Btm_Ligas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btm_Ligas.Location = new System.Drawing.Point(0, 480);
+            this.Btm_Ligas.Location = new System.Drawing.Point(0, 390);
+            this.Btm_Ligas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btm_Ligas.Name = "Btm_Ligas";
-            this.Btm_Ligas.Size = new System.Drawing.Size(217, 57);
+            this.Btm_Ligas.Size = new System.Drawing.Size(163, 46);
             this.Btm_Ligas.TabIndex = 9;
             this.Btm_Ligas.Text = "Ligas";
             this.Btm_Ligas.UseVisualStyleBackColor = true;
@@ -104,9 +107,10 @@
             this.btm_jogos.ForeColor = System.Drawing.Color.White;
             this.btm_jogos.Image = ((System.Drawing.Image)(resources.GetObject("btm_jogos.Image")));
             this.btm_jogos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btm_jogos.Location = new System.Drawing.Point(-3, 417);
+            this.btm_jogos.Location = new System.Drawing.Point(-2, 339);
+            this.btm_jogos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btm_jogos.Name = "btm_jogos";
-            this.btm_jogos.Size = new System.Drawing.Size(217, 57);
+            this.btm_jogos.Size = new System.Drawing.Size(163, 46);
             this.btm_jogos.TabIndex = 8;
             this.btm_jogos.Text = "Jogos";
             this.btm_jogos.UseVisualStyleBackColor = true;
@@ -119,9 +123,10 @@
             this.btm_Equipas.ForeColor = System.Drawing.Color.White;
             this.btm_Equipas.Image = ((System.Drawing.Image)(resources.GetObject("btm_Equipas.Image")));
             this.btm_Equipas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btm_Equipas.Location = new System.Drawing.Point(-3, 310);
+            this.btm_Equipas.Location = new System.Drawing.Point(-2, 252);
+            this.btm_Equipas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btm_Equipas.Name = "btm_Equipas";
-            this.btm_Equipas.Size = new System.Drawing.Size(217, 60);
+            this.btm_Equipas.Size = new System.Drawing.Size(163, 49);
             this.btm_Equipas.TabIndex = 6;
             this.btm_Equipas.Text = "Equipas";
             this.btm_Equipas.UseVisualStyleBackColor = true;
@@ -134,9 +139,10 @@
             this.btm_Treinadores.ForeColor = System.Drawing.Color.White;
             this.btm_Treinadores.Image = ((System.Drawing.Image)(resources.GetObject("btm_Treinadores.Image")));
             this.btm_Treinadores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btm_Treinadores.Location = new System.Drawing.Point(-3, 257);
+            this.btm_Treinadores.Location = new System.Drawing.Point(-2, 209);
+            this.btm_Treinadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btm_Treinadores.Name = "btm_Treinadores";
-            this.btm_Treinadores.Size = new System.Drawing.Size(217, 57);
+            this.btm_Treinadores.Size = new System.Drawing.Size(163, 46);
             this.btm_Treinadores.TabIndex = 5;
             this.btm_Treinadores.Text = "Treinadores";
             this.btm_Treinadores.UseVisualStyleBackColor = true;
@@ -147,9 +153,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(68, 164);
+            this.label1.Location = new System.Drawing.Point(51, 133);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 29);
+            this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Painel";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -161,9 +168,10 @@
             this.btm_Jogador.ForeColor = System.Drawing.Color.White;
             this.btm_Jogador.Image = ((System.Drawing.Image)(resources.GetObject("btm_Jogador.Image")));
             this.btm_Jogador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btm_Jogador.Location = new System.Drawing.Point(0, 196);
+            this.btm_Jogador.Location = new System.Drawing.Point(0, 159);
+            this.btm_Jogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btm_Jogador.Name = "btm_Jogador";
-            this.btm_Jogador.Size = new System.Drawing.Size(217, 63);
+            this.btm_Jogador.Size = new System.Drawing.Size(163, 51);
             this.btm_Jogador.TabIndex = 3;
             this.btm_Jogador.Text = "Jogadores";
             this.btm_Jogador.UseVisualStyleBackColor = true;
@@ -174,17 +182,19 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(217, 135);
+            this.panel3.Size = new System.Drawing.Size(163, 110);
             this.panel3.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 123);
+            this.pictureBox1.Size = new System.Drawing.Size(163, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -194,9 +204,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(217, 0);
+            this.panel2.Location = new System.Drawing.Point(163, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1712, 17);
+            this.panel2.Size = new System.Drawing.Size(1280, 14);
             this.panel2.TabIndex = 1;
             // 
             // panel4
@@ -205,8 +216,9 @@
             this.panel4.Controls.Add(this.PainelContent);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1929, 672);
+            this.panel4.Size = new System.Drawing.Size(1443, 546);
             this.panel4.TabIndex = 3;
             // 
             // fundo
@@ -214,8 +226,9 @@
             this.fundo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fundo.Image = ((System.Drawing.Image)(resources.GetObject("fundo.Image")));
             this.fundo.Location = new System.Drawing.Point(0, 0);
+            this.fundo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fundo.Name = "fundo";
-            this.fundo.Size = new System.Drawing.Size(1929, 672);
+            this.fundo.Size = new System.Drawing.Size(1443, 546);
             this.fundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fundo.TabIndex = 3;
             this.fundo.TabStop = false;
@@ -227,20 +240,22 @@
             this.PainelContent.BackColor = System.Drawing.Color.Transparent;
             this.PainelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PainelContent.Location = new System.Drawing.Point(0, 0);
+            this.PainelContent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PainelContent.Name = "PainelContent";
-            this.PainelContent.Size = new System.Drawing.Size(1929, 672);
+            this.PainelContent.Size = new System.Drawing.Size(1443, 546);
             this.PainelContent.TabIndex = 4;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1929, 672);
+            this.ClientSize = new System.Drawing.Size(1443, 546);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

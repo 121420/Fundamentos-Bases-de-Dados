@@ -129,6 +129,8 @@ namespace NBA
                     DateTime dataNasc = (DateTime)selected.Cells["dataHora_jogo"].Value;
                     txtData.Text = dataNasc.ToString("dd/MM/yyyy HH:mm:ss");
                 }
+                string idTemporada = selected.Cells["ID_Temporada"].Value.ToString();
+                txtIDTemporada.Text = idTemporada;
             }
         }
 
@@ -148,7 +150,8 @@ namespace NBA
             txtPontosCasa.Text = string.Empty;
             txtPontosFora.Text = string.Empty;
             cmbFase.SelectedIndex = -1;
-
+            txtIDTemporada.Text = string.Empty;
+            
         }
 
         private void Limpar_Click(object sender, EventArgs e)
@@ -202,7 +205,7 @@ namespace NBA
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("Erro SQL (CC duplicado ou formato inválido): " + ex.Message, "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro SQL " + ex.Message, "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception erro)
                 {

@@ -16,5 +16,10 @@ namespace NBA
         {
             InitializeComponent();
         }
+
+        private void txtidLiga_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
