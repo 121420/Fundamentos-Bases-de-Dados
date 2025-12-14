@@ -63,6 +63,66 @@ namespace NBA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _10101010 {
+            get {
+                object obj = ResourceManager.GetObject("10101010", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _11211211 {
+            get {
+                object obj = ResourceManager.GetObject("11211211", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _12321232 {
+            get {
+                object obj = ResourceManager.GetObject("12321232", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _15651565 {
+            get {
+                object obj = ResourceManager.GetObject("15651565", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _30003004 {
+            get {
+                object obj = ResourceManager.GetObject("30003004", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _30004005 {
+            get {
+                object obj = ResourceManager.GetObject("30004005", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _91521d35_d388_4ba6_a310_55d85a48189f {
             get {
                 object obj = ResourceManager.GetObject("91521d35-d388-4ba6-a310-55d85a48189f", resourceCulture);
@@ -76,6 +136,16 @@ namespace NBA.Properties {
         internal static System.Drawing.Bitmap _91521d35_d388_4ba6_a310_55d85a48189f1 {
             get {
                 object obj = ResourceManager.GetObject("91521d35-d388-4ba6-a310-55d85a48189f1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap foto_padrao {
+            get {
+                object obj = ResourceManager.GetObject("foto_padrao", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

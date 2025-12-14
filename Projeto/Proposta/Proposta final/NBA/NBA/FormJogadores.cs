@@ -6,7 +6,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -183,8 +185,47 @@ namespace NBA
                 cmbMaoDominante.SelectedIndex = cmbMaoDominante.FindStringExact(maoDominante);
 
 
+                string chaveImagem = selectedRow.Cells["CC"].Value.ToString();
+
+                // =========================================================
+                // === NOVO CÓDIGO PARA CARREGAR IMAGEM DO RESOURCES ========
+                // =========================================================
+
+                // 1. Cria uma instância do ResourceManager da sua classe de recursos gerada
+                // Substitua "NBA" pelo nome do namespace do seu projeto, se for diferente.
+                ResourceManager rm = new ResourceManager("NBA.Properties.Resources", typeof(FormJogadores).Assembly);
+
+                // 2. Busca o objeto (Imagem) pelo nome.
+                // Se o nome do recurso na pasta Resources.resx for exatamente o valor do CC, use:
+                Image imagemDoRecurso = (Image)rm.GetObject(chaveImagem);
+
+                // Se o seu ID/CC começa com números e você o nomeou no Resource.resx como "_12345678"
+                // talvez precise adicionar um prefixo, como:
+                // Image imagemDoRecurso = (Image)rm.GetObject("_" + chaveImagem); 
+
+
+                if (imagemDoRecurso != null)
+                {
+                    // O recurso foi encontrado
+                    pbFotoJogador.Image = imagemDoRecurso;
+                }
+                else
+                {
+                    // Recurso não encontrado, carrega uma imagem padrão (se você adicionou uma)
+                    // Certifique-se de que "foto_padrao" existe em Resources.resx
+                    pbFotoJogador.Image = Properties.Resources.foto_padrao;
+
+                    // Ou apenas limpa a PictureBox:
+                    // pbFotoJogador.Image = null; 
+                }
             }
+            else
+            {
+                pbFotoJogador.Image = null;
+            }
+
         }
+        
 
         private void btmAtualizar_Click(object sender, EventArgs e)
         {
@@ -479,5 +520,7 @@ namespace NBA
         {
 
         }
+
+        
     }
 }

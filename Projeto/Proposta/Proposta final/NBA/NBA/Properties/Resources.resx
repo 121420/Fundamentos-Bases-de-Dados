@@ -124,4 +124,25 @@
   <data name="91521d35-d388-4ba6-a310-55d85a48189f1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\91521d35-d388-4ba6-a310-55d85a48189f1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="10101010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Nikola_Jokic_free_throw_(cropped).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="12321232" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="30004005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kobe-bryant.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="30003004" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\post_45593-1024x575.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="11211211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\17022006.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="15651565" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10101010.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="foto_padrao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\foto_padrao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

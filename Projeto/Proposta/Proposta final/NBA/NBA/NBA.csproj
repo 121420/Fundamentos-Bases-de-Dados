@@ -140,5 +140,8 @@
   <ItemGroup>
     <None Include="Resources\91521d35-d388-4ba6-a310-55d85a48189f1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nikola_Jokic_free_throw_%28cropped%29.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
