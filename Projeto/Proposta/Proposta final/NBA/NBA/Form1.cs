@@ -46,7 +46,7 @@ namespace NBA
 
         private void btm_ligas_Click(object sender, EventArgs e)
         {
-            AbrirFormularioNoPainel(new FormLigas());
+            AbrirFormularioNoPainel(new FormClassificacao());
         }
 
         private void btm_Jogador_Click(object sender, EventArgs e)
@@ -77,18 +77,26 @@ namespace NBA
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.PainelContent.Controls.Clear();
+            this.fundo.Show();
+            this.fundo.BringToFront();
+
             
         }
 
         private void Btm_Ligas_Click_1(object sender, EventArgs e)
         {
-            AbrirFormularioNoPainel(new FormLigas());
+            AbrirFormularioNoPainel(new FormClassificacao());
 
         }
 
         private void btm_Pessoas_Click(object sender, EventArgs e)
         {
             AbrirFormularioNoPainel(new FormPessoas());
+        }
+
+        private void btmSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

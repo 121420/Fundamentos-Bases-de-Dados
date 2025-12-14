@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,11 +25,12 @@ namespace NBA
         {
             cmbFase.Items.AddRange(new string[] {"Regular Season" });
             txtIdJogo.Enabled = false;
-            cmbEquipaFora.SelectedIndex = -1;
-            cmbEquipaCasa.SelectedIndex = -1;
+            
 
             CarregarEquipasDropDowns();
             CarregarListaJogos();
+            cmbEquipaFora.SelectedIndex = -1;
+            cmbEquipaCasa.SelectedIndex = -1;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,11 +163,31 @@ namespace NBA
 
         private void btmInserir_Click(object sender, EventArgs e)
         {
+
+            string dataString = txtData.Text.Trim(); // Mudei para txtDataHora para clareza
+            DateTime dataJogo;
+
+            // Define o formato esperado (Dia/Mês/Ano Hora:Minuto - 24h)
+            const string formatoEsperado = "dd/MM/yyyy HH:mm";
+
+            // Tenta converter a string para um objeto DateTime
+            if (!DateTime.TryParseExact(dataString,
+                                        formatoEsperado,
+                                        CultureInfo.InvariantCulture, // Use InvariantCulture para garantir que o formato seja lido exatamente como "dd/MM/yyyy"
+                                        DateTimeStyles.None,
+                                        out dataJogo))
+            {
+                MessageBox.Show($"Formato de Data/Hora inválido. Use o formato: {formatoEsperado} (Ex: 17/02/2025 19:30).", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Pára a inserção se o formato estiver errado
+            }
+
+
             string idJogo = txtIdJogo.Text.Trim();
             string idEstadio = txtIdEstadio.Text.Trim();
-            string data = txtData.Text.Trim();
-            string equipaCasa = cmbEquipaCasa.Text;
-            string equipaFora = cmbEquipaFora.Text;
+
+            object idEquipaCasa = cmbEquipaCasa.SelectedValue;
+            object idEquipaFora = cmbEquipaFora.SelectedValue;
+            
             string pontosCasa = txtPontosCasa.Text.Trim();
             string pontoFora = txtPontosFora.Text.Trim();
             string fase = cmbFase.Text;
@@ -181,10 +203,10 @@ namespace NBA
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@ID_Jogo", idJogo);
-                        cmd.Parameters.AddWithValue("dataHora_jogo", data);
+                        cmd.Parameters.AddWithValue("dataHora_jogo", dataJogo);
                         cmd.Parameters.AddWithValue("@ID_estadio", idEstadio);
-                        cmd.Parameters.AddWithValue("@ID_equipa_Casa", equipaCasa);
-                        cmd.Parameters.AddWithValue("@ID_equipa_Fora", equipaFora);
+                        cmd.Parameters.AddWithValue("@ID_equipa_Casa", idEquipaCasa);
+                        cmd.Parameters.AddWithValue("@ID_equipa_Fora", idEquipaFora);
                         cmd.Parameters.AddWithValue("@pontos_casa", pontosCasa);
                         cmd.Parameters.AddWithValue("@pontos_fora", pontoFora);
                         cmd.Parameters.AddWithValue("@fase", fase);
@@ -213,5 +235,178 @@ namespace NBA
                 }
             }
         }
+
+        private void btmAtualizar_Click(object sender, EventArgs e)
+        {
+            string idJogoString = txtIdJogo.Text.Trim();
+            string dataString = txtData.Text.Trim();
+            DateTime dataJogo;
+
+            const string formatoEsperado = "dd/MM/yyyy HH:mm";
+
+            if (string.IsNullOrEmpty(idJogoString))
+            {
+                MessageBox.Show("Selecione um Jogo para atualizar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!DateTime.TryParseExact(dataString,
+                                        formatoEsperado,
+                                        CultureInfo.InvariantCulture,
+                                        DateTimeStyles.None,
+                                        out dataJogo))
+            {
+                MessageBox.Show($"Formato de Data/Hora inválido. Use o formato: {formatoEsperado} (Ex: 17/02/2025 19:30).", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+           object idEquipaCasaObj = cmbEquipaCasa.SelectedValue;
+            object idEquipaForaObj = cmbEquipaFora.SelectedValue;
+
+            
+            if (idEquipaCasaObj == null || idEquipaForaObj == null)
+            {
+                MessageBox.Show("Selecione as Equipas Casa e Fora.", "Erro de Seleção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int idJogo, idEstadio, pontosCasa, pontosFora, idTemporada;
+
+            if (!int.TryParse(txtIdJogo.Text.Trim(), out idJogo) ||
+                !int.TryParse(txtIdEstadio.Text.Trim(), out idEstadio) ||
+                !int.TryParse(txtPontosCasa.Text.Trim(), out pontosCasa) ||
+                !int.TryParse(txtPontosFora.Text.Trim(), out pontosFora) ||
+                !int.TryParse(txtIDTemporada.Text.Trim(), out idTemporada))
+            {
+                MessageBox.Show("Certifique-se de que o ID do Jogo, ID do Estádio, Pontos e ID da Temporada são números inteiros válidos.", "Erro de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+       
+            string fase = cmbFase.Text;
+
+           
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string queryUpdate = @"
+                UPDATE JOGO SET 
+                    dataHora_jogo = @DataHora, 
+                    ID_estadio = @ID_Estadio, 
+                    ID_equipa_Casa = @ID_Casa, 
+                    ID_equipa_Fora = @ID_Fora, 
+                    pontos_casa = @PontosCasa, 
+                    pontos_fora = @PontosFora, 
+                    fase = @Fase, 
+                    ID_Temporada = @ID_Temporada
+                WHERE ID_Jogo = @ID_Jogo";
+
+                    using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
+                    {
+                        //  Parâmetros
+                        cmd.Parameters.AddWithValue("@ID_Jogo", idJogo); 
+                        cmd.Parameters.AddWithValue("@DataHora", dataJogo);
+                        cmd.Parameters.AddWithValue("@ID_Estadio", idEstadio);
+                        cmd.Parameters.AddWithValue("@ID_Casa", idEquipaCasaObj);
+                        cmd.Parameters.AddWithValue("@ID_Fora", idEquipaForaObj); 
+                        cmd.Parameters.AddWithValue("@PontosCasa", pontosCasa);
+                        cmd.Parameters.AddWithValue("@PontosFora", pontosFora);
+                        cmd.Parameters.AddWithValue("@Fase", fase);
+                        cmd.Parameters.AddWithValue("@ID_Temporada", idTemporada);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Jogo atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CarregarListaJogos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nenhum registo foi atualizado. Verifique o ID do Jogo.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Erro SQL ao atualizar Jogo: " + ex.Message, "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao atualizar Jogo: " + erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btmEliminar_Click(object sender, EventArgs e)
+        {
+            string idJogoString = txtIdJogo.Text.Trim();
+            int idJogo;
+
+            if (string.IsNullOrEmpty(idJogoString))
+            {
+                MessageBox.Show("Selecione um Jogo (preenchendo o ID do Jogo) para eliminar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!int.TryParse(idJogoString, out idJogo))
+            {
+                MessageBox.Show("O ID do Jogo deve ser um número inteiro válido.", "Erro de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult confirmacao = MessageBox.Show(
+                $"Tem certeza que deseja eliminar o Jogo com ID: {idJogo}?",
+                "Confirmar Eliminação",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirmacao == DialogResult.No)
+            {
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string queryDelete = "DELETE FROM JOGO WHERE ID_Jogo = @ID_Jogo";
+
+                    using (SqlCommand cmd = new SqlCommand(queryDelete, con))
+                    {
+                        cmd.Parameters.AddWithValue("@ID_Jogo", idJogo);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Jogo eliminado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LimparCampo();
+                            CarregarListaJogos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nenhum registo foi eliminado. O ID do Jogo pode não existir.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Erro SQL ao eliminar Jogo: " + ex.Message, "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao eliminar Jogo: " + erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+
+    internal class DataTime
+    {
     }
 }

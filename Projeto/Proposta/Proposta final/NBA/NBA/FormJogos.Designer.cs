@@ -96,6 +96,7 @@
             this.btmAtualizar.TabIndex = 88;
             this.btmAtualizar.Text = "Atualizar";
             this.btmAtualizar.UseVisualStyleBackColor = true;
+            this.btmAtualizar.Click += new System.EventHandler(this.btmAtualizar_Click);
             // 
             // btmEliminar
             // 
@@ -107,6 +108,7 @@
             this.btmEliminar.TabIndex = 87;
             this.btmEliminar.Text = "Eliminar";
             this.btmEliminar.UseVisualStyleBackColor = true;
+            this.btmEliminar.Click += new System.EventHandler(this.btmEliminar_Click);
             // 
             // Limpar
             // 

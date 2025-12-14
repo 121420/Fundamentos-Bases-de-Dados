@@ -84,14 +84,11 @@ namespace NBA
                         {
                             adapter.Fill(DT);
 
-                            // 1. Configurar membros ANTES de atribuir a fonte de dados (mais seguro)
+                            
                             cmbID_Equipa.DisplayMember = "Nome";
                             cmbID_Equipa.ValueMember = "ID_Equipas";
 
-                            // 2. Tentar limpar antes ou depois. (Eu sugiro mover a limpeza para o LimparCampos())
-                            // cmbID_Equipa.SelectedIndex = -1; // <-- Remova ou comente esta linha
-
-                            // 3. Atribuir a fonte de dados
+                    
                             cmbID_Equipa.DataSource = DT;
                         }
                     }
