@@ -36,4 +36,4 @@ Bilhete
 - 01/12/2025 - mais dados adicionados nas tabelas e alterações de conferências
 
 
-
+- 16/12/2025 - aumentar salário maybe
