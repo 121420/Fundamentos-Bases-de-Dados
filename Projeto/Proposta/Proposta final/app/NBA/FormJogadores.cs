@@ -187,22 +187,11 @@ namespace NBA
 
                 string chaveImagem = selectedRow.Cells["CC"].Value.ToString();
 
-                // =========================================================
-                // === NOVO CÓDIGO PARA CARREGAR IMAGEM DO RESOURCES ========
-                // =========================================================
+               
 
-                // 1. Cria uma instância do ResourceManager da sua classe de recursos gerada
-                // Substitua "NBA" pelo nome do namespace do seu projeto, se for diferente.
                 ResourceManager rm = new ResourceManager("NBA.Properties.Resources", typeof(FormJogadores).Assembly);
 
-                // 2. Busca o objeto (Imagem) pelo nome.
-                // Se o nome do recurso na pasta Resources.resx for exatamente o valor do CC, use:
                 Image imagemDoRecurso = (Image)rm.GetObject(chaveImagem);
-
-                // Se o seu ID/CC começa com números e você o nomeou no Resource.resx como "_12345678"
-                // talvez precise adicionar um prefixo, como:
-                // Image imagemDoRecurso = (Image)rm.GetObject("_" + chaveImagem); 
-
 
                 if (imagemDoRecurso != null)
                 {
@@ -211,18 +200,44 @@ namespace NBA
                 }
                 else
                 {
-                    // Recurso não encontrado, carrega uma imagem padrão (se você adicionou uma)
-                    // Certifique-se de que "foto_padrao" existe em Resources.resx
                     pbFotoJogador.Image = Properties.Resources.foto_padrao;
 
-                    // Ou apenas limpa a PictureBox:
-                    // pbFotoJogador.Image = null; 
+                
+                }
+
+
+                //Conttratos
+                DataTable dtContrato = new DataTable();
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string idJogador = selectedRow.Cells["ID_Jogador"].Value.ToString();
+                    con.Open();
+                    string queryContrato = "Select C.ID_contrato,E.Nome,C.data_inicio,C.data_Fim,C.Salario_Total From Contrato C" +
+                        "   Join Contrato_Jogador CJ ON C.ID_contrato = CJ.ID_contrato" +
+                        "   Join Jogadores J ON J.ID_Jogador = CJ.ID_jogador " +
+                        "   Join Equipas E ON E.ID_Equipas = CJ.ID_equipa " +
+                        "   Where J.ID_Jogador = @ID_jogador";
+
+                    using(SqlCommand cmd = new SqlCommand(queryContrato,con))
+                    {
+                        object resultado = cmd.Parameters.AddWithValue("@ID_jogador", idJogador);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dtContrato);
+                        }
+
+                        ContratoJogador.DataSource = dtContrato;
+                    }
                 }
             }
             else
             {
                 pbFotoJogador.Image = null;
             }
+
+
+
 
         }
         
@@ -382,28 +397,28 @@ namespace NBA
 
         private int ObterProximoID()
         {
-            int proximoID = 1; // Valor padrão se a tabela estiver vazia
+            int proximoID = 1; 
 
             try
             {
-                // Use a sua connectionString
+               
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    // A query MAX retorna o maior valor de ID_Jogador.
+                    
                     string queryMaxID = "SELECT MAX(ID_Jogador) FROM Jogadores";
 
                     using (SqlCommand cmd = new SqlCommand(queryMaxID, con))
                     {
-                        // ExecuteScalar retorna o primeiro valor (o MAX ID)
+                        
                         object resultado = cmd.ExecuteScalar();
 
                         if (resultado != null && resultado != DBNull.Value)
                         {
-                            // Se houver dados, o próximo ID será o valor máximo + 1
+                            
                             proximoID = Convert.ToInt32(resultado) + 1;
                         }
-                        // Se o resultado for nulo (tabela vazia), retorna o valor padrão 1.
+                       
                     }
                 }
             }
@@ -435,8 +450,7 @@ namespace NBA
             string maoDominante = cmbMaoDominante.Text;
             object idEquipa = cmbID_Equipa.SelectedValue;
 
-            // --- 2. Preparação de Altura e Peso (Flexibilidade de Separador) ---
-            // Substitui a vírgula por ponto. O TryParse a seguir usará o ponto.
+            
             string alturaString = txtAltura.Text.Trim().Replace(',', '.');
             string pesoString = txtPeso.Text.Trim().Replace(',', '.');
 
@@ -445,7 +459,7 @@ namespace NBA
 
             // --- 3. Validação Completa ---
             if (string.IsNullOrEmpty(cc) || string.IsNullOrEmpty(nomeCamisola) || string.IsNullOrEmpty(posicao) || string.IsNullOrEmpty(maoDominante) ||
-                // Tenta converter usando a Cultura Invariant (ponto decimal)
+               
                 !float.TryParse(alturaString, NumberStyles.Float, CultureInfo.InvariantCulture, out altura) ||
                 !float.TryParse(pesoString, NumberStyles.Float, CultureInfo.InvariantCulture, out peso) ||
                 !int.TryParse(txtNumero.Text, out numero))
@@ -521,6 +535,9 @@ namespace NBA
 
         }
 
-        
+        private void Contrato_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

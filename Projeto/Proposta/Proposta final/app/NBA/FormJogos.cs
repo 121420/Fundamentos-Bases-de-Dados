@@ -404,6 +404,11 @@ namespace NBA
                 MessageBox.Show("Erro ao eliminar Jogo: " + erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     internal class DataTime
