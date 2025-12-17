@@ -1,6 +1,6 @@
 # BD: Trabalho Prático APF-T
 
-**Grupo**: PXGY
+**Grupo**: P4G4
 - Kelvin Loforte, MEC: 121420
 - Rómulo Monteiro, MEC: 127986
 
