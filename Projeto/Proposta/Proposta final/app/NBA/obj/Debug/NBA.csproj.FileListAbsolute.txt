@@ -31,3 +31,19 @@ C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre 
 C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.csproj.CoreCompileInputs.cache
 C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.exe
 C:\Users\lofor\OneDrive - Universidade de Aveiro\Desktop\School\2ºAno\Semestre I\FBD\P\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.pdb
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\bin\Debug\NBA.exe.config
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\bin\Debug\NBA.exe
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\bin\Debug\NBA.pdb
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.csproj.AssemblyReference.cache
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.Home.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.FormEquipas.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.FormJogadores.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.FormJogos.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.FormClassificacao.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.FormPessoas.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.FormTreinadores.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.Properties.Resources.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.csproj.GenerateResource.cache
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.csproj.CoreCompileInputs.cache
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.exe
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.pdb
