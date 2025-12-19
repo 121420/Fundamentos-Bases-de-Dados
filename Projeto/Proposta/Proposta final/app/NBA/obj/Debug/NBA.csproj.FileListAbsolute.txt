@@ -47,3 +47,5 @@ C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Pr
 C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.csproj.CoreCompileInputs.cache
 C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.exe
 C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.pdb
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.Bilhestes.resources
+C:\Users\Romulo\Desktop\FDB Clone\Fundamentos-Bases-de-Dados\Projeto\Proposta\Proposta final\app\NBA\obj\Debug\NBA.FormVendaBilhete.resources

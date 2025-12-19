@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -121,6 +122,37 @@ namespace NBA
 
                 object ID_liga = seleted.Cells["ID_Liga"].Value;
                 cmbIDLiga.SelectedValue = ID_liga;
+
+
+
+                //Foto
+                object equipaID = seleted.Cells["ID_Equipas"].Value;
+
+                if (equipaID != null && equipaID != DBNull.Value)
+                {
+                    string chaveImagemEquipa = equipaID.ToString();
+
+                    ResourceManager rmEquipas = new ResourceManager(
+                        "NBA.Properties.Resources",
+                        typeof(FormJogadores).Assembly
+                    );
+
+                    Image imagemEquipa = (Image)rmEquipas.GetObject(chaveImagemEquipa);
+
+                    if (imagemEquipa != null)
+                    {
+                        pbFotoEquipa.Image = imagemEquipa;
+                    }
+                    else
+                    {
+                        pbFotoEquipa.Image = Properties.Resources.equipa_padrao;
+                    }
+                }
+                else
+                {
+                    pbFotoEquipa.Image = Properties.Resources.equipa_padrao;
+                }
+
             }
         }
 

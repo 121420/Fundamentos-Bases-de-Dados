@@ -29,6 +29,7 @@ namespace NBA
         private void FormClassificacao_Load(object sender, EventArgs e)
         {
             CarregarClassificacao("");
+            CarregarResultados();
         }
         private void CarregarClassificacao(string conferencia = "")
         {
@@ -39,7 +40,7 @@ namespace NBA
                 using(SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string query = "SELECT * FROM ClassificacaoEquipas";
+                    string query = "SELECT ROW_NUMBER() OVER (ORDER BY Percentagem_Vitoria DESC) AS POS,Nome,Conferencia,V,D,JA,Percentagem_Vitoria FROM ClassificacaoEquipas";
 
                     if (!string.IsNullOrEmpty(conferencia))
                     {
@@ -103,6 +104,59 @@ namespace NBA
         private void classificacao_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void CarregarResultados()
+        {
+            DataTable dt = new DataTable(); 
+
+            using(SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string query = "Select * FROM vw_CalendarioJogos";
+                using(SqlDataAdapter adapter = new SqlDataAdapter(query,con))
+                {
+                    adapter.Fill(dt);
+                }
+                ResultadosJogos.DataSource = dt;
+            }
+        }
+        private void ResultadosJogos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ResultadosJogos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (ResultadosJogos.Rows[e.RowIndex].IsNewRow)
+                return;
+
+            // Garante que só trabalha quando ambas as colunas existem
+            if (ResultadosJogos.Columns.Contains("pontos_casa") &&
+                ResultadosJogos.Columns.Contains("pontos_fora"))
+            {
+                int pontosCasa = Convert.ToInt32(
+                    ResultadosJogos.Rows[e.RowIndex].Cells["pontos_casa"].Value);
+
+                int pontosFora = Convert.ToInt32(
+                    ResultadosJogos.Rows[e.RowIndex].Cells["pontos_fora"].Value);
+
+                // Se for a célula Pontos_Casa
+                if (ResultadosJogos.Columns[e.ColumnIndex].Name == "pontos_casa")
+                {
+                    e.CellStyle.BackColor = pontosCasa > pontosFora
+                        ? Color.LightGreen
+                        : Color.LightCoral;
+                }
+
+                // Se for a célula Pontos_Fora
+                if (ResultadosJogos.Columns[e.ColumnIndex].Name == "pontos_fora")
+                {
+                    e.CellStyle.BackColor = pontosFora > pontosCasa
+                        ? Color.LightGreen
+                        : Color.LightCoral;
+                }
+            }
         }
     }
 }

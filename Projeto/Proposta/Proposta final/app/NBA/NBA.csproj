@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bilhestes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilhestes.Designer.cs">
+      <DependentUpon>Bilhestes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,8 +94,17 @@
     <Compile Include="FormTreinadores.Designer.cs">
       <DependentUpon>FormTreinadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVendaBilhete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVendaBilhete.Designer.cs">
+      <DependentUpon>FormVendaBilhete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bilhestes.resx">
+      <DependentUpon>Bilhestes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTreinadores.resx">
       <DependentUpon>FormTreinadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVendaBilhete.resx">
+      <DependentUpon>FormVendaBilhete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\formjogadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\formjogadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\formvendabilhete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\formvendabilhete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\formjogadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\formjogadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\formpessoas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\formpessoas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\formpessoas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\formpessoas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\formvendabilhete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\formvendabilhete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\bilhestes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\bilhestes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\bilhestes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\bilhestes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\romulo\\desktop\\fdb clone\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +38,93 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormJogadores.cs",
-              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormJogadores.cs",
-              "RelativeDocumentMoniker": "NBA\\FormJogadores.cs",
-              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormJogadores.cs",
-              "RelativeToolTip": "NBA\\FormJogadores.cs",
-              "ViewState": "AgIAAL0BAAAAAAAAAAAiwM0BAAAPAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "FormPessoas.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormPessoas.cs",
+              "RelativeDocumentMoniker": "NBA\\FormPessoas.cs",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormPessoas.cs [Design]",
+              "RelativeToolTip": "NBA\\FormPessoas.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T01:22:43.287Z",
+              "WhenOpened": "2025-12-19T02:52:21.872Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormVendaBilhete.cs",
+              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormVendaBilhete.cs",
+              "RelativeDocumentMoniker": "NBA\\FormVendaBilhete.cs",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormVendaBilhete.cs",
+              "RelativeToolTip": "NBA\\FormVendaBilhete.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAiwGMAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T02:16:33.241Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormJogadores.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormJogadores.cs",
-              "RelativeDocumentMoniker": "NBA\\FormJogadores.cs",
-              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormJogadores.cs [Design]",
-              "RelativeToolTip": "NBA\\FormJogadores.cs [Design]",
+              "Title": "FormPessoas.cs",
+              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormPessoas.cs",
+              "RelativeDocumentMoniker": "NBA\\FormPessoas.cs",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormPessoas.cs",
+              "RelativeToolTip": "NBA\\FormPessoas.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAB8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T01:18:01.597Z",
+              "WhenOpened": "2025-12-19T02:52:24.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormVendaBilhete.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormVendaBilhete.cs",
+              "RelativeDocumentMoniker": "NBA\\FormVendaBilhete.cs",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormVendaBilhete.cs [Design]",
+              "RelativeToolTip": "NBA\\FormVendaBilhete.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T02:11:46.955Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Bilhestes.cs",
+              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\Bilhestes.cs",
+              "RelativeDocumentMoniker": "NBA\\Bilhestes.cs",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\Bilhestes.cs",
+              "RelativeToolTip": "NBA\\Bilhestes.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAWwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T02:00:32.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Bilhestes.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\Bilhestes.cs",
+              "RelativeDocumentMoniker": "NBA\\Bilhestes.cs",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\Bilhestes.cs [Design]",
+              "RelativeToolTip": "NBA\\Bilhestes.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T01:58:34.068Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\Form1.cs",
+              "RelativeDocumentMoniker": "NBA\\Form1.cs",
+              "ToolTip": "C:\\Users\\Romulo\\Desktop\\FDB Clone\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\Form1.cs [Design]",
+              "RelativeToolTip": "NBA\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T01:39:51.648Z",
               "EditorCaption": " [Design]"
             }
           ]

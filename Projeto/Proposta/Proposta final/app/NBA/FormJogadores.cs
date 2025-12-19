@@ -212,7 +212,7 @@ namespace NBA
                 {
                     string idJogador = selectedRow.Cells["ID_Jogador"].Value.ToString();
                     con.Open();
-                    string queryContrato = "Select C.ID_contrato,E.Nome,C.data_inicio,C.data_Fim,C.Salario_Total From Contrato C" +
+                    string queryContrato = "Select C.ID_contrato,E.Nome,C.data_inicio,C.data_Fim,C.Salario_Total,C.clausula_rescisao From Contrato C" +
                         "   Join Contrato_Jogador CJ ON C.ID_contrato = CJ.ID_contrato" +
                         "   Join Jogadores J ON J.ID_Jogador = CJ.ID_jogador " +
                         "   Join Equipas E ON E.ID_Equipas = CJ.ID_equipa " +
@@ -228,6 +228,32 @@ namespace NBA
                         }
 
                         ContratoJogador.DataSource = dtContrato;
+                    }
+                }
+
+
+                //Estatisticas
+                DataTable dtEstatisticas = new DataTable();
+                string idJogadorEs = selectedRow.Cells["ID_Jogador"].Value.ToString();
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string querryEstatisticas = "SELECT SUM(minutos) AS TotaMinutos, SUM(pontos) AS TotalPontos, SUM(assistencias) AS TotalAssisstencia, SUM(ressaltos) AS TotalRessaltos, SUM(roubos) AS TotalRoubos,SUM(blocos) AS TotalBlocos, SUM(Faltas) AS TotalFaltas" +
+                        " FROM Estatistica_Jogador_Jogo" +
+                        " WHERE ID_jogador = @ID_jogador " +
+                        "GROUP BY ID_jogador";
+
+                    using(SqlCommand cmd = new SqlCommand(querryEstatisticas,con))
+                    {
+                        object EstatisticasDoJogadorSelecionado = cmd.Parameters.AddWithValue("@ID_jogador", idJogadorEs);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dtEstatisticas);
+                        }
+
+                        Estatistica.DataSource = dtEstatisticas;
                     }
                 }
             }

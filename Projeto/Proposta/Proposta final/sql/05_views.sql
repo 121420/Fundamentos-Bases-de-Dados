@@ -38,3 +38,20 @@ LEFT JOIN Treinadores T ON P.CC = T.CC
 LEFT JOIN Jogadores J ON P.CC = J.CC -- Assumindo que a tabela Jogadores existe
 WHERE T.CC IS NULL AND J.CC IS NULL;
 GO
+
+--jogos do Futuro
+CREATE VIEW vw_JogosFuturos AS
+SELECT 
+    J.ID_Jogo,
+    E1.Nome AS Equipa_Casa,
+    E2.Nome AS Equipa_Fora,
+    J.dataHora_jogo,
+    Es.Nome AS Estadio
+FROM Jogo J
+JOIN Equipas E1 ON E1.ID_Equipas = J.ID_Equipa_Casa
+JOIN Equipas E2 ON E2.ID_Equipas = J.ID_Equipa_Fora
+JOIN Estadios Es ON Es.ID_Estadio = J.ID_Estadio
+WHERE J.dataHora_jogo >= CAST(GETDATE() AS DATE);
+GO
+
+Select * FROM vw_JogosFuturos

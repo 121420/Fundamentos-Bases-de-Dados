@@ -98,5 +98,10 @@ namespace NBA
         {
             Close();
         }
+
+        private void btmBilheste_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioNoPainel(new Bilhestes());
+        }
     }
 }
