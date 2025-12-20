@@ -1,3 +1,5 @@
+use p4g4;
+
 -- Procedure para inserir jogo com validação de equipas
 CREATE PROCEDURE sp_InserirJogo
     @ID_Jogo INT,
@@ -22,16 +24,29 @@ BEGIN
 END;
 GO
 
--- Função para calcular a idade da pessoa (usada no FormPessoas)
-CREATE FUNCTION fn_CalcularIdade (@DataNascimento DATE)
-RETURNS INT
+-- Procedure para vender bilhete com validação de lotação
+CREATE PROCEDURE sp_VenderBilhete
+    @ID_Bilhete INT,
+    @ID_Jogo INT,
+    @Preco DECIMAL(10,2),
+    @Lugar VARCHAR(10)
 AS
 BEGIN
-    DECLARE @Idade INT;
-    SET @Idade = DATEDIFF(YEAR, @DataNascimento, GETDATE()) - 
-                 CASE WHEN (MONTH(@DataNascimento) > MONTH(GETDATE())) OR 
-                 (MONTH(@DataNascimento) = MONTH(GETDATE()) AND DAY(@DataNascimento) > DAY(GETDATE())) 
-                 THEN 1 ELSE 0 END;
-    RETURN @Idade;
+    -- Validação: Não vender bilhetes para jogos que já aconteceram
+    IF (SELECT dataHora_jogo FROM JOGO WHERE ID_Jogo = @ID_Jogo) < GETDATE()
+    BEGIN
+        RAISERROR('Não é possível vender bilhetes para jogos passados.', 16, 1);
+        RETURN;
+    END
+
+    -- Validação: Verificar lotação usando a função que criámos acima
+    IF dbo.fn_BilhetesRestantes(@ID_Jogo) <= 0
+    BEGIN
+        RAISERROR('Estádio Lotado!', 16, 1);
+        RETURN;
+    END
+
+    INSERT INTO Bilhete (ID_bilhete, ID_Jogo, preco, lugar)
+    VALUES (@ID_Bilhete, @ID_Jogo, @Preco, @Lugar);
 END;
 GO

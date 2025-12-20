@@ -1,5 +1,4 @@
-
--- Vista para simplificar o FormTreinadores
+-- Vista para simplificar o FormTreinadores (SELECT * FROM vw_TreinadoresDetalhes)
 CREATE VIEW vw_TreinadoresDetalhes AS
 SELECT 
     T.ID_Treinador,
@@ -13,7 +12,44 @@ FROM Treinadores T
 JOIN Pessoas P ON T.CC = P.CC;
 GO
 
--- Vista para o FormJogos (mostra nomes em vez de IDs)
+-- Vista para encontrar pessoas que ainda não são treinadores nem jogadores (SELECt * FROM vw_PessoasDisponiveis)
+CREATE VIEW vw_PessoasDisponiveis AS
+SELECT P.CC, P.Nome
+FROM Pessoas P
+LEFT JOIN Treinadores T ON P.CC = T.CC
+LEFT JOIN Jogadores J ON P.CC = J.CC -- Assumindo que a tabela Jogadores existe
+WHERE T.CC IS NULL AND J.CC IS NULL;
+GO
+
+-- vista para o FormClassificacao (SELECT * FROM vw_Classificacao ORDER BY Vitorias DESC)
+CREATE VIEW vw_Classificacao AS
+SELECT 
+    E.Nome AS Equipa,
+    COUNT(CASE WHEN (J.ID_equipa_Casa = E.ID_Equipas AND J.pontos_casa > J.pontos_fora) OR 
+                    (J.ID_equipa_Fora = E.ID_Equipas AND J.pontos_fora > J.pontos_casa) THEN 1 END) AS Vitorias,
+    COUNT(CASE WHEN (J.ID_equipa_Casa = E.ID_Equipas AND J.pontos_casa < J.pontos_fora) OR 
+                    (J.ID_equipa_Fora = E.ID_Equipas AND J.pontos_fora < J.pontos_casa) THEN 1 END) AS Derrotas,
+    SUM(CASE WHEN J.ID_equipa_Casa = E.ID_Equipas THEN J.pontos_casa ELSE J.pontos_fora END) AS PontosMarcados
+FROM Equipas E
+LEFT JOIN JOGO J ON E.ID_Equipas = J.ID_equipa_Casa OR E.ID_Equipas = J.ID_equipa_Fora
+GROUP BY E.Nome;
+GO
+
+-- Vista para o FormJogadores (SELECT * FROM vw_JogadoresDetalhes)
+CREATE VIEW vw_JogadoresDetalhes AS
+SELECT 
+    J.ID_Jogador,
+    P.Nome,
+    P.CC,
+    J.Posicao,
+    J.Numero_Camisola,
+    E.Nome AS Equipa
+FROM Jogadores J
+JOIN Pessoas P ON J.CC = P.CC
+JOIN Equipas E ON J.ID_Equipa = E.ID_Equipas;
+GO
+
+-- Vista para o FormJogos (mostra nomes em vez de IDs) added (SELECT * FROM vw_CalendarioJogos)
 CREATE VIEW vw_CalendarioJogos AS
 SELECT 
     J.ID_Jogo,
@@ -30,16 +66,7 @@ JOIN Equipas EC ON J.ID_equipa_Casa = EC.ID_Equipas
 JOIN Equipas EF ON J.ID_equipa_Fora = EF.ID_Equipas;
 GO
 
--- Vista para encontrar pessoas que ainda não são treinadores nem jogadores
-CREATE VIEW vw_PessoasDisponiveis AS
-SELECT P.CC, P.Nome
-FROM Pessoas P
-LEFT JOIN Treinadores T ON P.CC = T.CC
-LEFT JOIN Jogadores J ON P.CC = J.CC -- Assumindo que a tabela Jogadores existe
-WHERE T.CC IS NULL AND J.CC IS NULL;
-GO
-
---jogos do Futuro
+--jogos do Futuro added (SELECT * FROM vw_JogosFuturos)
 CREATE VIEW vw_JogosFuturos AS
 SELECT 
     J.ID_Jogo,

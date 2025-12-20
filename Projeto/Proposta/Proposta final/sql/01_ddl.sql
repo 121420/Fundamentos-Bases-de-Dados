@@ -1,4 +1,4 @@
-use NBA;
+use p4g4;
 
 create Table Pessoas(
 	CC int primary key,
