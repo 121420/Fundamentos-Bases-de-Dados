@@ -4,28 +4,6 @@
 - Kelvin Loforte, MEC: 121420
 - Rómulo Monteiro, MEC: 127986
 
-# Instructions - TO REMOVE
-
-Este template é flexível.
-É sugerido seguir a estrutura, links de ficheiros e imagens, mas adicione conteúdo sempre que achar necessário.
-
----
-
-This template is flexible.
-It is suggested to follow the structure, file links and images but add more content where necessary.
-
-The files should be organized with the following nomenclature:
-
-- sql\01_ddl.sql: mandatory for DDL
-- sql\02_sp_functions.sql: mandatory for Store Procedure, Functions,... 
-- sql\03_triggers.sql: mandatory for triggers
-- sql\04_db_init.sql: scripts to init the database (i.e. inserts etc.)
-- sql\05_any_other_matter.sql: any other scripts.
-
-Por favor remova esta secção antes de submeter.
-
-Please remove this section before submitting.
-
 ## Introdução / Introduction
 O nosso projeto é uma base de dados sobre a Liga de Basquetebol NBA, que é a principal competição profissional de basquete do mundo.
 O objetivo é de criar uma base de dados que armazene e organize informações sobre equipas, jogadores e estatísticas, permitindo gerar relatorios e consultas.
@@ -40,7 +18,7 @@ O objetivo é de criar uma base de dados que armazene e organize informações s
     Ou seja, o nosso foco é representar a estrutura e funcionamento da NBA de forma organizada e consultável.
 
 ## ​Análise de Requisitos / Requirements
-##  . Requisitos funcionais
+###  . Requisitos funcionais
         1. Registar: 
             O sistema deve permitir o registo de:
                     - equipas da NBA(Nome,cidade,treinador princial, conferência e divisão)
@@ -78,34 +56,27 @@ O objetivo é de criar uma base de dados que armazene e organize informações s
                     - equipas, jogadores, jogos, ...
                     - contratos ou estatísticas desatualizadas.
 
-##  . Requisitos não funcionais:
+###  . Requisitos não funcionais:
         - Os dados dever ser consistentes e fáceis de Consultar.
         - O modelo deve ser escalável, podendo crescer com novas temporadas ou equipas.    
         
 ## DER - Diagrama Entidade Relacionamento/Entity Relationship Diagram
 
 ### Versão final/Final version
-
 ![DER Diagram!](der.jpg "AnImage")
 
 ### Melhorias/Improvements 
-
-Descreva sumariamente as melhorias sobre a entrega anterior.
-Describe briefly the improvements made since the previous delivery.
+Não foram feitas nenhuma alteração.
 
 ## ER - Esquema Relacional/Relational Schema
 
 ### Versão final/Final Version
-
 ![ER Diagram!](er.jpg "AnImage")
 
 ### Melhorias/Improvements
-
-Descreva sumariamente as melhorias sobre a entrega anterior.
-Describe briefly the improvements made since the previous delivery.
+Não foram feitas nenhuma alteração.
 
 ## ​SQL DDL - Data Definition Language
-
 [SQL DDL File](sql/01_ddl.sql "SQLFileQuestion")
 
 ## SQL DML - Data Manipulation Language
@@ -129,19 +100,76 @@ INSERT INTO MY_TABLE ....;
 
 ## Normalização/Normalization
 
-Descreva os passos utilizados para minimizar a duplicação de dados / redução de espaço.
-Justifique as opções tomadas.
-Describe the steps used to minimize data duplication / space reduction.
-Justify the choices made.
+A normalização é um processo fundamental no design de bases de dados relacionais que visa minimizar a redundância de dados, eliminar anomalias de atualização e otimizar o espaço de armazenamento. Este processo consiste em aplicar uma série de formas normais (FN) progressivas ao esquema da base de dados.
+O modelo relacional foi desenvolvido respeitando as principais formas normais: 1ª Forma Normal (1FN), 2ª Forma Normal (2FN) e 3ª Forma Normal (3FN).
+
+### 1FN
+Uma tabela encontra-se na 1FN quando: 
+- Todos os atributos possuem valores atómicos (indivisíveis);
+- Não existem grupos repetidos ou listas de valores;
+- Cada registo é identificado por uma chave primária.
+
+Neste projeto:
+- Todas as tabelas possuem uma chave primária bem definida (ex.: ID_Jogador, ID_Equipa, ID_Jogo, CC).
+- Os atributos armazenam apenas um valor por coluna (ex.: um jogador tem uma posição, uma equipa pertence a uma conferência).
+- Estatísticas por jogo foram separadas em tabelas próprias (Estatistica_Jogador_Jogo, Estatistica_Equipa_Jogo), evitando colunas repetidas.
+
+Ou seja, esquema cumpre com a 1FN.
+
+### 2FN
+Uma tabela encontra-se na 2FN quando:
+- Está na 1FN;
+- Todos os atributos não-chave dependem totalmente da chave primária;
+- Não existem dependências parciais (em tabelas com chaves compostas).
+
+Neste projeto, as tabelas com chave primária simples (ex.: Equipas, Pessoas, Jogadores) cumprem automaticamente a 2FN.
+
+- As tabelas com chave composta, como: Estatistica_Jogador_Jogo (ID_Jogador, ID_Jogo) e Estatistica_Equipa_Jogo (ID_Equipa, ID_Jogo), possuem apenas atributos que dependem da combinação completa da chave, como pontos, minutos, assistências, etc.
+- Dados como nome do jogador, equipa ou estádio não são repetidos nestas tabelas, sendo obtidos por junções (JOIN).
+
+O esquema cumpre com a 2FN, eliminando dependências parciais.
+
+### 3FN
+Uma tabela encontra-se na 3FN quando:
+- Está na 2FN;
+- Não existem dependências transitivas;
+- Os atributos não-chave dependem apenas da chave primária e não de outros atributos não-chave.
+
+Neste projeto:
+- Informações pessoais foram isoladas na tabela Pessoas, evitando repetição em Jogadores, Treinadores e Bilhete.
+- Contratos foram separados em: Contrato, Contrato_Jogador, Contrato_Treinador. Garantindo assim flexibilidade e eliminando dependências desnecessárias.
+- Informações de equipas, ligas, estádios e temporadas estão corretamente separadas, sem redundância.
+- Relatórios e consultas complexas são suportados através de views, evitando duplicação de dados.
+
+O esquema encontra-se em 3FN, garantindo integridade, consistência e escalabilidade.
+
+#### Em suma:
+O modelo de dados deste projeto NBA:
+- Está normalizado até à 3ª Forma Normal (3FN);
+- Evita redundância e anomalias de atualização;
+- Facilita manutenção, expansão e consultas complexas;
+- Está adequado a um sistema real de gestão de estatísticas desportivas.
 
 ## Índices/Indexes
 
-Descreva os indices criados. Junte uma cópia do SQL de criação do indice.
-Describe the indexes created. Attach a copy of the SQL to create the index.
-
 ```sql
--- Create an index to speed queries by XYZ in form A.
-CREATE INDEX index_name ON table_name (column1, column2, ...);
+--  busca de jogadores por equipa
+CREATE INDEX IX_Jogadores_Equipa ON Jogadores (ID_Equipa);
+
+-- ComboBox de Equipas que usa ORDER BY Nome
+CREATE INDEX IX_Equipas_Nome ON Equipas (Nome);
+
+-- Acelera buscas por nome na tabela de Pessoas
+CREATE INDEX IX_Pessoas_Nome ON Pessoas (Nome);
+
+-- Não podem existir dois emails iguais 
+CREATE UNIQUE INDEX UQ_Pessoas_Email ON Pessoas (Email);
+
+-- Acelera pesquisas por posição (ex: todos os Bases)
+CREATE INDEX IX_Jogadores_Posicao ON Jogadores (Posicao);
+
+-- Acelera pesquisas por mão dominante (Direita/Esquerda)
+CREATE INDEX IX_Jogadores_Mao ON Jogadores (Mao_Dominante);
 ```
 
 ## SQL Programming: Stored Procedures, Triggers, UDF
@@ -150,7 +178,9 @@ CREATE INDEX index_name ON table_name (column1, column2, ...);
 
 [SQL Triggers File](sql/03_triggers.sql "SQLFileQuestion")
 
-## Outras notas/Other notes
+[SQL User Definition Functions File](sql/06_udfs.sql "SQLFileQuestion")
+
+[SQL Indexes File](sql/07_INDEX.sql "SQLFileQuestion")
 
 ### Dados iniciais da dabase de dados/Database init data
 
