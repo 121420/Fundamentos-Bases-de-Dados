@@ -66,7 +66,7 @@ O objetivo é de criar uma base de dados que armazene e organize informações s
 ![DER Diagram!](der.jpg "AnImage")
 
 ### Melhorias/Improvements 
-Não foram feitas nenhuma alteração.
+Não foram feitas nenhumas alterações.
 
 ## ER - Esquema Relacional/Relational Schema
 
@@ -74,7 +74,7 @@ Não foram feitas nenhuma alteração.
 ![ER Diagram!](er.jpg "AnImage")
 
 ### Melhorias/Improvements
-Não foram feitas nenhuma alteração.
+Não foram feitas nenhumas alterações.
 
 ## ​SQL DDL - Data Definition Language
 [SQL DDL File](sql/01_ddl.sql "SQLFileQuestion")
