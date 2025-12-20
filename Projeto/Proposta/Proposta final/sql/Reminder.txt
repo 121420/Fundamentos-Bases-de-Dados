@@ -39,4 +39,4 @@ Bilhete
 - 16/12/2025 - aumentar salário maybe
 
 - 20/12/2025 - 	todas views adicionadas. Falta adaptar nos forms.cs
-				Falta concluir as UDFS, triggers e as SP
+				Falta concluir as UDFS, triggers e as SP e relatório done.
