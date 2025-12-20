@@ -59,7 +59,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1328, 54);
             this.panel1.TabIndex = 67;
@@ -80,7 +80,7 @@
             // 
             this.cmbLicensa.FormattingEnabled = true;
             this.cmbLicensa.Location = new System.Drawing.Point(180, 325);
-            this.cmbLicensa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbLicensa.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLicensa.Name = "cmbLicensa";
             this.cmbLicensa.Size = new System.Drawing.Size(116, 21);
             this.cmbLicensa.TabIndex = 110;
@@ -89,7 +89,7 @@
             // 
             this.btmAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btmAtualizar.Location = new System.Drawing.Point(273, 375);
-            this.btmAtualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmAtualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btmAtualizar.Name = "btmAtualizar";
             this.btmAtualizar.Size = new System.Drawing.Size(80, 27);
             this.btmAtualizar.TabIndex = 107;
@@ -101,7 +101,7 @@
             // 
             this.btmEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btmEliminar.Location = new System.Drawing.Point(372, 375);
-            this.btmEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btmEliminar.Name = "btmEliminar";
             this.btmEliminar.Size = new System.Drawing.Size(80, 27);
             this.btmEliminar.TabIndex = 106;
@@ -113,7 +113,7 @@
             // 
             this.Limpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Limpar.Location = new System.Drawing.Point(458, 375);
-            this.Limpar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Limpar.Margin = new System.Windows.Forms.Padding(2);
             this.Limpar.Name = "Limpar";
             this.Limpar.Size = new System.Drawing.Size(80, 27);
             this.Limpar.TabIndex = 105;
@@ -125,7 +125,7 @@
             // 
             this.btmInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btmInserir.Location = new System.Drawing.Point(177, 375);
-            this.btmInserir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmInserir.Margin = new System.Windows.Forms.Padding(2);
             this.btmInserir.Name = "btmInserir";
             this.btmInserir.Size = new System.Drawing.Size(80, 27);
             this.btmInserir.TabIndex = 104;
@@ -169,7 +169,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(177, 162);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtNome.Name = "txtNome";
             this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(116, 20);
@@ -189,7 +189,7 @@
             // txtIdTreinador
             // 
             this.txtIdTreinador.Location = new System.Drawing.Point(180, 214);
-            this.txtIdTreinador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdTreinador.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdTreinador.Name = "txtIdTreinador";
             this.txtIdTreinador.Size = new System.Drawing.Size(116, 20);
             this.txtIdTreinador.TabIndex = 98;
@@ -210,7 +210,7 @@
             this.ListaTreiadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ListaTreiadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListaTreiadores.Location = new System.Drawing.Point(633, 154);
-            this.ListaTreiadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListaTreiadores.Margin = new System.Windows.Forms.Padding(2);
             this.ListaTreiadores.Name = "ListaTreiadores";
             this.ListaTreiadores.RowTemplate.Height = 24;
             this.ListaTreiadores.Size = new System.Drawing.Size(611, 280);
@@ -221,7 +221,7 @@
             // txtPesquisa
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(633, 123);
-            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(612, 20);
             this.txtPesquisa.TabIndex = 114;
@@ -239,7 +239,7 @@
             // txtCC
             // 
             this.txtCC.Location = new System.Drawing.Point(308, 214);
-            this.txtCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCC.Margin = new System.Windows.Forms.Padding(2);
             this.txtCC.Name = "txtCC";
             this.txtCC.Size = new System.Drawing.Size(116, 20);
             this.txtCC.TabIndex = 115;
@@ -258,7 +258,7 @@
             // txtAnosExperiencia
             // 
             this.txtAnosExperiencia.Location = new System.Drawing.Point(178, 265);
-            this.txtAnosExperiencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAnosExperiencia.Margin = new System.Windows.Forms.Padding(2);
             this.txtAnosExperiencia.Name = "txtAnosExperiencia";
             this.txtAnosExperiencia.Size = new System.Drawing.Size(116, 20);
             this.txtAnosExperiencia.TabIndex = 117;
@@ -266,7 +266,7 @@
             // txtEspecialidade
             // 
             this.txtEspecialidade.Location = new System.Drawing.Point(308, 265);
-            this.txtEspecialidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEspecialidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtEspecialidade.Name = "txtEspecialidade";
             this.txtEspecialidade.Size = new System.Drawing.Size(116, 20);
             this.txtEspecialidade.TabIndex = 118;
@@ -296,9 +296,10 @@
             this.Controls.Add(this.txtIdTreinador);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormTreinadores";
             this.Text = "FormTreinadores";
+            this.Load += new System.EventHandler(this.FormTreinadores_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListaTreiadores)).EndInit();

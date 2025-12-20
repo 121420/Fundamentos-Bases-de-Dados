@@ -27,9 +27,7 @@ namespace NBA
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                string query = "SELECT P.Nome,T.CC,T.ID_Treinador,T.Experiencia_anos,T.Especialidade,T.Licenca " +
-                    "FROM Treinadores T " +
-                    "JOIN Pessoas P ON P.CC = T.CC ";
+                string query = "SELECT * FROM vw_TreinadoresDetalhes";
 
                 try
                 {
@@ -339,6 +337,11 @@ namespace NBA
                     MessageBox.Show("Ocorreu um erro geral: " + erro.Message, "Erro Geral", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void FormTreinadores_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

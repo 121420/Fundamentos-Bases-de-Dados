@@ -158,7 +158,7 @@ namespace NBA
             // 1. Validação dos dados
             string cc = txtCC.Text.Trim();
             string nome = txtNome.Text.Trim();
-            string dataNascString = mskData.Text.Replace("/", "").Trim(); // Remove barras
+            string dataNascString = mskData.Text.Replace("/", "").Trim();   
             string nacionalidade = txtNacionalidade.Text.Trim();
             string genero = cmbGenero.Text;
             string email = txtEmail.Text.Trim();
