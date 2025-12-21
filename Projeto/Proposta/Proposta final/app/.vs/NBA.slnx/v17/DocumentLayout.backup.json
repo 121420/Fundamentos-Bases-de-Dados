@@ -1,70 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\nba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\lofor\\onedrive - universidade de aveiro\\desktop\\school\\2\u00BAano\\semestre i\\fbd\\p\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\formclassificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\formclassificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\nba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormClassificacao.cs",
-              "DocumentMoniker": "C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormClassificacao.cs",
-              "RelativeDocumentMoniker": "NBA\\FormClassificacao.cs",
-              "ToolTip": "C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormClassificacao.cs",
-              "RelativeToolTip": "NBA\\FormClassificacao.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAkwDgAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T19:10:27.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\Form1.cs",
-              "RelativeDocumentMoniker": "NBA\\Form1.cs",
-              "ToolTip": "C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\Form1.cs",
-              "RelativeToolTip": "NBA\\Form1.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T19:10:10.03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\Form1.cs",
-              "RelativeDocumentMoniker": "NBA\\Form1.cs",
-              "ToolTip": "C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\Form1.cs [Design]",
-              "RelativeToolTip": "NBA\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T19:04:03.151Z",
-              "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
