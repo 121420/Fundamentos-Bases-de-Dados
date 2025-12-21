@@ -45,5 +45,10 @@ namespace NBA
                 }
                 Vendas.DataSource = dt;            }
         }
+
+        private void Vendas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
