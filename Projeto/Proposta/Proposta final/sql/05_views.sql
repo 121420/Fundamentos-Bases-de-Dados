@@ -81,4 +81,31 @@ JOIN Estadios Es ON Es.ID_Estadio = J.ID_Estadio
 WHERE J.dataHora_jogo >= CAST(GETDATE() AS DATE);
 GO
 
-Select * FROM vw_JogosFuturos
+DROP VIEW IF EXISTS vw_RelatorioVendasEfetivas;
+GO
+
+CREATE VIEW vw_RelatorioVendasEfetivas AS
+SELECT 
+    J.ID_Jogo,
+    E1.Nome AS Equipa_Casa,
+    E2.Nome AS Equipa_Fora,
+    EST.Nome AS Estadio,
+    J.dataHora_jogo AS Data_Hora,
+    COUNT(B.ID_bilhete) AS Bilhetes_Vendidos,
+    SUM(B.preco) AS Receita_Total
+FROM JOGO J
+JOIN Equipas E1 ON J.ID_equipa_Casa = E1.ID_Equipas
+JOIN Equipas E2 ON J.ID_equipa_Fora = E2.ID_Equipas
+JOIN Estadios EST ON J.ID_Estadio = EST.ID_Estadio
+JOIN Bilhete B ON J.ID_Jogo = B.ID_Jogo 
+GROUP BY 
+    J.ID_Jogo, 
+    E1.Nome, 
+    E2.Nome, 
+    EST.Nome, 
+    J.dataHora_jogo
+HAVING SUM(B.preco) > 0; -- O filtro de somas deve estar aqui
+GO
+
+-- Para testar a View correta:
+SELECT * FROM vw_RelatorioVendasEfetivas ORDER BY Receita_Total DESC;

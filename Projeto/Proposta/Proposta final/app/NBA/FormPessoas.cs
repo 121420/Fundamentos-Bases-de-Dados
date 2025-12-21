@@ -14,11 +14,21 @@ namespace NBA
     public partial class FormPessoas : Form
     {
         private string connectionString;
-        public FormPessoas()
+        private int fecho;
+        public FormPessoas(string ccRecebido, int fecho)
         {
             InitializeComponent();
             connectionString = @"Server=tcp:mednat.ieeta.pt,8101;Database=p4g4;User ID=p4g4;Password=-121420127986@KR;Encrypt=False;";
+            txtCC.Text = ccRecebido;
+            this.fecho = fecho;
+            if(fecho == 1)
+            {
+                listaPessoas.Visible = false;
+                txtCC.Enabled = false;
+                txtPesquisa.Visible = false;
+                lblPesquisa.Visible=false;
 
+            }
 
         }
 
@@ -203,6 +213,10 @@ namespace NBA
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Pessoa inserida com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if(fecho == 1)
+                            {
+                                this.Close();
+                            }
                             CarregarPessoas();
                             LimparCampos();
                         }

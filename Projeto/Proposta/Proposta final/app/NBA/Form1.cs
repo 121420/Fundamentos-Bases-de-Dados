@@ -91,7 +91,7 @@ namespace NBA
 
         private void btm_Pessoas_Click(object sender, EventArgs e)
         {
-            AbrirFormularioNoPainel(new FormPessoas());
+            AbrirFormularioNoPainel(new FormPessoas("",0));
         }
 
         private void btmSair_Click(object sender, EventArgs e)
@@ -102,6 +102,11 @@ namespace NBA
         private void btmBilheste_Click(object sender, EventArgs e)
         {
             AbrirFormularioNoPainel(new Bilhestes());
+        }
+
+        private void Relatorio_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioNoPainel(new Relatorio());
         }
     }
 }

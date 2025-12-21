@@ -1,5 +1,7 @@
 use p4g4;
-
+DROP PROCEDURE IF EXISTS sp_VenderBilhete;
+DROP PROCEDURE IF EXISTS sp_InserirJogo;
+GO
 -- Procedure para inserir jogo com validação de equipas
 CREATE PROCEDURE sp_InserirJogo
     @ID_Jogo INT,
@@ -25,10 +27,14 @@ END;
 GO
 
 -- Procedure para vender bilhete com validação de lotação
+
 CREATE PROCEDURE sp_VenderBilhete
     @ID_Bilhete INT,
     @ID_Jogo INT,
+	@CC INT,
+	@ID_EStadio INT,
     @Preco DECIMAL(10,2),
+	@setor INT,
     @Lugar VARCHAR(10)
 AS
 BEGIN
@@ -38,15 +44,10 @@ BEGIN
         RAISERROR('Não é possível vender bilhetes para jogos passados.', 16, 1);
         RETURN;
     END
-
-    -- Validação: Verificar lotação usando a função que criámos acima
-    IF dbo.fn_BilhetesRestantes(@ID_Jogo) <= 0
-    BEGIN
-        RAISERROR('Estádio Lotado!', 16, 1);
-        RETURN;
-    END
-
-    INSERT INTO Bilhete (ID_bilhete, ID_Jogo, preco, lugar)
-    VALUES (@ID_Bilhete, @ID_Jogo, @Preco, @Lugar);
+    INSERT INTO Bilhete (ID_bilhete,ID_estadio, ID_Jogo,setor, preco, lugar,CC)
+    VALUES (@ID_Bilhete, @ID_Estadio,@ID_Jogo,@setor, @Preco, @Lugar,@CC);
 END;
 GO
+
+
+

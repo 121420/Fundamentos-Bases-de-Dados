@@ -40,9 +40,10 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 66);
+            this.panel3.Location = new System.Drawing.Point(0, 54);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(247, 717);
+            this.panel3.Size = new System.Drawing.Size(185, 582);
             this.panel3.TabIndex = 96;
             // 
             // panel1
@@ -51,9 +52,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1850, 66);
+            this.panel1.Size = new System.Drawing.Size(1388, 54);
             this.panel1.TabIndex = 95;
             // 
             // label1
@@ -61,11 +62,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(476, 25);
+            this.label1.Location = new System.Drawing.Point(357, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 26);
+            this.label1.Size = new System.Drawing.Size(90, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Classificacao";
+            this.label1.Text = "Bilhetes";
             // 
             // ListasjogosFuturos
             // 
@@ -73,11 +75,10 @@
             this.ListasjogosFuturos.BackgroundColor = System.Drawing.Color.White;
             this.ListasjogosFuturos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListasjogosFuturos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ListasjogosFuturos.Location = new System.Drawing.Point(405, 190);
-            this.ListasjogosFuturos.Margin = new System.Windows.Forms.Padding(4);
+            this.ListasjogosFuturos.Location = new System.Drawing.Point(304, 154);
             this.ListasjogosFuturos.Name = "ListasjogosFuturos";
             this.ListasjogosFuturos.RowHeadersWidth = 51;
-            this.ListasjogosFuturos.Size = new System.Drawing.Size(782, 478);
+            this.ListasjogosFuturos.Size = new System.Drawing.Size(611, 414);
             this.ListasjogosFuturos.TabIndex = 97;
             this.ListasjogosFuturos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListasjogosFuturos_CellContentClick);
             // 
@@ -85,7 +86,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(400, 146);
+            this.label2.Location = new System.Drawing.Point(300, 119);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 25);
             this.label2.TabIndex = 98;
@@ -93,13 +95,14 @@
             // 
             // Bilhestes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1850, 783);
+            this.ClientSize = new System.Drawing.Size(1388, 636);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ListasjogosFuturos);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Bilhestes";
             this.Text = "Bilhestes";
             this.Load += new System.EventHandler(this.Bilhestes_Load);

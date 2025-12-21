@@ -70,5 +70,41 @@ namespace NBA
         {
             CarregarjogosFuturos();
         }
+        private void VenderBilhete(int idBilhete, int idJogo, decimal preco, string lugar)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    // Configura o comando para usar a Stored Procedure
+                    using (SqlCommand cmd = new SqlCommand("sp_VenderBilhete", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Adiciona os parâmetros exigidos pela SP
+                        cmd.Parameters.AddWithValue("@ID_Bilhete", idBilhete);
+                        cmd.Parameters.AddWithValue("@ID_Jogo", idJogo);
+                        cmd.Parameters.AddWithValue("@Preco", preco);
+                        cmd.Parameters.AddWithValue("@Lugar", lugar);
+
+                        // Executa a SP
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Bilhete vendido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                // Aqui o C# captura o RAISERROR da tua SP (Ex: 'Estádio Lotado!')
+                MessageBox.Show("Erro na base de dados: " + ex.Message, "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro geral: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -24,6 +24,8 @@ namespace NBA
             InitializeComponent();
             _idJogo = idJogo;
 
+            AtualizarLugaresDisponiveis(idJogo);
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -69,13 +71,34 @@ namespace NBA
 
         private void FormVendaBilhete_Load(object sender, EventArgs e)
         {
+            
             CarregarDadosJogo();
             txtIDJogo.Text = _idJogo.ToString();
             txtIDJogo.ReadOnly = true;
 
             cmbSetor.Items.AddRange(new string[] { "A1", "A2" ,"B1", "B2", "C1", "C2", "D1", "D2" });
         }
+        private void AtualizarLugaresDisponiveis(int idJogo)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                // Chamamos a função diretamente num SELECT
+                string query = "SELECT dbo.fn_BilhetesRestantes(@ID_Jogo)";
 
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID_Jogo", idJogo);
+                    int restantes = (int)cmd.ExecuteScalar();
+
+                    lblBilhetesRestantes.Text = $"Lugares restantes: {restantes}";
+
+                    // Feedback visual: se for 0, bloqueia o botão de venda
+                    btmConfirmar.Enabled = (restantes > 0);
+                    if (restantes <= 0) lblBilhetesRestantes.ForeColor = Color.Red;
+                }
+            }
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -96,50 +119,95 @@ namespace NBA
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                int proximoId = 1;
-                string queryMaxId = "SELECT MAX(ID_bilhete) FROM Bilhete";
-                using (SqlCommand cmdId = new SqlCommand(queryMaxId, con))
+
+                // 1. Verificar se o CC existe
+                string queryCheck = "SELECT COUNT(*) FROM Pessoas WHERE CC = @CC";
+                using (SqlCommand cmdCheck = new SqlCommand(queryCheck, con))
                 {
-                    object res = cmdId.ExecuteScalar();
-                    if (res != DBNull.Value && res != null)
+                    cmdCheck.Parameters.AddWithValue("@CC", txtCC.Text);
+                    int existe = (int)cmdCheck.ExecuteScalar();
+
+                    if (existe == 0)
                     {
-                        proximoId = Convert.ToInt32(res) + 1;
+                        // 2. Se não existir, pergunta se quer cadastrar
+                        DialogResult dr = MessageBox.Show("Este CC não existe. Deseja cadastrar esta pessoa agora?",
+                            "Utilizador não encontrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (dr == DialogResult.Yes)
+                        {
+                            // 3. Abre o formulário de Pessoas passando o CC
+                            // Nota: Precisas de ajustar o construtor do FormPessoas para receber o CC
+                            FormPessoas frmPessoas = new FormPessoas(txtCC.Text,1);
+                            frmPessoas.ShowDialog(); // ShowDialog trava esta janela até a outra fechar
+
+                            // Após fechar, o utilizador pode tentar clicar em "Vender" novamente
+                            return;
+                        }
+                        else { return; }
                     }
                 }
-                string query = @"
-                    INSERT INTO Bilhete
-                    (ID_bilhete,ID_estadio, ID_Jogo, setor, lugar, preco, vendido, CC)
-                    VALUES
-                    (@ID_bilhete,@ID_estadio, @ID_Jogo, @setor, @lugar, @preco, 1, @CC)";
-
-                string queryEtadio = @"SELECT ID_Estadio " +
-                         "FROM Jogo " +
-                         "WHERE ID_Jogo = @ID_Jogo";
-                using (SqlCommand cmd2 = new SqlCommand(queryEtadio, con))
-                {
-                    cmd2.Parameters.AddWithValue("@ID_Jogo", _idJogo);
-                    object result = cmd2.ExecuteScalar();
-                    
-                    if (result != null)
-                        _idEstadio = Convert.ToInt32(result);
-                }
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@ID_bilhete", proximoId);
-                    cmd.Parameters.AddWithValue("@ID_estadio", _idEstadio);
-
-                    cmd.Parameters.AddWithValue("@ID_Jogo", _idJogo);
-                    cmd.Parameters.AddWithValue("@setor", cmbSetor.Text);
-                    cmd.Parameters.AddWithValue("@lugar", txtLugar.Text);
-                    cmd.Parameters.AddWithValue("@preco", txtPreco.Text); // depois automatizamos
-                    cmd.Parameters.AddWithValue("@CC", txtCC.Text);
-
-                    cmd.ExecuteNonQuery();
-                }
+                ExecutarVenda();
             }
+        }
+        private void ExecutarVenda()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
 
-            MessageBox.Show("Bilhete vendido com sucesso!");
+                    // 1. Gerar o próximo ID do Bilhete
+                    int proximoId = 1;
+                    string queryMaxId = "SELECT MAX(ID_bilhete) FROM Bilhete";
+                    using (SqlCommand cmdId = new SqlCommand(queryMaxId, con))
+                    {
+                        object res = cmdId.ExecuteScalar();
+                        if (res != DBNull.Value && res != null)
+                            proximoId = Convert.ToInt32(res) + 1;
+                    }
+
+                    string queryEtadio = @"SELECT ID_Estadio " +
+                          "FROM Jogo " +
+                          "WHERE ID_Jogo = @ID_Jogo";
+                    using (SqlCommand cmd2 = new SqlCommand(queryEtadio, con))
+                    {
+                        cmd2.Parameters.AddWithValue("@ID_Jogo", _idJogo);
+                        object result = cmd2.ExecuteScalar();
+
+                        if (result != null)
+                            _idEstadio = Convert.ToInt32(result);
+                    }
+
+                    // 3. Chamada da Stored Procedure
+                    using (SqlCommand cmd = new SqlCommand("sp_VenderBilhete", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ID_Bilhete", proximoId);
+                        cmd.Parameters.AddWithValue("@ID_Estadio", _idEstadio); // Usa o valor real buscado
+                        cmd.Parameters.AddWithValue("@ID_Jogo", _idJogo);
+                        cmd.Parameters.AddWithValue("@Preco", Convert.ToDecimal(txtPreco.Text));
+                        cmd.Parameters.AddWithValue("@Lugar", txtLugar.Text);
+                        cmd.Parameters.AddWithValue("@Setor", cmbSetor.Text);
+                        cmd.Parameters.AddWithValue("@CC", Convert.ToInt32(txtCC.Text));
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Bilhete vendido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (SqlException ex)
+            {
+                // Captura erros de lotação da SP ou erros de chave estrangeira
+                MessageBox.Show("Erro no Banco: " + ex.Message, "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro técnico: " + ex.Message);
+            }
             this.Close();
         }
     }
