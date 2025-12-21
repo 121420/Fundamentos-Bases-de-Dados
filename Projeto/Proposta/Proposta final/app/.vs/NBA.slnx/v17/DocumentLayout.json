@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|c:\\users\\lofor\\onedrive - universidade de aveiro\\desktop\\school\\2\u00BAano\\semestre i\\fbd\\p\\fundamentos-bases-de-dados\\projeto\\proposta\\proposta final\\app\\nba\\formclassificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{124D00AC-1AAE-47E7-BC78-317E2DC76D17}|NBA\\NBA.csproj|solutionrelative:nba\\formclassificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormClassificacao.cs",
+              "DocumentMoniker": "C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormClassificacao.cs",
+              "RelativeDocumentMoniker": "NBA\\FormClassificacao.cs",
+              "ToolTip": "C:\\Users\\lofor\\OneDrive - Universidade de Aveiro\\Desktop\\School\\2\u00BAAno\\Semestre I\\FBD\\P\\Fundamentos-Bases-de-Dados\\Projeto\\Proposta\\Proposta final\\app\\NBA\\FormClassificacao.cs",
+              "RelativeToolTip": "NBA\\FormClassificacao.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-21T00:14:32.26Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
