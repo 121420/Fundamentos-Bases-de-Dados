@@ -12,6 +12,8 @@ BEGIN
 END;
 GO
 
+
+
 -- Função para calcular bilhetes restantes para um jogo
 CREATE FUNCTION fn_BilhetesRestantes (@ID_Jogo INT)
 RETURNS INT
@@ -24,8 +26,9 @@ BEGIN
     FROM JOGO J JOIN Estadios Es ON J.ID_estadio = Es.ID_Estadio 
     WHERE J.ID_Jogo = @ID_Jogo;
 
-    SELECT @Vendidos = COUNT(*) FROM Bilhetes WHERE ID_Jogo = @ID_Jogo;
+    SELECT @Vendidos = COUNT(*) FROM Bilhete WHERE ID_Jogo = @ID_Jogo;
 
     RETURN @Capacidade - @Vendidos;
 END;
 GO
+
