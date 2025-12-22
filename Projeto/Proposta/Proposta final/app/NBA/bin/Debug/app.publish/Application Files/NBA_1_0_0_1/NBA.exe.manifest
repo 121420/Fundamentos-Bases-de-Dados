@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="NBA.exe" version="1.0.0.1" publicKeyToken="625857226eeed241" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="NBA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="NBA.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opções de Manifesto do UAC
+          Para alterar o nível de Controle de Conta de Usuário do Windows, substitua o nó
+          requestedExecutionLevel por um dos seguintes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Para utilizar a Virtualização de Arquivos e Registro para manter a compatibilidade com versões anteriores,
+         exclua o nó requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NBA.exe" size="3135976">
+      <assemblyIdentity name="NBA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>vIT23W6Ak6Dh0CKcl7SVD9ccOMyA8l5p3pCtsAxxjJk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="NBA.exe.config" size="195">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9FI/u0SasKhdPKhkzWKFjVh8SUBAZxLffz7JV9xBY8A=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-5HRQN5F\Romulo" issuerKeyHash="8641928896118cba0434cb03e69653915c1d6bfc" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>7jckzRI29YhJWXJrWoEj03smfyxwqJILdOG3tvjH9ck=</DigestValue></Reference></SignedInfo><SignatureValue>Ocyd+DHqHggZR485c6yB59+hnnu0l6u/Z8icW2CHW0wnTQlexKPZWPluk6+GP8BkIVy0daPl06vx3LGpQChMFVsONrMRhnlPlXmTQ1AqyAjc8GBP261RcsSv91srOePX8kDmIrqum4Fg+ep1q4lx+yo9hcG3og3X6+1zo9iV+rg=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>q2fkNdDo76B6apXsI6hNqft10L+OhpH6Qps5L4Qs3OQMwW50+7Du961w3J1kS73WZvseUalVGbPSwZTqPhAoPsxXBwxCUbPi81sOcbp4q25b7TeO6/FxTN9QTOcbfTrmvRt4/d9fYYpocAVsoOc8zYEYHwKTQhIXuVzmuNPIPFE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="c9f5c7f8b6b7e1740b92a8702c7f267bd323815a6b72594988f53612cd2437ee" Description="" Url=""><as:assemblyIdentity name="NBA.exe" version="1.0.0.1" publicKeyToken="625857226eeed241" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-5HRQN5F\Romulo</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>/SqKTLkuRrF0WcxYig8090m+eqKway/wVoCu1qqXAs8=</DigestValue></Reference></SignedInfo><SignatureValue>U7wsOryWQAuIw4O9kE4VcHQSqMJXiNGaLflHstoGmrOQ2uLLRtPvGbL/whm3qb2eeyZv5leD4k9QEdB6z4f1WISnM5eMPLDwYHZ4eCwRwbWaIAxhwT55ypt5BmtaJBrdj3L++84yp5MFtbfLdicTT0Hd5a/bluhALjQZcyPCZu4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>q2fkNdDo76B6apXsI6hNqft10L+OhpH6Qps5L4Qs3OQMwW50+7Du961w3J1kS73WZvseUalVGbPSwZTqPhAoPsxXBwxCUbPi81sOcbp4q25b7TeO6/FxTN9QTOcbfTrmvRt4/d9fYYpocAVsoOc8zYEYHwKTQhIXuVzmuNPIPFE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQGxtf55hGhZFOtEOlfg2L8jANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwARABFAFMASwBUAE8AUAAtADUASABSAFEATgA1AEYAXABSAG8AbQB1AGwAbzAeFw0yNTEyMjIxNjIxMTZaFw0yNjEyMjIyMjIxMTZaMDcxNTAzBgNVBAMeLABEAEUAUwBLAFQATwBQAC0ANQBIAFIAUQBOADUARgBcAFIAbwBtAHUAbABvMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrZ+Q10OjvoHpqlewjqE2p+3XQv46GkfpCmzkvhCzc5AzBbnT7sO73rXDcnWRLvdZm+x5RqVUZs9LBlOo+ECg+zFcHDEJRs+LzWw5xunirblvtN47r8XFM31BM5xt9Oua9G3j9319himhwBWyg5zzNgRgfApNCEhe5XOa408g8UQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBACGH6gbUA9j4t6uagDtHPO4fG61Uzmm9DuJRmBToy+gWS8mXRKeLcNHsmzd1v+jrM0hnPXbKqn44dL1PU0YxUh5o7P0uWtT+wYCObW4HKwvhyfU3f1pa4GWeFT47lV2TcqplwebXDu38Upx4TICHIyG04WyI+egwVt4IRDLWNGA0</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
